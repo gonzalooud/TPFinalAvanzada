@@ -4,13 +4,18 @@
              http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
+
+    
   <persistence-unit name="aplicacion">
+      
+          <class>modelo.Empleado</class>
+      
     <properties>
         <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sistemareclamo" />
+        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sistemareclamo?serverTimezone=UTC" />
         <property name="javax.persistence.jdbc.user" value="admin" />
         <property name="javax.persistence.jdbc.password" value="admin" />
-        <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+        <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
         <property name="hibernate.hbm2ddl.auto" value="create-drop" /> <!--cambiar a create-->
     </properties>
   </persistence-unit>
