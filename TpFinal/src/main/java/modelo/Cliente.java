@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table (name = "CLIENTE")
-public class Cliente implements Serializable {
+public class Cliente extends Persona implements Serializable {
     
     private static final long serialVersionUID = 1L;
     
@@ -55,7 +55,6 @@ public class Cliente implements Serializable {
     public String toString() {
         return "Cliente{" + "contrato=" + contrato + ", numeroCliente=" + numeroCliente + '}';
     }
-    
     
 }
 

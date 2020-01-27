@@ -8,11 +8,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table (name = "EMPLEADO")
-public class Empleado implements Serializable {
+public class Empleado extends Persona implements Serializable {
     
     private static final long serialVersionUID = 1L;
    
-    @Id
+
     @Column
     private int NumeroEmpleado;
     
