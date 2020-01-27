@@ -5,10 +5,13 @@ import java.text.SimpleDateFormat;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @Entity
 @Table (name = "PERSONA")
+@Inheritance(strategy=InheritanceType.JOINED)
 public class Persona implements Serializable {
     
     private static final long serialVersionUID = 1L;
