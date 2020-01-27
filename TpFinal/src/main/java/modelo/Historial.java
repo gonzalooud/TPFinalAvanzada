@@ -6,6 +6,8 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,13 +27,13 @@ public class Historial implements Serializable{
     private int id;
     
     @Column
-    private Empleado empleadosAsignados;
+    private HashMap< Integer , Empleado > empleadosAsignados;
     
     @Column
     private String descripcion;
     
     @Column
-    private 
+    private ArrayList<Estado> estados;
     
     
 }
