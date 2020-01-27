@@ -31,6 +31,9 @@ public class Servicio implements Serializable{
     @Column
     private float precio;
 
+    public Servicio() {
+    }
+
 
     public Servicio(int id, String descripcion, float precio) {
         this.id = id;
@@ -62,5 +65,11 @@ public class Servicio implements Serializable{
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "Servicio{" + "id=" + id + ", descripcion=" + descripcion + ", precio=" + precio + '}';
+    }
+    
     
 }
