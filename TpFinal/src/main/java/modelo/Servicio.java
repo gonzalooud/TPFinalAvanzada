@@ -26,9 +26,12 @@ public class Servicio implements Serializable{
     @Column
     private float precio;
 
+    //CONSTRUCTOR VACIO********************************************************************************************
+    
     public Servicio() {
     }
 
+    //CONSTRUCTOR SERVICIO******************************************************************************************
 
     public Servicio(int id, String descripcion, float precio) {
         this.id = id;
@@ -36,6 +39,8 @@ public class Servicio implements Serializable{
         this.precio = precio;
     }
 
+    //GETTERS Y SETTERS**************************************************************************************************
+    
     public String getDescripcion() {
         return descripcion;
     }
@@ -61,10 +66,11 @@ public class Servicio implements Serializable{
         this.id = id;
     }
 
+    //TO STRING*********************************************************************************************************
+    
     @Override
     public String toString() {
         return "Servicio{" + "id=" + id + ", descripcion=" + descripcion + ", precio=" + precio + '}';
     }
-    
     
 }

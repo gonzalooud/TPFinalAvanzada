@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelo;
 
 import java.io.Serializable;
@@ -10,7 +5,6 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 
 public class TipoReclamo implements Serializable{
     
@@ -24,11 +18,15 @@ public class TipoReclamo implements Serializable{
     @Column
     private String descripcion;
 
+    //CONSTRUCTOR TIPO RECLAMO************************************************************************************
+    
     public TipoReclamo(int id, String descripcion) {
         this.id = id;
         this.descripcion = descripcion;
     }
 
+    //GETTERS Y SETTERS**************************************************************************************************
+    
     public int getId() {
         return id;
     }
@@ -45,15 +43,16 @@ public class TipoReclamo implements Serializable{
         this.descripcion = descripcion;
     }
 
+    //CONSTRUCTOR VACIO********************************************************************************************
+    
     public TipoReclamo() {
     }
+    
+    //TO STRING*********************************************************************************************************
 
     @Override
     public String toString() {
         return "TipoReclamo{" + "id=" + id + ", descripcion=" + descripcion + '}';
     }
-    
-    
-    
     
 }
