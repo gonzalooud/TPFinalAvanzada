@@ -6,12 +6,12 @@
 package modelo;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashMap;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 /**
  *
@@ -23,17 +23,72 @@ public class Historial implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="ID")
+    @Column
     private int id;
     
     @Column
-    private HashMap< Integer , Empleado > empleadosAsignados;
+    private HashMap< Integer , Integer > empleadosAsignados;
     
     @Column
     private String descripcion;
     
     @Column
-    private ArrayList<Estado> estados;
+    @ManyToMany
+    private Estado estado;
+
+    public Historial() {
+    }
+
+    public Historial(int id, HashMap<Integer, Integer> empleadosAsignados, String descripcion, Estado estado) {
+        this.id = id;
+        this.empleadosAsignados = empleadosAsignados;
+        this.descripcion = descripcion;
+        this.estado = estado;
+    }
+
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public HashMap<Integer, Integer> getEmpleadosAsignados() {
+        return empleadosAsignados;
+    }
+
+    public void setEmpleadosAsignados(HashMap<Integer, Integer> empleadosAsignados) {
+        this.empleadosAsignados = empleadosAsignados;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return "Historial{" + "id=" + id + ", empleadosAsignados=" + empleadosAsignados + ", descripcion=" + descripcion + ", estado=" + estado + '}';
+    }
+
+
+   
+
+    
     
     
 }
