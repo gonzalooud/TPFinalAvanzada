@@ -24,7 +24,7 @@ public class Historial implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ID")
-    private int id;
+    private int idHistorial;
     
     @Column
     private HashMap< Integer , Empleado > empleadosAsignados;
@@ -34,6 +34,8 @@ public class Historial implements Serializable{
     
     @Column
     private ArrayList<Estado> estados;
+    
+    
     
     
 }
