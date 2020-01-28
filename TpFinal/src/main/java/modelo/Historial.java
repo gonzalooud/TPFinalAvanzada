@@ -24,7 +24,7 @@ public class Historial implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private int id;
+    private int idHistorial;
     
     @Column
     private HashMap< Integer , Integer > empleadosAsignados;
@@ -40,7 +40,7 @@ public class Historial implements Serializable{
     }
 
     public Historial(int id, HashMap<Integer, Integer> empleadosAsignados, String descripcion, Estado estado) {
-        this.id = id;
+        this.idHistorial = id;
         this.empleadosAsignados = empleadosAsignados;
         this.descripcion = descripcion;
         this.estado = estado;
@@ -49,11 +49,11 @@ public class Historial implements Serializable{
 
 
     public int getId() {
-        return id;
+        return idHistorial;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.idHistorial = id;
     }
 
     public HashMap<Integer, Integer> getEmpleadosAsignados() {
@@ -82,7 +82,7 @@ public class Historial implements Serializable{
 
     @Override
     public String toString() {
-        return "Historial{" + "id=" + id + ", empleadosAsignados=" + empleadosAsignados + ", descripcion=" + descripcion + ", estado=" + estado + '}';
+        return "Historial{" + "id=" + idHistorial + ", empleadosAsignados=" + empleadosAsignados + ", descripcion=" + descripcion + ", estado=" + estado + '}';
     }
 
 
