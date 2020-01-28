@@ -26,6 +26,9 @@ public class Persona implements Serializable {
     @Column
     private SimpleDateFormat fechaNacimiento;
     
+    @Column
+    private Contacto contacto;
+    
     //CONSTRUCTOR VACIO********************************************************************************************
 
     public Persona() {
@@ -33,10 +36,11 @@ public class Persona implements Serializable {
     
     //CONSTRUCTOR PERSONA
 
-    public Persona(int dni, String nombre, SimpleDateFormat fechaNacimiento) {
+    public Persona(int dni, String nombre, SimpleDateFormat fechaNacimiento, Contacto contacto) {
         this.dni = dni;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
+        this.contacto = contacto;
     }
     
     //GETTERS***********************************************************************************************************
@@ -52,6 +56,10 @@ public class Persona implements Serializable {
     public SimpleDateFormat getFechaNacimiento() {
         return fechaNacimiento;
     }
+
+    public Contacto getContacto() {
+        return contacto;
+    }
  
     //SETTERS************************************************************************************************************
 
@@ -66,13 +74,17 @@ public class Persona implements Serializable {
     public void setFechaNacimiento(SimpleDateFormat fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
+
+    public void setContacto(Contacto contacto) {
+        this.contacto = contacto;
+    }
     
     //TO STRING*********************************************************************************************************
 
     @Override
     public String toString() {
-        return "Persona{" + "dni=" + dni + ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + '}';
+        return "Persona{" + "dni=" + dni + ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", contacto=" + contacto + '}';
     }
-    
+
 }
 
