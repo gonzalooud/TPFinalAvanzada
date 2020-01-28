@@ -1,9 +1,10 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
@@ -24,8 +25,8 @@ public class Empleado extends Persona implements Serializable {
     private String contraseña;
     
     @Column
-    @ManyToOne
-    private Especialidad especialidad;
+    @ManyToMany
+    private ArrayList <TipoReclamo> tipoReclamo;
 
     //CONTRUCTOR VACIO*********************************************************************************************
     
@@ -34,11 +35,10 @@ public class Empleado extends Persona implements Serializable {
 
     //CONSTRUCTOR EMPLEADO****************************************************************************************
     
-    public Empleado(int numeroEmpleado, String usuario, String contraseña, Especialidad especialidad) {
+    public Empleado(int numeroEmpleado, String usuario, String contraseña) {
         this.numeroEmpleado = numeroEmpleado;
         this.usuario = usuario;
         this.contraseña = contraseña;
-        this.especialidad = especialidad;
     }
 
     //GETTERS************************************************************************************************************
@@ -55,9 +55,6 @@ public class Empleado extends Persona implements Serializable {
         return contraseña;
     }
 
-    public Especialidad getEspecialidad() {
-        return especialidad;
-    }
     
     //SETTERS************************************************************************************************************
     
@@ -73,15 +70,12 @@ public class Empleado extends Persona implements Serializable {
         this.contraseña = contraseña;
     }
 
-    public void setEspecialidad(Especialidad especialidad) {    
-        this.especialidad = especialidad;
-    }
 
     //TO STRING*********************************************************************************************************
 
     @Override
     public String toString() {
-        return "Empleado{" + "numeroEmpleado=" + numeroEmpleado + ", usuario=" + usuario + ", contrase\u00f1a=" + contraseña + ", especialidad=" + especialidad + '}';
+        return "Empleado{" + "numeroEmpleado=" + numeroEmpleado + ", usuario=" + usuario + ", contrase\u00f1a=" + contraseña + ", especialidad=" + '}';
     }
     
 }
