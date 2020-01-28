@@ -3,9 +3,6 @@ package modelo;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
@@ -15,16 +12,18 @@ import javax.persistence.Table;
 public class Empleado extends Persona implements Serializable {
     
     private static final long serialVersionUID = 1L;
-   
-
+  
     @Column
-    private int NumeroEmpleado;
+    private int numeroEmpleado;
     
     @Column
-    private String Usuario;
+    private String usuario;
     
     @Column
-    private String Contraseña;
+    private String contraseña;
+    
+    @Column
+    private Especialidad especialidad;
 
     //CONTRUCTOR VACIO*********************************************************************************************
     
@@ -33,45 +32,54 @@ public class Empleado extends Persona implements Serializable {
 
     //CONSTRUCTOR EMPLEADO****************************************************************************************
     
-    public Empleado(int NumeroEmpleado, String Usuario, String Contraseña) {
-        this.NumeroEmpleado = NumeroEmpleado;
-        this.Usuario = Usuario;
-        this.Contraseña = Contraseña;
+    public Empleado(int numeroEmpleado, String usuario, String contraseña, Especialidad especialidad) {
+        this.numeroEmpleado = numeroEmpleado;
+        this.usuario = usuario;
+        this.contraseña = contraseña;
+        this.especialidad = especialidad;
     }
 
     //GETTERS************************************************************************************************************
-    
+
     public int getNumeroEmpleado() {
-        return NumeroEmpleado;
+        return numeroEmpleado;
     }
 
     public String getUsuario() {
-        return Usuario;
+        return usuario;
     }
 
     public String getContraseña() {
-        return Contraseña;
+        return contraseña;
     }
 
+    public Especialidad getEspecialidad() {
+        return especialidad;
+    }
+    
     //SETTERS************************************************************************************************************
     
-    public void setNumeroEmpleado(int NumeroEmpleado) {
-        this.NumeroEmpleado = NumeroEmpleado;
+    public void setNumeroEmpleado(int numeroEmpleado) {
+        this.numeroEmpleado = numeroEmpleado;
     }
 
-    public void setUsuario(String Usuario) {
-        this.Usuario = Usuario;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
-    public void setContraseña(String Contraseña) {
-        this.Contraseña = Contraseña;
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+
+    public void setEspecialidad(Especialidad especialidad) {    
+        this.especialidad = especialidad;
     }
 
     //TO STRING*********************************************************************************************************
-    
+
     @Override
     public String toString() {
-        return "Empleado{" + "NumeroEmpleado=" + NumeroEmpleado + ", Usuario=" + Usuario + ", Contrase\u00f1a=" + Contraseña + '}';
+        return "Empleado{" + "numeroEmpleado=" + numeroEmpleado + ", usuario=" + usuario + ", contrase\u00f1a=" + contraseña + ", especialidad=" + especialidad + '}';
     }
     
 }
