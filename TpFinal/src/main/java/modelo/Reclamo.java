@@ -27,11 +27,11 @@ public class Reclamo implements Serializable {
    
 
    @ManyToOne
-   @JoinColumn(name="DNI")
+   @JoinColumn
    private Cliente cliente;
 
-   @ManyToMany
-   @JoinColumn(name="IDSERVICIO")
+   @ManyToOne
+   @JoinColumn
    private Servicio servicio;
    
    @Column
@@ -45,7 +45,7 @@ public class Reclamo implements Serializable {
    private Date fecha;
    
    @ManyToOne
-   @JoinColumn(name="DNI")
+   @JoinColumn
    private Empleado empleadoRegistro;
    
    @Column

@@ -24,8 +24,8 @@ public class Contrato implements Serializable{
     @Column
     private int idContrato;
     
-    @Column
     @OneToOne
+    @JoinColumn
     private Cliente cliente;
     
     @ManyToMany
