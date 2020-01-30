@@ -13,26 +13,26 @@ public class TipoReclamo implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ID")
-    private int id;
+    private int idTipo;
     
     @Column
     private String descripcion;
 
     //CONSTRUCTOR TIPO RECLAMO************************************************************************************
     
-    public TipoReclamo(int id, String descripcion) {
-        this.id = id;
+    public TipoReclamo(int idTipo, String descripcion) {
+        this.idTipo = idTipo;
         this.descripcion = descripcion;
     }
 
     //GETTERS Y SETTERS**************************************************************************************************
     
-    public int getId() {
-        return id;
+    public int getIdTipo() {
+        return idTipo;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int idTipo) {
+        this.idTipo = idTipo;
     }
 
     public String getDescripcion() {
@@ -52,7 +52,7 @@ public class TipoReclamo implements Serializable{
 
     @Override
     public String toString() {
-        return "TipoReclamo{" + "id=" + id + ", descripcion=" + descripcion + '}';
+        return "TipoReclamo{" + "idTipo=" + idTipo + ", descripcion=" + descripcion + '}';
     }
     
 }
