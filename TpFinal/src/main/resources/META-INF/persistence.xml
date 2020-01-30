@@ -8,7 +8,16 @@
     
   <persistence-unit name="aplicacion">
       
+          <class>modelo.Cliente</class>
+          <class>modelo.Contacto</class>
+          <class>modelo.Contrato</class>
           <class>modelo.Empleado</class>
+          <class>modelo.Estado</class>
+          <class>modelo.Historial</class>
+          <class>modelo.Persona</class>
+          <class>modelo.Reclamo</class>
+          <class>modelo.Servicio</class>
+          <class>modelo.TipoReclamo</class>
       
     <properties>
         <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
