@@ -26,7 +26,7 @@ public class Historial implements Serializable{
     @Column
     private String descripcion;
     
-    @ManyToMany
+    @ManyToOne
     @JoinColumn
     private Estado estado;
 
