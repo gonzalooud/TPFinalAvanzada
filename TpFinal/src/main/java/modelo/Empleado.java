@@ -34,12 +34,15 @@ public class Empleado extends Persona implements Serializable {
     }
 
     //CONSTRUCTOR EMPLEADO****************************************************************************************
-    
-    public Empleado(int numeroEmpleado, String usuario, String contraseña) {
+
+    public Empleado(int numeroEmpleado, String usuario, String contraseña, ArrayList<TipoReclamo> tipoReclamo) {
         this.numeroEmpleado = numeroEmpleado;
         this.usuario = usuario;
         this.contraseña = contraseña;
+        this.tipoReclamo = tipoReclamo;
     }
+    
+
 
     //GETTERS************************************************************************************************************
 
@@ -55,6 +58,11 @@ public class Empleado extends Persona implements Serializable {
         return contraseña;
     }
 
+    public ArrayList<TipoReclamo> getTipoReclamo() {
+        return tipoReclamo;
+    }
+
+    
     
     //SETTERS************************************************************************************************************
     
@@ -70,13 +78,20 @@ public class Empleado extends Persona implements Serializable {
         this.contraseña = contraseña;
     }
 
+    public void setTipoReclamo(ArrayList<TipoReclamo> tipoReclamo) {
+        this.tipoReclamo = tipoReclamo;
+    }
+
+    
 
     //TO STRING*********************************************************************************************************
 
     @Override
     public String toString() {
-        return "Empleado{" + "numeroEmpleado=" + numeroEmpleado + ", usuario=" + usuario + ", contrase\u00f1a=" + contraseña + ", especialidad=" + '}';
+        return "Empleado{" + "numeroEmpleado=" + numeroEmpleado + ", usuario=" + usuario + ", contrase\u00f1a=" + contraseña + ", tipoReclamo=" + tipoReclamo + '}';
     }
+
+  
     
 }
 
