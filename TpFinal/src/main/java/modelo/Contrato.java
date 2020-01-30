@@ -20,7 +20,7 @@ public class Contrato implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private int idReclamo;
+    private int idContrato;
     
     @Column
     @OneToOne
