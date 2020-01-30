@@ -24,7 +24,7 @@ public class mainPrueba {
     
     public static void main(String[]args) {
         
-        emf=Persistence.createEntityManagerFactory("persistencia");
+        emf=Persistence.createEntityManagerFactory("aplicacion");
         manager=emf.createEntityManager();
         
         TipoReclamo tr = new TipoReclamo (100,"master en todo");
