@@ -1,6 +1,7 @@
 package modelo;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
@@ -28,8 +29,8 @@ public class Cliente extends Persona implements Serializable {
 
     //CONSTRUCTOR CLIENTE*******************************************************************************************
     
-    public Cliente(Contrato contrato, int numeroCliente) {
-        this.contrato = contrato;
+    public Cliente(int dni, String nombre, SimpleDateFormat fechaNacimiento, Contacto contacto, int numeroCliente) {
+        super(dni, nombre, fechaNacimiento, contacto);
         this.numeroCliente = numeroCliente;
     }
 

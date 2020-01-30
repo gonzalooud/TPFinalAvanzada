@@ -17,8 +17,8 @@ public class Servicio implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="ID")
-    private int id;
+    @Column
+    private int idServicio;
     
     @Column
     private String descripcion;
@@ -33,8 +33,7 @@ public class Servicio implements Serializable{
 
     //CONSTRUCTOR SERVICIO******************************************************************************************
 
-    public Servicio(int id, String descripcion, float precio) {
-        this.id = id;
+    public Servicio(String descripcion, float precio) {
         this.descripcion = descripcion;
         this.precio = precio;
     }
@@ -58,19 +57,12 @@ public class Servicio implements Serializable{
     }
     
     
-    public int getId() {
-        return id;
+    public int getIdServicio() {
+        return idServicio;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    //TO STRING*********************************************************************************************************
-    
-    @Override
-    public String toString() {
-        return "Servicio{" + "id=" + id + ", descripcion=" + descripcion + ", precio=" + precio + '}';
+    public void setIdServicio(int idServicio) {
+        this.idServicio = idServicio;
     }
     
 }

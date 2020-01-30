@@ -7,16 +7,10 @@ package modelo;
 
 import java.io.Serializable;
 import java.util.HashMap;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 
-/**
- *
- * @author xx-gi
- */
+@Entity
+@Table (name = "HISTORIAL")
 public class Historial implements Serializable{
     
     private static final long serialVersionUID = 1L;
@@ -39,8 +33,7 @@ public class Historial implements Serializable{
     public Historial() {
     }
 
-    public Historial(int id, HashMap<Integer, Integer> empleadosAsignados, String descripcion, Estado estado) {
-        this.idHistorial = id;
+    public Historial(HashMap<Integer, Integer> empleadosAsignados, String descripcion, Estado estado) {
         this.empleadosAsignados = empleadosAsignados;
         this.descripcion = descripcion;
         this.estado = estado;
@@ -48,12 +41,12 @@ public class Historial implements Serializable{
 
 
 
-    public int getId() {
+    public int getIdHistorial() {
         return idHistorial;
     }
 
-    public void setId(int id) {
-        this.idHistorial = id;
+    public void setIdHistorial(int idHistorial) {
+        this.idHistorial = idHistorial;
     }
 
     public HashMap<Integer, Integer> getEmpleadosAsignados() {

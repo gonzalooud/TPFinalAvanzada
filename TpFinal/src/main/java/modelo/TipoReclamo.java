@@ -1,18 +1,18 @@
 package modelo;
 
 import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+
+@Entity
+@Table (name = "TIPORECLAMO")
 public class TipoReclamo implements Serializable{
     
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="ID")
+    @Column
     private int idTipo;
     
     @Column
@@ -20,8 +20,7 @@ public class TipoReclamo implements Serializable{
 
     //CONSTRUCTOR TIPO RECLAMO************************************************************************************
     
-    public TipoReclamo(int idTipo, String descripcion) {
-        this.idTipo = idTipo;
+    public TipoReclamo(String descripcion) {
         this.descripcion = descripcion;
     }
 
@@ -31,7 +30,7 @@ public class TipoReclamo implements Serializable{
         return idTipo;
     }
 
-    public void setId(int idTipo) {
+    public void setIdTipo(int idTipo) {
         this.idTipo = idTipo;
     }
 

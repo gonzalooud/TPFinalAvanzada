@@ -48,6 +48,10 @@ public class Contrato implements Serializable{
 
     //GETTERS************************************************************************************************************
 
+    public int getIdContrato() {
+        return idContrato;
+    }
+
     public Cliente getCliente() {
         return cliente;
     }
@@ -61,6 +65,10 @@ public class Contrato implements Serializable{
     }
     
     //SETTERS************************************************************************************************************
+
+    public void setIdContrato(int idContrato) {
+        this.idContrato = idContrato;
+    }
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;

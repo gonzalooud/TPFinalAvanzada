@@ -68,6 +68,10 @@ public class Contacto implements Serializable{
     
     //GETTERS***********************************************************************************************************
 
+    public int getIdContacto() {
+        return idContacto;
+    }
+    
     public ArrayList<String> getCorreo() {
         return correo;
     }
@@ -105,6 +109,10 @@ public class Contacto implements Serializable{
     }
     
    //SETTERS*************************************************************************************************************
+
+    public void setIdContacto(int idContacto) {
+        this.idContacto = idContacto;
+    }
 
     public void setCorreo(ArrayList<String> correo) {
         this.correo = correo;

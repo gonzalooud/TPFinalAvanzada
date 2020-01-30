@@ -1,19 +1,18 @@
 package modelo;
 
 import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table (name = "ESTADO")
 public class Estado implements Serializable{
     
 private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="ID")
-    private int id;
+    @Column
+    private int idEstado;
     
     @Column
     private String descripcion;
@@ -25,19 +24,18 @@ private static final long serialVersionUID = 1L;
 
     //CONTRUCTOR ESTADO********************************************************************************************
     
-    public Estado(int id, String descripcion) {
-        this.id = id;
+    public Estado(String descripcion) {
         this.descripcion = descripcion;
     }
 
     //GETTERS Y SETTERS**************************************************************************************************
     
-    public int getId() {
-        return id;
+    public int getIdEstado() {
+        return idEstado;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdEstaod(int idEstado) {
+        this.idEstado = idEstado;
     }
 
     public String getDescripcion() {
@@ -48,11 +46,4 @@ private static final long serialVersionUID = 1L;
         this.descripcion = descripcion;
     }
 
-    //TO STRING*********************************************************************************************************
-    
-    @Override
-    public String toString() {
-        return "Estado{" + "id=" + id + ", descripcion=" + descripcion + '}';
-    }
-    
 }

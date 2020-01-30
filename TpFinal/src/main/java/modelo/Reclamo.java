@@ -59,8 +59,8 @@ public class Reclamo implements Serializable {
     
    //CONSTRUCTOR RECLAMO****************************************************************************************** 
 
-    public Reclamo(int idReclamo, Cliente cliente, Servicio servicio, String descripcion, String urgencia, Date fecha, Empleado empleadoRegistro, Historial historial, TipoReclamo tipoReclamo) {
-        this.idReclamo = idReclamo;
+    public Reclamo(Cliente cliente, Servicio servicio, String descripcion, String urgencia, Date fecha,
+            Empleado empleadoRegistro, Historial historial, TipoReclamo tipoReclamo) {
         this.cliente = cliente;
         this.servicio = servicio;
         this.descripcion = descripcion;

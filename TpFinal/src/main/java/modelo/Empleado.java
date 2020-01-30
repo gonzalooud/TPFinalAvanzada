@@ -1,6 +1,7 @@
 package modelo;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,7 +36,9 @@ public class Empleado extends Persona implements Serializable {
 
     //CONSTRUCTOR EMPLEADO****************************************************************************************
 
-    public Empleado(int numeroEmpleado, String usuario, String contraseña, ArrayList<TipoReclamo> tipoReclamo) {
+    public Empleado(int dni, String nombre, SimpleDateFormat fechaNacimiento, Contacto contacto,
+            int numeroEmpleado, String usuario, String contraseña, ArrayList<TipoReclamo> tipoReclamo) {
+        super(dni, nombre, fechaNacimiento, contacto);
         this.numeroEmpleado = numeroEmpleado;
         this.usuario = usuario;
         this.contraseña = contraseña;
