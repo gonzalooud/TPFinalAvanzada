@@ -3,8 +3,10 @@ package modelo;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -25,9 +27,9 @@ public class Empleado extends Persona implements Serializable {
     @Column
     private String contraseña;
     
-    @Column
     @ManyToMany
-    private ArrayList <TipoReclamo> tipoReclamo;
+    @JoinColumn
+    private List <TipoReclamo> tipoReclamo=new ArrayList<>();
 
     //CONTRUCTOR VACIO*********************************************************************************************
     
@@ -37,7 +39,7 @@ public class Empleado extends Persona implements Serializable {
     //CONSTRUCTOR EMPLEADO****************************************************************************************
 
     public Empleado(int dni, String nombre, SimpleDateFormat fechaNacimiento, Contacto contacto,
-            int numeroEmpleado, String usuario, String contraseña, ArrayList<TipoReclamo> tipoReclamo) {
+            int numeroEmpleado, String usuario, String contraseña, List<TipoReclamo> tipoReclamo) {
         super(dni, nombre, fechaNacimiento, contacto);
         this.numeroEmpleado = numeroEmpleado;
         this.usuario = usuario;
@@ -61,7 +63,7 @@ public class Empleado extends Persona implements Serializable {
         return contraseña;
     }
 
-    public ArrayList<TipoReclamo> getTipoReclamo() {
+    public List<TipoReclamo> getTipoReclamo() {
         return tipoReclamo;
     }
 
@@ -81,7 +83,7 @@ public class Empleado extends Persona implements Serializable {
         this.contraseña = contraseña;
     }
 
-    public void setTipoReclamo(ArrayList<TipoReclamo> tipoReclamo) {
+    public void setTipoReclamo(List<TipoReclamo> tipoReclamo) {
         this.tipoReclamo = tipoReclamo;
     }
 

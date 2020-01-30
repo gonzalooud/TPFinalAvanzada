@@ -2,6 +2,7 @@ package modelo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,13 +22,13 @@ public class Contacto implements Serializable{
     private int idContacto;
     
     @Column
-    private ArrayList <String> correo;
+    private List <String> correo=new ArrayList<>();
    
     @Column
-    private ArrayList <Integer> telefonoFijo;
+    private List <Integer> telefonoFijo=new ArrayList<>();
     
     @Column
-    private ArrayList <Integer> telefonoMovil;
+    private List <Integer> telefonoMovil=new ArrayList<>();
     
     @Column
     private String calle;
@@ -54,7 +55,7 @@ public class Contacto implements Serializable{
     
     //CONSTRUCTOR CONTACTO***************************************************************************************
 
-    public Contacto(ArrayList<String> correo, ArrayList<Integer> telefonoFijo, ArrayList<Integer> telefonoMovil, String calle, int numeracion, int piso, String departamento, String nombreCiudad, String nombreProvincia) {
+    public Contacto(List<String> correo, List<Integer> telefonoFijo, List<Integer> telefonoMovil, String calle, int numeracion, int piso, String departamento, String nombreCiudad, String nombreProvincia) {
         this.correo = correo;
         this.telefonoFijo = telefonoFijo;
         this.telefonoMovil = telefonoMovil;
@@ -72,15 +73,15 @@ public class Contacto implements Serializable{
         return idContacto;
     }
     
-    public ArrayList<String> getCorreo() {
+    public List<String> getCorreo() {
         return correo;
     }
 
-    public ArrayList<Integer> getTelefonoFijo() {
+    public List<Integer> getTelefonoFijo() {
         return telefonoFijo;
     }
 
-    public ArrayList<Integer> getTelefonoMovil() {
+    public List<Integer> getTelefonoMovil() {
         return telefonoMovil;
     }
 
@@ -114,15 +115,15 @@ public class Contacto implements Serializable{
         this.idContacto = idContacto;
     }
 
-    public void setCorreo(ArrayList<String> correo) {
+    public void setCorreo(List<String> correo) {
         this.correo = correo;
     }
 
-    public void setTelefonoFijo(ArrayList<Integer> telefonoFijo) {
+    public void setTelefonoFijo(List<Integer> telefonoFijo) {
         this.telefonoFijo = telefonoFijo;
     }
 
-    public void setTelefonoMovil(ArrayList<Integer> telefonoMovil) {
+    public void setTelefonoMovil(List<Integer> telefonoMovil) {
         this.telefonoMovil = telefonoMovil;
     }
 

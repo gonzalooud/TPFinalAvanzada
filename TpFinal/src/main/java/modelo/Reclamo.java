@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -24,12 +25,13 @@ public class Reclamo implements Serializable {
    @Column
    private int idReclamo;
    
-   @Column
+
    @ManyToOne
+   @JoinColumn(name="DNI")
    private Cliente cliente;
 
-   @Column
    @ManyToMany
+   @JoinColumn(name="IDSERVICIO")
    private Servicio servicio;
    
    @Column
@@ -42,8 +44,8 @@ public class Reclamo implements Serializable {
    @Temporal(TemporalType.TIMESTAMP)
    private Date fecha;
    
-   @Column
    @ManyToOne
+   @JoinColumn(name="DNI")
    private Empleado empleadoRegistro;
    
    @Column

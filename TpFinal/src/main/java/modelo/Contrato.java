@@ -2,11 +2,13 @@ package modelo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -26,9 +28,9 @@ public class Contrato implements Serializable{
     @OneToOne
     private Cliente cliente;
     
-    @Column
     @ManyToMany
-    private ArrayList<Servicio> servicio;
+    @JoinColumn
+    private List<Servicio> servicio=new ArrayList<>();
     
     @Column
     private float ValorPrecio;
@@ -40,7 +42,7 @@ public class Contrato implements Serializable{
     
     //CONSTRUCTOR CONTRATO****************************************************************************************
 
-    public Contrato(Cliente cliente, ArrayList<Servicio> servicio, float ValorPrecio) {
+    public Contrato(Cliente cliente, List<Servicio> servicio, float ValorPrecio) {
         this.cliente = cliente;
         this.servicio = servicio;
         this.ValorPrecio = ValorPrecio;
@@ -56,7 +58,7 @@ public class Contrato implements Serializable{
         return cliente;
     }
 
-    public ArrayList<Servicio> getServicio() {
+    public List<Servicio> getServicio() {
         return servicio;
     }
 
@@ -74,7 +76,7 @@ public class Contrato implements Serializable{
         this.cliente = cliente;
     }
 
-    public void setServicio(ArrayList<Servicio> servicio) {
+    public void setServicio(List<Servicio> servicio) {
         this.servicio = servicio;
     }
 

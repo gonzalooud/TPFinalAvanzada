@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -15,8 +16,8 @@ public class Cliente extends Persona implements Serializable {
     
     private static final long serialVersionUID = 1L;
     
-    @Column
     @OneToOne
+    @JoinColumn
     private Contrato contrato;
     
     @Column
