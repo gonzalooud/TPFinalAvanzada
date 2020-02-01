@@ -6,18 +6,34 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
 @Table (name = "EMPLEADO")
 @PrimaryKeyJoinColumn(name="PersonaId")
-public class Empleado extends Persona implements Serializable {
+public class Empleado implements Serializable {
     
     private static final long serialVersionUID = 1L;
   
+    @Id
+    @Column
+    private int dni;
+    
+    @Column
+    private String nombre;
+    
+    @Column
+    private SimpleDateFormat fechaNacimiento;
+    
+    @OneToOne
+    @JoinColumn
+    private Contacto contacto;
+    
     @Column
     private int numeroEmpleado;
     
@@ -38,18 +54,32 @@ public class Empleado extends Persona implements Serializable {
 
     //CONSTRUCTOR EMPLEADO****************************************************************************************
 
-    public Empleado(int dni, String nombre, SimpleDateFormat fechaNacimiento, Contacto contacto,
-            int numeroEmpleado, String usuario, String contraseña, List<TipoReclamo> tipoReclamo) {
-        super(dni, nombre, fechaNacimiento, contacto);
+    public Empleado(int dni, String nombre, SimpleDateFormat fechaNacimiento, int numeroEmpleado, String usuario, String contraseña) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
         this.numeroEmpleado = numeroEmpleado;
         this.usuario = usuario;
         this.contraseña = contraseña;
-        this.tipoReclamo = tipoReclamo;
     }
     
-
-
     //GETTERS************************************************************************************************************
+    
+    public int getDni() {
+        return dni;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public SimpleDateFormat getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public Contacto getContacto() {
+        return contacto;
+    }
 
     public int getNumeroEmpleado() {
         return numeroEmpleado;
@@ -67,8 +97,6 @@ public class Empleado extends Persona implements Serializable {
         return tipoReclamo;
     }
 
-    
-    
     //SETTERS************************************************************************************************************
     
     public void setNumeroEmpleado(int numeroEmpleado) {
@@ -87,17 +115,29 @@ public class Empleado extends Persona implements Serializable {
         this.tipoReclamo = tipoReclamo;
     }
 
-    
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setFechaNacimiento(SimpleDateFormat fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public void setContacto(Contacto contacto) {
+        this.contacto = contacto;
+    }
 
     //TO STRING*********************************************************************************************************
 
     @Override
     public String toString() {
-        return "Empleado{" + "numeroEmpleado=" + numeroEmpleado + ", usuario=" + usuario + ", contrase\u00f1a=" + contraseña + ", tipoReclamo=" + tipoReclamo + '}';
+        return "Empleado{" + "dni=" + dni + ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", contacto=" + contacto + ", numeroEmpleado=" + numeroEmpleado + ", usuario=" + usuario + ", contrase\u00f1a=" + contraseña + ", tipoReclamo=" + tipoReclamo + '}';
     }
 
-  
-    
 }
 
 
