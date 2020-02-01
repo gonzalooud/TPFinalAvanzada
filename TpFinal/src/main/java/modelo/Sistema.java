@@ -13,7 +13,7 @@ public class Sistema {
     private List<Empleado> empleados = new ArrayList<>();
     private List<Estado> estados = new ArrayList<>();
     private List<Historial> historiales = new ArrayList<>();
-    private List<Persona> personas = new ArrayList<>();
+    //private List<Persona> personas = new ArrayList<>();
     private List<Reclamo> reclamos = new ArrayList<>();
     private List<Servicio> servicios = new ArrayList<>();
     private List<TipoReclamo> tiposReclamos = new ArrayList<>();
@@ -50,9 +50,9 @@ public class Sistema {
         return historiales;
     }
 
-    public List<Persona> getPersonas() {
+   /* public List<Persona> getPersonas() {
         return personas;
-    }
+    }*/
 
     public List<Reclamo> getReclamos() {
         return reclamos;
@@ -90,9 +90,9 @@ public class Sistema {
         this.historiales = historiales;
     }
 
-    public void setPersonas(List<Persona> personas) {
+    /*public void setPersonas(List<Persona> personas) {
         this.personas = personas;
-    }
+    }*/
 
     public void setReclamos(List<Reclamo> reclamos) {
         this.reclamos = reclamos;
