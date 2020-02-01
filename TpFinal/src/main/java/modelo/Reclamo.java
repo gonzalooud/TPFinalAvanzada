@@ -52,7 +52,9 @@ public class Reclamo implements Serializable {
    @OneToOne
    @JoinColumn(name="IDHISTORIAL")
    private Historial historial;
-   
+  
+   @ManyToOne
+   @JoinColumn
    private TipoReclamo tipoReclamo;
 
    //CONTRUCTOR VACIO**********************************************************************************************
