@@ -10,12 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
 @Table (name = "EMPLEADO")
-@PrimaryKeyJoinColumn(name="PersonaId")
 public class Empleado implements Serializable {
     
     private static final long serialVersionUID = 1L;
