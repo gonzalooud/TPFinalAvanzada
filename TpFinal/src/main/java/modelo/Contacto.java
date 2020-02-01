@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,12 +23,15 @@ public class Contacto implements Serializable{
     private int idContacto;
     
     @Column
+    @ElementCollection(targetClass=String.class)
     private List <String> correo=new ArrayList<>();
    
     @Column
+    @ElementCollection(targetClass=Integer.class)
     private List <Integer> telefonoFijo=new ArrayList<>();
     
     @Column
+    @ElementCollection(targetClass=Integer.class)
     private List <Integer> telefonoMovil=new ArrayList<>();
     
     @Column
