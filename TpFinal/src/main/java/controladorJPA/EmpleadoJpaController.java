@@ -28,6 +28,9 @@ public class EmpleadoJpaController implements Serializable {
     }
     private EntityManagerFactory emf = null;
 
+    public EmpleadoJpaController() {
+    }
+
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
