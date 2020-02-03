@@ -56,7 +56,7 @@ public class ControlCliente {
     public String eliminarCliente(Cliente cliente) {
     	try
         {
-            jpaControl.destroy(cliente.getId());
+            jpaControl.destroy(cliente.getDni());
             mensaje = "Cliente eliminado correctamente";
         }
         catch (Exception e) {
