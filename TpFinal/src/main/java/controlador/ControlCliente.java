@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class ControlCliente {
     
     private ControlSistema controlSistema;
-    private ClienteJpaController jpac = new ClienteJpaController();
+    private ClienteJpaController jpaControl = new ClienteJpaController();
     private String mensaje="";
     
     public ControlCliente(ControlSistema controlSistema){
