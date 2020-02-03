@@ -12,6 +12,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import modelo.Reclamo;
@@ -25,10 +26,13 @@ public class ReclamoJpaController implements Serializable {
     public ReclamoJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
-    private EntityManagerFactory emf = null;
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("Persistence");
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
+    }
+
+    public ReclamoJpaController() {
     }
 
     public void create(Reclamo reclamo) {

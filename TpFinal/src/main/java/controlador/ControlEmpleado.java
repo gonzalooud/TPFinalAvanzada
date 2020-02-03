@@ -6,9 +6,14 @@ import modelo.Empleado;
 
 public class ControlEmpleado {
     
+    private ControlSistema controlSistema;
     private String mensaje  = "";
     private EmpleadoJpaController jpaControl = new EmpleadoJpaController();
+   
     
+    public ControlEmpleado(ControlSistema controlSistema){
+        this.controlSistema = controlSistema;
+    }
     
     
     

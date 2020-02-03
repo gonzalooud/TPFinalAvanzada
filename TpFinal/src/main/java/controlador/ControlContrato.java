@@ -1,5 +1,6 @@
 package controlador;
 
+import controladorJPA.ContratoJpaController;
 import exception.Notificaciones;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +10,8 @@ import modelo.Servicio;
 public class ControlContrato {
     
     private ControlSistema controlSistema;
+    private ContratoJpaController jpaControl = new ContratoJpaController();
+    private String mensaje="";
     
     public ControlContrato(ControlSistema controlSistema){
         this.controlSistema = controlSistema;

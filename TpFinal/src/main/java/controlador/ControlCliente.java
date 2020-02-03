@@ -19,7 +19,7 @@ public class ControlCliente {
     
     public Cliente getCliente(int dni){
         Cliente clienteBuscado = null;
-        List<Cliente> listaClientes = new ArrayList<>(falta el llamado a la funcion);
+        List<Cliente> listaClientes = new ArrayList<>(controlSistema.getmSistema().getClientes());
         for(Cliente c: listaClientes){
             if(c.getDni()== dni){
                 clienteBuscado = c;
@@ -49,7 +49,6 @@ public class ControlCliente {
 			System.out.println("Mensaje en actualizar: " + e.getMessage());
 			mensaje = "Error al actualizar el Cliente.";
 		}
-        System.out.println(mensaje);
 		return mensaje;
     }
     
