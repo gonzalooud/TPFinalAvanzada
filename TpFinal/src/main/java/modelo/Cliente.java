@@ -110,6 +110,8 @@ public class Cliente implements Serializable {
     public String toString() {
         return "Cliente{" + "dni=" + dni + ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", contacto=" + contacto + ", contrato=" + contrato + ", numeroCliente=" + numeroCliente + '}';
     }
+
+
     
 }
 

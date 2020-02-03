@@ -27,5 +27,42 @@ public class ControlCliente {
         }
         return clienteBuscado;
     }
+     /*  - - - - - Manejo de JPA - - - - -   */
+    public String insertarCliente(Cliente cliente) {
+		try {
+			jpaControl.create(cliente);
+			mensaje = "Cliente agregado correctamente.";
+		}
+		catch (Exception e) {
+			System.out.println("Mensaje en guardar: " + e.getMessage());
+			mensaje = "Error al almacenar el Cliente.";
+		}
+		return mensaje;
+    }
     
+    public String actualizarCliente(Cliente cliente) {
+        try {
+			jpaControl.edit(cliente);
+			mensaje = "Cliente actualizado correctamente.";
+		}
+		catch (Exception e) {
+			System.out.println("Mensaje en actualizar: " + e.getMessage());
+			mensaje = "Error al actualizar el Cliente.";
+		}
+        System.out.println(mensaje);
+		return mensaje;
+    }
+    
+    public String eliminarCliente(Cliente cliente) {
+    	try
+        {
+            jpaControl.destroy(cliente.getDni());
+            mensaje = "Cliente eliminado correctamente";
+        }
+        catch (Exception e) {
+            System.out.println("Mensaje en eliminar: " + e.getMessage());
+            mensaje = "Error al eliminar el Cliente";
+        }
+        return mensaje;
+    }
 }
