@@ -4,6 +4,7 @@ import exception.Notificaciones;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.Cliente;
+import modelo.Servicio;
 
 public class ControlContrato {
     
@@ -21,8 +22,8 @@ public class ControlContrato {
         Cliente cliente = null;
         cliente = controlSistema.getControlCliente().getCliente(dniCliente);
         if(cliente != null){
-            for(TipoServicio ts: cliente.getContrato().getTiposServicio()){
-                listaTiposServ.add(ts.getTipoServ());
+            for(Servicio s: cliente.getContrato().getServicio()){
+                listaServicios.add(s.getDescripcion());
             }
         }
         else{
@@ -30,12 +31,12 @@ public class ControlContrato {
             throw new Notificaciones(mensaje);
         }
         
-        if(listaTiposServ.isEmpty()){
+        if(listaServicios.isEmpty()){
                 mensaje = "El cliente no posee servicios contratados.";
                 throw new Notificaciones(mensaje);
         }
         
-        return listaTiposServ;
+        return listaServicios;
     }
     
 }
