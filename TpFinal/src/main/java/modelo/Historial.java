@@ -6,7 +6,9 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import javax.persistence.*;
 
 @Entity
@@ -20,8 +22,10 @@ public class Historial implements Serializable{
     @Column
     private int idHistorial;
     
+    
     @Column
-    private HashMap< Integer , Integer > empleadosAsignados;
+    @ElementCollection(targetClass=String.class)
+    private List<String> empleadosAsignados;
     
     @Column
     private String descripcion;
@@ -33,8 +37,8 @@ public class Historial implements Serializable{
     public Historial() {
     }
 
-    public Historial(HashMap<Integer, Integer> empleadosAsignados, String descripcion, Estado estado) {
-        this.empleadosAsignados = empleadosAsignados;
+    public Historial(String empleadosAsignados, String descripcion, Estado estado) {
+        this.empleadosAsignados.add(empleadosAsignados);
         this.descripcion = descripcion;
         this.estado = estado;
     }
@@ -49,12 +53,12 @@ public class Historial implements Serializable{
         this.idHistorial = idHistorial;
     }
 
-    public HashMap<Integer, Integer> getEmpleadosAsignados() {
+    public List<String> getEmpleadosAsignados() {
         return empleadosAsignados;
     }
 
-    public void setEmpleadosAsignados(HashMap<Integer, Integer> empleadosAsignados) {
-        this.empleadosAsignados = empleadosAsignados;
+    public void setEmpleadosAsignados(String nuevoEmpleado) {
+        this.empleadosAsignados.add(nuevoEmpleado);
     }
 
     public String getDescripcion() {

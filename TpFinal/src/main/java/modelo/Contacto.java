@@ -28,11 +28,11 @@ public class Contacto implements Serializable{
    
     @Column
     @ElementCollection(targetClass=Integer.class)
-    private List <Integer> telefonoFijo=new ArrayList<>();
+    private List <String> telefonoFijo=new ArrayList<>();
     
     @Column
     @ElementCollection(targetClass=Integer.class)
-    private List <Integer> telefonoMovil=new ArrayList<>();
+    private List <String> telefonoMovil=new ArrayList<>();
     
     @Column
     private String calle;
@@ -59,7 +59,7 @@ public class Contacto implements Serializable{
     
     //CONSTRUCTOR CONTACTO***************************************************************************************
 
-    public Contacto(List<String> correo, List<Integer> telefonoFijo, List<Integer> telefonoMovil, String calle, int numeracion, int piso, String departamento, String nombreCiudad, String nombreProvincia) {
+    public Contacto(List<String> correo, List<String> telefonoFijo, List<String> telefonoMovil, String calle, int numeracion, int piso, String departamento, String nombreCiudad, String nombreProvincia) {
         this.correo = correo;
         this.telefonoFijo = telefonoFijo;
         this.telefonoMovil = telefonoMovil;
@@ -81,11 +81,11 @@ public class Contacto implements Serializable{
         return correo;
     }
 
-    public List<Integer> getTelefonoFijo() {
+    public List<String> getTelefonoFijo() {
         return telefonoFijo;
     }
 
-    public List<Integer> getTelefonoMovil() {
+    public List<String> getTelefonoMovil() {
         return telefonoMovil;
     }
 
@@ -123,11 +123,11 @@ public class Contacto implements Serializable{
         this.correo = correo;
     }
 
-    public void setTelefonoFijo(List<Integer> telefonoFijo) {
+    public void setTelefonoFijo(List<String> telefonoFijo) {
         this.telefonoFijo = telefonoFijo;
     }
 
-    public void setTelefonoMovil(List<Integer> telefonoMovil) {
+    public void setTelefonoMovil(List<String> telefonoMovil) {
         this.telefonoMovil = telefonoMovil;
     }
 

@@ -18,13 +18,12 @@ public class ControlContrato {
     }
     
     
-    /* Recuperar lista de tipos de servicio contratados por un cliente, como lista de String */
+    /* Recuperar lista de tipos de servicio contratados por un cliente, como lista de String para la vista */
     public List<String> listarServicio(int dniCliente) throws Notificaciones{
         List<String> listaServicios = new ArrayList();
-        String mensaje = null;
-        Cliente cliente = null;
-        cliente = controlSistema.getControlCliente().getCliente(dniCliente);
+        Cliente cliente = controlSistema.getControlCliente().getCliente(dniCliente);
         if(cliente != null){
+            
             for(Servicio s: cliente.getContrato().getServicio()){
                 listaServicios.add(s.getDescripcion());
             }

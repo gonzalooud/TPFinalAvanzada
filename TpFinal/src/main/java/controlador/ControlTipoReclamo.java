@@ -1,6 +1,9 @@
 package controlador;
 
 import controladorJPA.TipoReclamoJpaController;
+import java.util.ArrayList;
+import java.util.List;
+import modelo.TipoReclamo;
 
 public class ControlTipoReclamo {
     
@@ -11,4 +14,15 @@ public class ControlTipoReclamo {
     public ControlTipoReclamo(ControlSistema controlSistema){
         this.controlSistema = controlSistema;
     }
+    
+    /*Recuperar lista de los tipos de reclamos posibles, como lista de String*/
+    public List<String> getListaTiposReclamos (){
+        List<String> listaTiposReclamos = new ArrayList();
+        List<TipoReclamo> tiposReclamos = new ArrayList(controlSistema.getmSistema().getTiposReclamos());
+        for(TipoReclamo tr: tiposReclamos){
+            listaTiposReclamos.add(tr.getDescripcion());
+        }
+        return listaTiposReclamos;
+    }
+    
 }

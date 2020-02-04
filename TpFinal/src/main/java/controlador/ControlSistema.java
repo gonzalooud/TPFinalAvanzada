@@ -40,7 +40,11 @@ public class ControlSistema {
         this.cargarDatosDesdeBD();
     }
 
-    
+//    public String getDatosInicialesReclamo (int dniCliente){
+//        
+//        
+//        return "";
+//    }
     
     
     
@@ -135,7 +139,7 @@ public class ControlSistema {
    
     
     
-    public void cargarDatosDesdeBD() {
+    private void cargarDatosDesdeBD() {
     	EntityManagerFactory emf = Persistence.createEntityManagerFactory("Persistence");
     	EntityManager manager = emf.createEntityManager();
         
