@@ -42,6 +42,7 @@ public class Empleado implements Serializable {
     @Column
     private String contraseña;
     
+    @Column
     private boolean supervisor;
     
     @ManyToMany
