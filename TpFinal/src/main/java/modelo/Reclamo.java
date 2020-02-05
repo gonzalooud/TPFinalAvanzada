@@ -2,6 +2,7 @@ package modelo;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -42,8 +43,7 @@ public class Reclamo implements Serializable {
    private String urgencia;
    
    @Column
-   @Temporal(TemporalType.TIMESTAMP)
-   private Date fecha;
+   private Timestamp fecha;
    
    @ManyToOne
    @JoinColumn
@@ -64,7 +64,7 @@ public class Reclamo implements Serializable {
     
    //CONSTRUCTOR RECLAMO****************************************************************************************** 
 
-    public Reclamo(Cliente cliente, Servicio servicio, String descripcion, String urgencia, Date fecha,
+    public Reclamo(Cliente cliente, Servicio servicio, String descripcion, String urgencia, Timestamp fecha,
             Empleado empleadoRegistro, Historial historial, TipoReclamo tipoReclamo) {
         this.cliente = cliente;
         this.servicio = servicio;
@@ -98,7 +98,7 @@ public class Reclamo implements Serializable {
         return urgencia;
     }
 
-    public Date getFecha() {
+    public Timestamp getFecha() {
         return fecha;
     }
 
@@ -136,7 +136,7 @@ public class Reclamo implements Serializable {
         this.urgencia = urgencia;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(Timestamp fecha) {
         this.fecha = fecha;
     }
 
