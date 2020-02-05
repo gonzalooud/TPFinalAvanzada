@@ -1,7 +1,7 @@
 package modelo;
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
@@ -27,7 +27,7 @@ public class Empleado implements Serializable {
     private String nombre;
     
     @Column
-    private SimpleDateFormat fechaNacimiento;
+    private Date fechaNacimiento;
     
     @OneToOne
     @JoinColumn
@@ -42,6 +42,8 @@ public class Empleado implements Serializable {
     @Column
     private String contraseña;
     
+    private boolean supervisor;
+    
     @ManyToMany
     @JoinColumn
     private List <TipoReclamo> tipoReclamo=new ArrayList<>();
@@ -53,17 +55,22 @@ public class Empleado implements Serializable {
 
     //CONSTRUCTOR EMPLEADO****************************************************************************************
 
-    public Empleado(int dni, String nombre, SimpleDateFormat fechaNacimiento, int numeroEmpleado, String usuario, String contraseña) {
+    public Empleado(int dni, String nombre, Date fechaNacimiento, int numeroEmpleado, String usuario, String contraseña, boolean supervisor) {
         this.dni = dni;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.numeroEmpleado = numeroEmpleado;
         this.usuario = usuario;
         this.contraseña = contraseña;
+        this.supervisor= supervisor;
     }
     
     //GETTERS************************************************************************************************************
     
+    public boolean isSupervisor() {
+        return supervisor;
+    }
+
     public int getDni() {
         return dni;
     }
@@ -72,7 +79,7 @@ public class Empleado implements Serializable {
         return nombre;
     }
 
-    public SimpleDateFormat getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 
@@ -98,6 +105,10 @@ public class Empleado implements Serializable {
 
     //SETTERS************************************************************************************************************
     
+    public void setSupervisor(boolean supervisor) {
+        this.supervisor = supervisor;
+    }
+
     public void setNumeroEmpleado(int numeroEmpleado) {
         this.numeroEmpleado = numeroEmpleado;
     }
@@ -122,7 +133,7 @@ public class Empleado implements Serializable {
         this.nombre = nombre;
     }
 
-    public void setFechaNacimiento(SimpleDateFormat fechaNacimiento) {
+    public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 

@@ -1,16 +1,23 @@
 package controlador;
 
+import exception.Notificaciones;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.swing.JOptionPane;
 import modelo.*;
+import vista.VistaPrincipal;
 
 public class ControlSistema {
     
     /*Instancias de modelo y vista del sistema*/
     private Sistema mSistema;
-    //private vistaSistema vSistema;
+    private VistaPrincipal vPrincipal;
+    
+    
+    /*Instancia de la sesion del empleado loggeado*/
+    private Empleado sesion = null;
     
     /*Instancias de controladores del sistema*/
     private ControlCliente controlCliente;
@@ -19,6 +26,7 @@ public class ControlSistema {
     private ControlEmpleado controlEmpleado;
     private ControlEstado controlEstado;
     private ControlHistorial controlHistorial;
+    private ControlLogin controlLogin;
     private ControlReclamo controlReclamo;
     private ControlServicio controlServicio;
     private ControlTipoReclamo controlTipoReclamo;
@@ -33,6 +41,7 @@ public class ControlSistema {
         this.controlEmpleado = new ControlEmpleado(this);
         this.controlEstado = new ControlEstado(this);
         this.controlHistorial = new ControlHistorial(this);
+        this.controlLogin = new ControlLogin(this);
         this.controlReclamo = new ControlReclamo(this);
         this.controlServicio = new ControlServicio(this);
         this.controlTipoReclamo = new ControlTipoReclamo(this);
@@ -46,6 +55,27 @@ public class ControlSistema {
 //        return "";
 //    }
     
+    public void controlLogin(String usuario, String clave, VistaPrincipal vistaPrincipal){
+        this.vPrincipal = vistaPrincipal;
+        
+        try {
+            this.sesion = this.getControlLogin().getEmpleadoLogin(usuario, clave);
+        }catch (Notificaciones ex) {
+            //JOptionPane.showMessageDialog(this.vPrincipal, ex.getMessage());
+        }
+        
+        if(sesion != null){
+            /* Comprobar el tipo de usuario para mostrar su correspondiente vista */
+            if(sesion.isSupervisor()){
+                //this.vPrincipal.mostrarSupervisor();
+            }else{
+                //this.vPrincipal.mostrarSupervisor();
+            }
+        }
+        
+        
+    }
+
     
     
     
@@ -56,6 +86,33 @@ public class ControlSistema {
     
     
     
+    
+    
+    
+    
+    public VistaPrincipal getvPrincipal() {
+        return vPrincipal;
+    }
+
+    public void setvSistema(VistaPrincipal vPrincipal) {
+        this.vPrincipal = vPrincipal;
+    }
+
+    public Empleado getSesion() {
+        return sesion;
+    }
+
+    public void setSesion(Empleado sesion) {
+        this.sesion = sesion;
+    }
+
+    public ControlLogin getControlLogin() {
+        return controlLogin;
+    }
+
+    public void setControlLogin(ControlLogin controlLogin) {
+        this.controlLogin = controlLogin;
+    }
     
     public Sistema getmSistema() {
         return mSistema;
