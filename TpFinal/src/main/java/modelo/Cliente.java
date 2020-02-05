@@ -1,6 +1,7 @@
 package modelo;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.persistence.Column;
@@ -25,7 +26,7 @@ public class Cliente implements Serializable {
     private String nombre;
     
     @Column
-    private SimpleDateFormat fechaNacimiento;
+    private Date fechaNacimiento;
     
     @OneToOne
     @JoinColumn
@@ -45,7 +46,7 @@ public class Cliente implements Serializable {
 
     //CONSTRUCTOR CLIENTE*******************************************************************************************
 
-    public Cliente(int dni, String nombre, SimpleDateFormat fechaNacimiento, int numeroCliente) {
+    public Cliente(int dni, String nombre, Date fechaNacimiento, int numeroCliente) {
         this.dni = dni;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
@@ -62,7 +63,7 @@ public class Cliente implements Serializable {
         return nombre;
     }
 
-    public SimpleDateFormat getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 
@@ -88,7 +89,7 @@ public class Cliente implements Serializable {
         this.nombre = nombre;
     }
 
-    public void setFechaNacimiento(SimpleDateFormat fechaNacimiento) {
+    public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
