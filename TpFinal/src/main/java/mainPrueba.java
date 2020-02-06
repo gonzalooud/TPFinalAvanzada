@@ -27,11 +27,11 @@ public class mainPrueba {
         emf=Persistence.createEntityManagerFactory("aplicacion");
         manager=emf.createEntityManager();
         
-        TipoReclamo tr = new TipoReclamo ("master en todo");
+        //TipoReclamo tr = new TipoReclamo ("master en todo");
         
-        manager.getTransaction().begin();
+       /* manager.getTransaction().begin();
         manager.persist(tr);
-        manager.getTransaction().commit();
+        manager.getTransaction().commit();*/
         
         
         
