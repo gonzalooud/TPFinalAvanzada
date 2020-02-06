@@ -43,7 +43,7 @@ public class Empleado implements Serializable {
     private String contraseña;
     
     @Column
-    private boolean supervisor;
+    private int supervisor;
     
     @ManyToMany
     @JoinColumn
@@ -56,7 +56,7 @@ public class Empleado implements Serializable {
 
     //CONSTRUCTOR EMPLEADO****************************************************************************************
 
-    public Empleado(int dni, String nombre, Date fechaNacimiento, int numeroEmpleado, String usuario, String contraseña, boolean supervisor) {
+    public Empleado(int dni, String nombre, Date fechaNacimiento, int numeroEmpleado, String usuario, String contraseña, int supervisor) {
         this.dni = dni;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
@@ -68,7 +68,7 @@ public class Empleado implements Serializable {
     
     //GETTERS************************************************************************************************************
     
-    public boolean isSupervisor() {
+    public int getSupervisor() {
         return supervisor;
     }
 
@@ -106,7 +106,7 @@ public class Empleado implements Serializable {
 
     //SETTERS************************************************************************************************************
     
-    public void setSupervisor(boolean supervisor) {
+    public void setSupervisor(int supervisor) {
         this.supervisor = supervisor;
     }
 
