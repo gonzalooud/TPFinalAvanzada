@@ -17,7 +17,6 @@
       <property name="javax.persistence.jdbc.password" value="admin"/>
       <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
       <property name="hibernate.hbm2ddl.auto" value="update"/>
-      <!--cambiar a create-->
     </properties>
   </persistence-unit>
 </persistence>
