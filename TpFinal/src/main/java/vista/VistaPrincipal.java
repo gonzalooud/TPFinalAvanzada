@@ -9,6 +9,6 @@ package vista;
  *
  * @author gonza
  */
-public class VistaPrincipal {
+public class VistaPrincipal extends javax.swing.JFrame{
     
 }

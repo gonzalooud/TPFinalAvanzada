@@ -1,7 +1,6 @@
 package modelo;
 
 import java.io.Serializable;
-import java.sql.Date;
 import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -72,7 +71,7 @@ public class Reclamo implements Serializable {
         this.urgencia = urgencia;
         this.fecha = fecha;
         this.empleadoRegistro = empleadoRegistro;
-        this.historial = historial;
+        this.historial= historial;
         this.tipoReclamo = tipoReclamo;
     }
    

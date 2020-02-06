@@ -25,4 +25,15 @@ public class ControlTipoReclamo {
         return listaTiposReclamos;
     }
     
+    public TipoReclamo getTipoReclamo(String descripcion){
+        TipoReclamo resultado= null;
+        List<TipoReclamo> tiposReclamos = new ArrayList(controlSistema.getmSistema().getTiposReclamos());
+        for(TipoReclamo tr: tiposReclamos){
+            if(tr.getDescripcion().equalsIgnoreCase(descripcion)){
+                resultado=tr;
+            }
+        }
+        return resultado;
+    }
+    
 }

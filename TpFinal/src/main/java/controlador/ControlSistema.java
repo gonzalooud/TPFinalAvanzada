@@ -66,17 +66,43 @@ public class ControlSistema {
         
         if(sesion != null){
             /* Comprobar el tipo de usuario para mostrar su correspondiente vista */
-            if(sesion.isSupervisor()){
+            if(sesion.getSupervisor()==1){
                 //this.vPrincipal.mostrarSupervisor();
             }else{
                 //this.vPrincipal.mostrarSupervisor();
             }
         }
-        
-        
     }
 
-    
+    public void agregarReclamo(int dniCliente, String servicio, String descripcion, String urgencia
+    , String tipoReclamo, String estado, String descripcionHistorial) throws Notificaciones{
+        String mensaje;
+        if(servicio.isBlank() || descripcion.isBlank() || urgencia.isBlank() || tipoReclamo.isBlank() || estado.isBlank() || descripcionHistorial.isBlank()){
+            throw new Notificaciones("Por favor complete todos los campos.");
+        }
+        Cliente cliente= this.controlCliente.getCliente(dniCliente);
+        if(cliente==null){
+            throw new Notificaciones("El dni ingresado no corresponde con un cliente en servicio.");
+        }
+        Servicio servicioAgregar= this.controlServicio.getServicio(servicio);
+        if(servicioAgregar==null){
+            throw new Notificaciones("Error en la busqueda, no se encuentra el servicio.");
+        }
+        TipoReclamo tipoReclamoAgregar= this.controlTipoReclamo.getTipoReclamo(tipoReclamo);
+        if(tipoReclamoAgregar==null){
+            throw new Notificaciones("Error en la busqueda, no se encuentra el tipo de reclamo.");
+        }
+        Estado estadoAgregar= this.getControlEstado().getEstado(estado);
+        if(estadoAgregar==null){
+            throw new Notificaciones("Error en la busqueda, no se encuentra el estado seleccionado.");
+        }
+        /*generar la asignacion de empleado*/
+        String empleadoAsignar="";
+        /*----------------------------------*/
+        Historial historial= this.controlHistorial.agregarHistorial(empleadoAsignar, descripcion, estadoAgregar);
+        mensaje= this.controlReclamo.nuevoReclamo(cliente, servicioAgregar, descripcion, urgencia, sesion, historial, tipoReclamoAgregar);
+        JOptionPane.showMessageDialog(this.vPrincipal, mensaje);
+    }
     
     
     
