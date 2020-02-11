@@ -8,7 +8,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         this.setLayout(new FlowLayout());
-        this.pack();;
+        this.pack();
     }
     private RegistroReclamo rr;
     
@@ -187,7 +187,7 @@ public class Principal extends javax.swing.JFrame {
 
     
     private void BotonRegistrarReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarReclamoActionPerformed
-        getContentPane().removeAll();
+        getContentPane().setVisible(false);
         rr = new RegistroReclamo();
         this.add(rr,BorderLayout.CENTER);
         this.pack();
