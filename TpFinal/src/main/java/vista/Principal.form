@@ -56,12 +56,12 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="BotonConsultarReclamo" min="-2" pref="362" max="-2" attributes="0"/>
+                              <Component id="BotonConsultarReclamoEmpPendientes" min="-2" pref="362" max="-2" attributes="0"/>
                               <Component id="BotonAsignarReclamo" min="-2" pref="362" max="-2" attributes="0"/>
                               <Component id="BotonRegistrarReclamo" min="-2" pref="362" max="-2" attributes="0"/>
                               <Component id="BotonTransferirReclamo" alignment="1" min="-2" pref="362" max="-2" attributes="0"/>
-                              <Component id="BotonConsultarReclamo1" min="-2" pref="362" max="-2" attributes="0"/>
-                              <Component id="BotonConsultarReclamo2" alignment="1" min="-2" pref="362" max="-2" attributes="0"/>
+                              <Component id="BotonConsultarReclamoEmpResueltos" min="-2" pref="362" max="-2" attributes="0"/>
+                              <Component id="BotonConsultarReclamoCliente" alignment="1" min="-2" pref="362" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -84,12 +84,12 @@
                   <Component id="BotonAsignarReclamo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Component id="BotonTransferirReclamo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="35" max="32767" attributes="0"/>
-                  <Component id="BotonConsultarReclamo2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="BotonConsultarReclamo" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="BotonConsultarReclamoCliente" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="87" max="32767" attributes="0"/>
+                  <Component id="BotonConsultarReclamoEmpPendientes" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                  <Component id="BotonConsultarReclamo1" min="-2" max="-2" attributes="0"/>
+                  <Component id="BotonConsultarReclamoEmpResueltos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -198,7 +198,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonTransferirReclamoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BotonConsultarReclamo">
+        <Component class="javax.swing.JButton" name="BotonConsultarReclamoEmpPendientes">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="66" type="rgb"/>
@@ -212,10 +212,10 @@
             <Property name="text" type="java.lang.String" value="Consultar sobre reclamos pendientes"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultarReclamoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultarReclamoEmpPendientesActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BotonConsultarReclamo1">
+        <Component class="javax.swing.JButton" name="BotonConsultarReclamoEmpResueltos">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="66" type="rgb"/>
@@ -229,10 +229,10 @@
             <Property name="text" type="java.lang.String" value="Consultar sobre reclamos resueltos"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultarReclamo1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultarReclamoEmpResueltosActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BotonConsultarReclamo2">
+        <Component class="javax.swing.JButton" name="BotonConsultarReclamoCliente">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="66" type="rgb"/>
@@ -246,7 +246,7 @@
             <Property name="text" type="java.lang.String" value="Consultar sobre historial de reclamos"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultarReclamo2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultarReclamoClienteActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
