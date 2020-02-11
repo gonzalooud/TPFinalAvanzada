@@ -1,12 +1,17 @@
 package vista;
 
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
 public class Principal extends javax.swing.JFrame {
 
     public Principal() {
         initComponents();
-        this.setLocationRelativeTo(null);
+        this.setLayout(new FlowLayout());
+        this.pack();;
     }
-
+    private RegistroReclamo rr;
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -183,9 +188,9 @@ public class Principal extends javax.swing.JFrame {
     
     private void BotonRegistrarReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarReclamoActionPerformed
         getContentPane().removeAll();
-        RegistroReclamo rr = new RegistroReclamo ();
-        rr.setVisible(true);
-        rr.setSize(920, 531);
+        rr = new RegistroReclamo();
+        this.add(rr,BorderLayout.CENTER);
+        this.pack();
        // rr.setLocation(point);
     }//GEN-LAST:event_BotonRegistrarReclamoActionPerformed
 
