@@ -11,7 +11,7 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        PanelMenuPrincipal = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         LabelMenuPrincipal = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -19,12 +19,13 @@ public class Principal extends javax.swing.JFrame {
         BotonRegistrarReclamo = new javax.swing.JButton();
         BotonTransferirReclamo = new javax.swing.JButton();
         BotonConsultarReclamo = new javax.swing.JButton();
+        BotonConsultarReclamo1 = new javax.swing.JButton();
+        BotonConsultarReclamo2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(920, 531));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setPreferredSize(new java.awt.Dimension(920, 531));
+        PanelMenuPrincipal.setBackground(new java.awt.Color(204, 204, 204));
+        PanelMenuPrincipal.setPreferredSize(new java.awt.Dimension(920, 531));
 
         jPanel2.setBackground(new java.awt.Color(0, 204, 204));
 
@@ -89,62 +90,88 @@ public class Principal extends javax.swing.JFrame {
         BotonConsultarReclamo.setBackground(new java.awt.Color(102, 102, 102));
         BotonConsultarReclamo.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         BotonConsultarReclamo.setForeground(new java.awt.Color(51, 51, 51));
-        BotonConsultarReclamo.setText("Consultar sobre reclamos registrados");
+        BotonConsultarReclamo.setText("Consultar sobre reclamos pendientes");
         BotonConsultarReclamo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonConsultarReclamoActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        BotonConsultarReclamo1.setBackground(new java.awt.Color(102, 102, 102));
+        BotonConsultarReclamo1.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        BotonConsultarReclamo1.setForeground(new java.awt.Color(51, 51, 51));
+        BotonConsultarReclamo1.setText("Consultar sobre reclamos resueltos");
+        BotonConsultarReclamo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonConsultarReclamo1ActionPerformed(evt);
+            }
+        });
+
+        BotonConsultarReclamo2.setBackground(new java.awt.Color(102, 102, 102));
+        BotonConsultarReclamo2.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        BotonConsultarReclamo2.setForeground(new java.awt.Color(51, 51, 51));
+        BotonConsultarReclamo2.setText("Consultar sobre historial de reclamos");
+        BotonConsultarReclamo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonConsultarReclamo2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelMenuPrincipalLayout = new javax.swing.GroupLayout(PanelMenuPrincipal);
+        PanelMenuPrincipal.setLayout(PanelMenuPrincipalLayout);
+        PanelMenuPrincipalLayout.setHorizontalGroup(
+            PanelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(PanelMenuPrincipalLayout.createSequentialGroup()
+                .addGroup(PanelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelMenuPrincipalLayout.createSequentialGroup()
                         .addGap(385, 385, 385)
                         .addComponent(LabelMenuPrincipal))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(PanelMenuPrincipalLayout.createSequentialGroup()
                         .addGap(273, 273, 273)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(PanelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(BotonConsultarReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BotonAsignarReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BotonRegistrarReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BotonTransferirReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(BotonTransferirReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotonConsultarReclamo1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotonConsultarReclamo2, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(285, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        PanelMenuPrincipalLayout.setVerticalGroup(
+            PanelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelMenuPrincipalLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LabelMenuPrincipal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
+                .addGap(31, 31, 31)
                 .addComponent(BotonRegistrarReclamo)
-                .addGap(51, 51, 51)
+                .addGap(18, 18, 18)
                 .addComponent(BotonAsignarReclamo)
-                .addGap(47, 47, 47)
+                .addGap(28, 28, 28)
                 .addComponent(BotonTransferirReclamo)
-                .addGap(48, 48, 48)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(BotonConsultarReclamo2)
+                .addGap(28, 28, 28)
                 .addComponent(BotonConsultarReclamo)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(BotonConsultarReclamo1)
+                .addGap(38, 38, 38))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelMenuPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PanelMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -157,9 +184,11 @@ public class Principal extends javax.swing.JFrame {
 
     
     private void BotonRegistrarReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarReclamoActionPerformed
-        RegistroReclamo rr = new RegistroReclamo();
+        getContentPane().removeAll();
+        RegistroReclamo rr = new RegistroReclamo ();
         rr.setVisible(true);
-        this.dispose();
+        rr.setSize(920, 531);
+       // rr.setLocation(point);
     }//GEN-LAST:event_BotonRegistrarReclamoActionPerformed
 
     private void BotonTransferirReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTransferirReclamoActionPerformed
@@ -169,6 +198,14 @@ public class Principal extends javax.swing.JFrame {
     private void BotonConsultarReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultarReclamoActionPerformed
 
     }//GEN-LAST:event_BotonConsultarReclamoActionPerformed
+
+    private void BotonConsultarReclamo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultarReclamo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonConsultarReclamo1ActionPerformed
+
+    private void BotonConsultarReclamo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultarReclamo2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonConsultarReclamo2ActionPerformed
 
     public static void main(String args[]) {
         
@@ -200,10 +237,12 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAsignarReclamo;
     private javax.swing.JButton BotonConsultarReclamo;
+    private javax.swing.JButton BotonConsultarReclamo1;
+    private javax.swing.JButton BotonConsultarReclamo2;
     private javax.swing.JButton BotonRegistrarReclamo;
     private javax.swing.JButton BotonTransferirReclamo;
     private javax.swing.JLabel LabelMenuPrincipal;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel PanelMenuPrincipal;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
