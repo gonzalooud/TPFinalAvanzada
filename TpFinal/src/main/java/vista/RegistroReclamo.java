@@ -14,11 +14,13 @@ import java.awt.FlowLayout;
  */
 public class RegistroReclamo extends javax.swing.JPanel {
 
+    
     /**
      * Creates new form RegistroReclamo
      */
-    public RegistroReclamo() {
+    public RegistroReclamo(Principal p) {
         initComponents();
+        this.p= p;
     }
     private Principal p;
 

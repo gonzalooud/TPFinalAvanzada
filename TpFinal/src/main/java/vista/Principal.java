@@ -213,9 +213,11 @@ public class Principal extends javax.swing.JFrame {
     
     private void BotonRegistrarReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarReclamoActionPerformed
         getContentPane().setVisible(false);
-        rr = new RegistroReclamo();
-        this.add(rr,BorderLayout.CENTER);
-        this.pack();
+        rr = new RegistroReclamo(this);
+        PanelMenuPrincipal.removeAll();
+        PanelMenuPrincipal.add(rr);
+        PanelMenuPrincipal.revalidate();
+        PanelMenuPrincipal.repaint();
        // rr.setLocation(point);
     }//GEN-LAST:event_BotonRegistrarReclamoActionPerformed
 
@@ -235,6 +237,7 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BotonConsultarReclamoClienteActionPerformed
 
+    boolean supervisor;
     
     public void mostrarSupervisor(){
         BotonAsignarReclamo.setVisible(true);
@@ -243,6 +246,7 @@ public class Principal extends javax.swing.JFrame {
         BotonConsultarReclamoEmpResueltos.setVisible(true);
         BotonRegistrarReclamo.setVisible(true);
         BotonTransferirReclamo.setVisible(true);
+        supervisor = true;
     }
     
     public void mostrarEmpComun(){
@@ -250,6 +254,7 @@ public class Principal extends javax.swing.JFrame {
         BotonConsultarReclamoCliente.setVisible(true);
         BotonRegistrarReclamo.setVisible(true);
         BotonTransferirReclamo.setVisible(true);
+        supervisor= false;
     }
     
     
