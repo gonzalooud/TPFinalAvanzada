@@ -98,7 +98,7 @@ public class ControlSistema {
         }
         /*generar la asignacion de empleado*/
         String empleadoAsignar="";
-        /*----------------------------------*/
+        /*---------------------------------*/
         Historial historial= this.controlHistorial.agregarHistorial(empleadoAsignar, descripcion, estadoAgregar);
         mensaje= this.controlReclamo.nuevoReclamo(cliente, servicioAgregar, descripcion, urgencia, sesion, historial, tipoReclamoAgregar);
         JOptionPane.showMessageDialog(this.vPrincipal, mensaje);
