@@ -7,13 +7,13 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.swing.JOptionPane;
 import modelo.*;
-import vista.VistaPrincipal;
+import vista.Principal;
 
 public class ControlSistema {
     
     /*Instancias de modelo y vista del sistema*/
     private Sistema mSistema;
-    private VistaPrincipal vPrincipal;
+    private Principal vPrincipal;
     
     
     /*Instancia de la sesion del empleado loggeado*/
@@ -55,21 +55,21 @@ public class ControlSistema {
 //        return "";
 //    }
     
-    public void controlLogin(String usuario, String clave, VistaPrincipal vistaPrincipal){
+    public void controlLogin(String usuario, String clave, Principal vistaPrincipal){
         this.vPrincipal = vistaPrincipal;
         
         try {
             this.sesion = this.getControlLogin().getEmpleadoLogin(usuario, clave);
         }catch (Notificaciones ex) {
-            //JOptionPane.showMessageDialog(this.vPrincipal, ex.getMessage());
+            JOptionPane.showMessageDialog(this.vPrincipal, ex.getMessage());
         }
         
         if(sesion != null){
             /* Comprobar el tipo de usuario para mostrar su correspondiente vista */
             if(sesion.getSupervisor()==1){
-                //this.vPrincipal.mostrarSupervisor();
+                this.vPrincipal.mostrarSupervisor();
             }else{
-                //this.vPrincipal.mostrarSupervisor();
+                this.vPrincipal.mostrarEmpComun();
             }
         }
     }
@@ -116,11 +116,11 @@ public class ControlSistema {
     
     
     
-    public VistaPrincipal getvPrincipal() {
+    public Principal getvPrincipal() {
         return vPrincipal;
     }
 
-    public void setvSistema(VistaPrincipal vPrincipal) {
+    public void setvSistema(Principal vPrincipal) {
         this.vPrincipal = vPrincipal;
     }
 
