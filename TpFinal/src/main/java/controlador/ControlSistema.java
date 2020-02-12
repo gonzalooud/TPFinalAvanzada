@@ -75,9 +75,9 @@ public class ControlSistema {
     }
 
     public void agregarReclamo(int dniCliente, String servicio, String descripcion, String urgencia
-    , String tipoReclamo, String estado, String descripcionHistorial) throws Notificaciones{
+    , String tipoReclamo, String descripcionHistorial) throws Notificaciones{
         String mensaje;
-        if(servicio.isBlank() || descripcion.isBlank() || urgencia.isBlank() || tipoReclamo.isBlank() || estado.isBlank() || descripcionHistorial.isBlank()){
+        if(servicio.isBlank() || descripcion.isBlank() || urgencia.isBlank() || tipoReclamo.isBlank() || descripcionHistorial.isBlank()){
             throw new Notificaciones("Por favor complete todos los campos.");
         }
         Cliente cliente= this.controlCliente.getCliente(dniCliente);
@@ -92,6 +92,7 @@ public class ControlSistema {
         if(tipoReclamoAgregar==null){
             throw new Notificaciones("Error en la busqueda, no se encuentra el tipo de reclamo.");
         }
+        String estado="Alta";
         Estado estadoAgregar= this.getControlEstado().getEstado(estado);
         if(estadoAgregar==null){
             throw new Notificaciones("Error en la busqueda, no se encuentra el estado seleccionado.");
