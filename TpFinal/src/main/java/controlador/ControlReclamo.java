@@ -9,6 +9,8 @@ import modelo.TipoReclamo;
 import modelo.Historial;
 import modelo.Empleado;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ControlReclamo {
     
@@ -34,7 +36,29 @@ public class ControlReclamo {
         return mensaje;
     }
     
+    public String finalizarReclamo(int idReclamo, String descripcion)throws Notificaciones{
+        List<Reclamo> listaReclamos = new ArrayList<>(controlSistema.getmSistema().getReclamos());
+        for(Reclamo r: listaReclamos){
+            if(idReclamo==r.getIdReclamo()){
+                descripcion= r.getDescripcion();
+            }
+        }
+        if(descripcion.isBlank()){
+            throw new Notificaciones("No existe el reclamo.");
+        }
+        return descripcion;
+    }
     
+    public boolean existeReclamo(int idReclamo){
+        boolean existe=false;
+        List<Reclamo> listaReclamos = new ArrayList<>(controlSistema.getmSistema().getReclamos());
+        for(Reclamo r: listaReclamos){
+            if(idReclamo==r.getIdReclamo()){
+                existe=true;
+            }
+        }
+        return existe;
+    }
     
     
      /*  - - - - - Manejo de JPA - - - - -   */
