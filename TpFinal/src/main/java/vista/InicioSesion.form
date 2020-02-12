@@ -199,7 +199,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextoUsuarioActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextoUsuarioKeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JPasswordField" name="TextoContrase&#xf1;a">
@@ -211,6 +211,9 @@
               <Font name="Century Gothic" size="14" style="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TextoContrase&#xf1;aKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonIniciarSesion">
           <Properties>

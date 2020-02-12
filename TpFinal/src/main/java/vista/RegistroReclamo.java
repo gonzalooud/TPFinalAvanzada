@@ -5,18 +5,24 @@
  */
 package vista;
 
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
 /**
  *
  * @author Nadia
  */
 public class RegistroReclamo extends javax.swing.JPanel {
 
+    
     /**
      * Creates new form RegistroReclamo
      */
-    public RegistroReclamo() {
+    public RegistroReclamo(Principal p) {
         initComponents();
+        this.p= p;
     }
+    private Principal p;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,13 +42,23 @@ public class RegistroReclamo extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+<<<<<<< HEAD
+        TextoNumeroCliente = new javax.swing.JTextField();
+        TextoNumeroEmpleado = new javax.swing.JTextField();
+        ComboReclamo = new javax.swing.JComboBox<>();
+        ComboMotivo = new javax.swing.JComboBox<>();
+        ComboClasificacion = new javax.swing.JComboBox<>();
+        BotonCancelar = new javax.swing.JButton();
+        BotonAceptar = new javax.swing.JButton();
+=======
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        BotonCancelar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+>>>>>>> dec06ff5f87c88bd3a6a3a0f8e532717aca9fa35
 
         PanelRegistroReclamo.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -96,44 +112,44 @@ public class RegistroReclamo extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("Clasificación:");
 
-        jTextField1.setBackground(new java.awt.Color(153, 153, 153));
-        jTextField1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        TextoNumeroCliente.setBackground(new java.awt.Color(153, 153, 153));
+        TextoNumeroCliente.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
 
-        jTextField2.setBackground(new java.awt.Color(153, 153, 153));
-        jTextField2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        TextoNumeroEmpleado.setBackground(new java.awt.Color(153, 153, 153));
+        TextoNumeroEmpleado.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
 
-        jComboBox1.setBackground(new java.awt.Color(153, 153, 153));
-        jComboBox1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(51, 51, 51));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Internet", "Telefonía IP", "Televisión por cable" }));
+        ComboReclamo.setBackground(new java.awt.Color(153, 153, 153));
+        ComboReclamo.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        ComboReclamo.setForeground(new java.awt.Color(51, 51, 51));
+        ComboReclamo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Internet", "Telefonía IP", "Televisión por cable" }));
 
-        jComboBox2.setBackground(new java.awt.Color(153, 153, 153));
-        jComboBox2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jComboBox2.setForeground(new java.awt.Color(51, 51, 51));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Conexión lenta", "Interferencia en la comunicación", "Problemas en el servicio", "Sin servicio", " " }));
+        ComboMotivo.setBackground(new java.awt.Color(153, 153, 153));
+        ComboMotivo.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        ComboMotivo.setForeground(new java.awt.Color(51, 51, 51));
+        ComboMotivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Conexión lenta", "Interferencia en la comunicación", "Problemas en el servicio", "Sin servicio", " " }));
 
-        jComboBox3.setBackground(new java.awt.Color(153, 153, 153));
-        jComboBox3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jComboBox3.setForeground(new java.awt.Color(51, 51, 51));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Critico", "Urgente", " " }));
+        ComboClasificacion.setBackground(new java.awt.Color(153, 153, 153));
+        ComboClasificacion.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        ComboClasificacion.setForeground(new java.awt.Color(51, 51, 51));
+        ComboClasificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Critico", "Urgente", " " }));
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(51, 51, 51));
-        jButton1.setText("Cancelar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BotonCancelar.setBackground(new java.awt.Color(102, 102, 102));
+        BotonCancelar.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        BotonCancelar.setForeground(new java.awt.Color(51, 51, 51));
+        BotonCancelar.setText("Cancelar");
+        BotonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BotonCancelarActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(102, 102, 102));
-        jButton2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(51, 51, 51));
-        jButton2.setText("Aceptar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BotonAceptar.setBackground(new java.awt.Color(102, 102, 102));
+        BotonAceptar.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        BotonAceptar.setForeground(new java.awt.Color(51, 51, 51));
+        BotonAceptar.setText("Aceptar");
+        BotonAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BotonAceptarActionPerformed(evt);
             }
         });
 
@@ -154,10 +170,10 @@ public class RegistroReclamo extends javax.swing.JPanel {
                             .addGroup(PanelRegistroReclamoLayout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(65, 65, 65)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(TextoNumeroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelRegistroReclamoLayout.createSequentialGroup()
                                 .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton1)
+                                    .addComponent(BotonCancelar)
                                     .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel3)
                                         .addComponent(jLabel4)
@@ -165,12 +181,12 @@ public class RegistroReclamo extends javax.swing.JPanel {
                                         .addComponent(jLabel6)))
                                 .addGap(34, 34, 34)
                                 .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField2)
-                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ComboReclamo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(TextoNumeroEmpleado)
+                                    .addComponent(ComboMotivo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ComboClasificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegistroReclamoLayout.createSequentialGroup()
-                                        .addComponent(jButton2)
+                                        .addComponent(BotonAceptar)
                                         .addGap(63, 63, 63)))))
                         .addGap(212, 212, 212))))
         );
@@ -185,27 +201,31 @@ public class RegistroReclamo extends javax.swing.JPanel {
                 .addGap(48, 48, 48)
                 .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TextoNumeroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TextoNumeroEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(34, 34, 34)
                 .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ComboReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(34, 34, 34)
                 .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ComboMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(34, 34, 34)
                 .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ComboClasificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addGap(34, 34, 34)
                 .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(BotonCancelar)
+<<<<<<< HEAD
+                    .addComponent(BotonAceptar))
+=======
                     .addComponent(jButton2))
+>>>>>>> dec06ff5f87c88bd3a6a3a0f8e532717aca9fa35
                 .addContainerGap(75, Short.MAX_VALUE))
         );
 
@@ -221,22 +241,38 @@ public class RegistroReclamo extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BotonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCancelarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+<<<<<<< HEAD
+=======
+        this.setVisible(false);
+        p.setVisible(true);
+>>>>>>> dec06ff5f87c88bd3a6a3a0f8e532717aca9fa35
+    }//GEN-LAST:event_BotonCancelarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void BotonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAceptarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_BotonAceptarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
+    private javax.swing.JButton BotonAceptar;
+    private javax.swing.JButton BotonCancelar;
+    private javax.swing.JComboBox<String> ComboClasificacion;
+    private javax.swing.JComboBox<String> ComboMotivo;
+    private javax.swing.JComboBox<String> ComboReclamo;
     private javax.swing.JPanel PanelRegistroReclamo;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField TextoNumeroCliente;
+    private javax.swing.JTextField TextoNumeroEmpleado;
+=======
+    private javax.swing.JButton BotonCancelar;
+    private javax.swing.JPanel PanelRegistroReclamo;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
+>>>>>>> dec06ff5f87c88bd3a6a3a0f8e532717aca9fa35
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -245,7 +281,5 @@ public class RegistroReclamo extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,10 +1,22 @@
 package vista;
 
+import controlador.ControlSistema;
+import java.awt.event.KeyEvent;
+
 public class InicioSesion extends javax.swing.JFrame {
 
+     private ControlSistema controlSistema;
+    private Principal vSistema;
+    
     public InicioSesion() {
         initComponents();
         this.setLocationRelativeTo(null);
+    }
+    
+    public InicioSesion(ControlSistema controlSistema, Principal vSistema){
+        this.controlSistema= controlSistema;
+        this.vSistema= vSistema;
+        initComponents();
     }
 
     @SuppressWarnings("unchecked")
@@ -70,14 +82,19 @@ public class InicioSesion extends javax.swing.JFrame {
 
         TextoUsuario.setBackground(new java.awt.Color(153, 153, 153));
         TextoUsuario.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        TextoUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextoUsuarioActionPerformed(evt);
+        TextoUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TextoUsuarioKeyPressed(evt);
             }
         });
 
         TextoContraseña.setBackground(new java.awt.Color(153, 153, 153));
         TextoContraseña.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        TextoContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TextoContraseñaKeyPressed(evt);
+            }
+        });
 
         BotonIniciarSesion.setBackground(new java.awt.Color(102, 102, 102));
         BotonIniciarSesion.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
@@ -155,15 +172,26 @@ public class InicioSesion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TextoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoUsuarioActionPerformed
-
-    }//GEN-LAST:event_TextoUsuarioActionPerformed
-
     private void BotonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonIniciarSesionActionPerformed
-        Principal p = new Principal();
-        p.setVisible(true);
-        this.dispose();
+        String usuario = this.TextoUsuario.getText();
+        char[] c = this.TextoContraseña.getPassword();
+        String clave = new String(c);
+        this.controlSistema.controlLogin(usuario, clave, vSistema);
     }//GEN-LAST:event_BotonIniciarSesionActionPerformed
+
+    private void TextoUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextoUsuarioKeyPressed
+        
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            BotonIniciarSesionActionPerformed(null);
+        }
+    }//GEN-LAST:event_TextoUsuarioKeyPressed
+
+    private void TextoContraseñaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextoContraseñaKeyPressed
+        
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            BotonIniciarSesionActionPerformed(null);
+        }
+    }//GEN-LAST:event_TextoContraseñaKeyPressed
 
     public static void main(String args[]) {
         try {
