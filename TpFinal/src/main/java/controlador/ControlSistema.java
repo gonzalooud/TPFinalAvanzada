@@ -121,6 +121,10 @@ public class ControlSistema {
         }
     }
     
+    public void finalizarReclamo(int idReclamo, String descripcion)throws Notificaciones{
+        this.controlReclamo.finalizarReclamo(idReclamo, descripcion);
+    }
+    
     
     
     

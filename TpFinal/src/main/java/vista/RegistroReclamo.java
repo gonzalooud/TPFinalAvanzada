@@ -5,13 +5,11 @@
  */
 package vista;
 
-<<<<<<< HEAD
-=======
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.JTextField;
 
->>>>>>> bd6c5b436d6268b987af0bdfea03da9d596bd912
 /**
  *
  * @author Nadia
