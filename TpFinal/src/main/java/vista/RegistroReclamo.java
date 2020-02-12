@@ -4,10 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.JTextField;
 
-/**
- *
- * @author Nadia
- */
 public class RegistroReclamo extends javax.swing.JPanel {
 
     public RegistroReclamo() {
@@ -107,6 +103,11 @@ public class RegistroReclamo extends javax.swing.JPanel {
         BotonBuscar.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         BotonBuscar.setForeground(new java.awt.Color(51, 51, 51));
         BotonBuscar.setText("Buscar");
+        BotonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonBuscarActionPerformed(evt);
+            }
+        });
 
         ComboServicio.setBackground(new java.awt.Color(153, 153, 153));
         ComboServicio.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -214,7 +215,7 @@ public class RegistroReclamo extends javax.swing.JPanel {
                         .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(ComboTipoReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(ComboClasificación, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -243,6 +244,10 @@ public class RegistroReclamo extends javax.swing.JPanel {
             .addComponent(PanelRegistroReclamo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
+        
+    }//GEN-LAST:event_BotonBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
