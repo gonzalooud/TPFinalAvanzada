@@ -1,10 +1,12 @@
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import modelo.Empleado;
+import modelo.Historial;
 import modelo.TipoReclamo;
 
 
@@ -33,14 +35,21 @@ public class mainPrueba {
         emf=Persistence.createEntityManagerFactory("Persistence");
         manager=emf.createEntityManager();
         
-        
-        
-        Query query=manager.createQuery("SELECT nombre FROM empleado");
-        List<String> list=query.getResultList();
+          
+        Query query=manager.createQuery("FROM Historial");
+        List<Historial> list=query.getResultList();
+        List<Integer> ultimos=new ArrayList<>();
+       // List<Integer> ultimosId=new ArrayList<>();
         list.forEach((e) -> {
-            System.out.println("ultima entrada en empleados asignados :"+e);
+            ultimos.add(Integer.parseInt(e.getEmpleadosAsignados().get(e.getEmpleadosAsignados().size()-1).substring(2, 10 )));
+            System.out.println("ultima entrada en empleados asignados :"+e.getEmpleadosAsignados().get(e.getEmpleadosAsignados().size()-1));
         });
-        /*   Query query = session.createQuery("SELECT * FROM sistemareclamo.empleado;");
+            System.out.println(ultimos);
+         /*   ultimos.forEach((e) -> {
+                ultimosId.add(Integer.parseInt(e));
+        });
+            System.out.println(ultimosId);*/
+            /*   Query query = session.createQuery("SELECT * FROM sistemareclamo.empleado;");
         List<Empleado> listaEmpleados = query.list();
         for (Empleado e : listaEmpleados) {
         System.out.println(e.toString());
