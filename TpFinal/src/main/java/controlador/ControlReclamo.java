@@ -36,17 +36,21 @@ public class ControlReclamo {
         return mensaje;
     }
     
-    public String finalizarReclamo(int idReclamo, String descripcion)throws Notificaciones{
+    
+    public void finalizarReclamo(int idReclamo, String descripcion)throws Notificaciones{
+        Reclamo actualizar=null;
         List<Reclamo> listaReclamos = new ArrayList<>(controlSistema.getmSistema().getReclamos());
         for(Reclamo r: listaReclamos){
             if(idReclamo==r.getIdReclamo()){
-                descripcion= r.getDescripcion();
+                actualizar = r;
             }
         }
-        if(descripcion.isBlank()){
-            throw new Notificaciones("No existe el reclamo.");
+        if (actualizar==null){
+            throw new Notificaciones("ESTO NO DEBERIA PASAR.");
         }
-        return descripcion;
+        descripcion= actualizar.getDescripcion() + descripcion;
+        actualizar.setDescripcion(descripcion);
+        actualizarReclamo(actualizar);
     }
     
     public boolean existeReclamo(int idReclamo){

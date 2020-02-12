@@ -4,6 +4,10 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.JTextField;
 
+/**
+ *
+ * @author Nadia
+ */
 public class RegistroReclamo extends javax.swing.JPanel {
 
     public RegistroReclamo() {
