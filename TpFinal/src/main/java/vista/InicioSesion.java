@@ -6,14 +6,14 @@ import java.awt.event.KeyEvent;
 public class InicioSesion extends javax.swing.JFrame {
 
      private ControlSistema controlSistema;
-    private Principal vSistema;
+    private FramePrincipal vSistema;
     
     public InicioSesion() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
     
-    public InicioSesion(ControlSistema controlSistema, Principal vSistema){
+    public InicioSesion(ControlSistema controlSistema, FramePrincipal vSistema){
         this.controlSistema= controlSistema;
         this.vSistema= vSistema;
         initComponents();
