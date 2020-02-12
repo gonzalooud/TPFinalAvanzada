@@ -3,10 +3,11 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import modelo.Empleado;
 import modelo.TipoReclamo;
-import org.hibernate.Session;
-import org.hibernate.query.Query;
+
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -24,26 +25,27 @@ public class mainPrueba {
     
     private static EntityManagerFactory emf;
     
-    private static Session session;
     
 
     
     public static void main(String[]args) {
         
-        emf=Persistence.createEntityManagerFactory("aplicacion");
+        emf=Persistence.createEntityManagerFactory("Persistence");
         manager=emf.createEntityManager();
         
         
         
-         /*   Query query = session.createQuery("SELECT * FROM sistemareclamo.empleado;");
-            List<Empleado> listaEmpleados = query.list();
-            for (Empleado e : listaEmpleados) {
-            System.out.println(e.toString());
-            }*/
-        
-        //TipoReclamo tr = new TipoReclamo ("master en todo");
-        
-       /* manager.getTransaction().begin();
+        Query query=manager.createQuery("SELECT nombre FROM empleado");
+        List<String> list=query.getResultList();
+        list.forEach((e) -> {
+            System.out.println("ultima entrada en empleados asignados :"+e);
+        });
+        /*   Query query = session.createQuery("SELECT * FROM sistemareclamo.empleado;");
+        List<Empleado> listaEmpleados = query.list();
+        for (Empleado e : listaEmpleados) {
+        System.out.println(e.toString());
+        }*/ //TipoReclamo tr = new TipoReclamo ("master en todo");
+        /* manager.getTransaction().begin();
         manager.persist(tr);
         manager.getTransaction().commit();*/
         
