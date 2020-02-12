@@ -42,7 +42,6 @@ public class RegistroReclamo extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-<<<<<<< HEAD
         TextoNumeroCliente = new javax.swing.JTextField();
         TextoNumeroEmpleado = new javax.swing.JTextField();
         ComboReclamo = new javax.swing.JComboBox<>();
@@ -50,7 +49,6 @@ public class RegistroReclamo extends javax.swing.JPanel {
         ComboClasificacion = new javax.swing.JComboBox<>();
         BotonCancelar = new javax.swing.JButton();
         BotonAceptar = new javax.swing.JButton();
-=======
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -58,7 +56,6 @@ public class RegistroReclamo extends javax.swing.JPanel {
         jComboBox3 = new javax.swing.JComboBox<>();
         BotonCancelar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
->>>>>>> dec06ff5f87c88bd3a6a3a0f8e532717aca9fa35
 
         PanelRegistroReclamo.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -221,11 +218,9 @@ public class RegistroReclamo extends javax.swing.JPanel {
                 .addGap(34, 34, 34)
                 .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonCancelar)
-<<<<<<< HEAD
                     .addComponent(BotonAceptar))
-=======
+
                     .addComponent(jButton2))
->>>>>>> dec06ff5f87c88bd3a6a3a0f8e532717aca9fa35
                 .addContainerGap(75, Short.MAX_VALUE))
         );
 
@@ -243,11 +238,10 @@ public class RegistroReclamo extends javax.swing.JPanel {
 
     private void BotonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCancelarActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
-=======
         this.setVisible(false);
         p.setVisible(true);
->>>>>>> dec06ff5f87c88bd3a6a3a0f8e532717aca9fa35
+        this.setVisible(false);
+        p.setVisible(true);
     }//GEN-LAST:event_BotonCancelarActionPerformed
 
     private void BotonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAceptarActionPerformed
@@ -256,7 +250,6 @@ public class RegistroReclamo extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
     private javax.swing.JButton BotonAceptar;
     private javax.swing.JButton BotonCancelar;
     private javax.swing.JComboBox<String> ComboClasificacion;
@@ -265,14 +258,12 @@ public class RegistroReclamo extends javax.swing.JPanel {
     private javax.swing.JPanel PanelRegistroReclamo;
     private javax.swing.JTextField TextoNumeroCliente;
     private javax.swing.JTextField TextoNumeroEmpleado;
-=======
     private javax.swing.JButton BotonCancelar;
     private javax.swing.JPanel PanelRegistroReclamo;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
->>>>>>> dec06ff5f87c88bd3a6a3a0f8e532717aca9fa35
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
