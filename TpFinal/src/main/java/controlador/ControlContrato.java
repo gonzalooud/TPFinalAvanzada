@@ -18,6 +18,8 @@ public class ControlContrato {
     }
     
     
+    
+    
     /* Recuperar lista de tipos de servicio contratados por un cliente, como lista de String para la vista */
     public List<String> listarServicio(int dniCliente) throws Notificaciones{
         List<String> listaServicios = new ArrayList();

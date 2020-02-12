@@ -1,6 +1,7 @@
 package controlador;
 
 import exception.Notificaciones;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -49,12 +50,17 @@ public class ControlSistema {
         this.cargarDatosDesdeBD();
     }
 
-//    public String getDatosInicialesReclamo (int dniCliente){
-//        
-//        
-//        return "";
-//    }
+    public List<String> getListaServicios (int dniCliente)throws Notificaciones{
+        List<String> listaServicios;
+        listaServicios = this.controlContrato.listarServicio(dniCliente);
+        return listaServicios;
+    }
     
+    public List<String> getListaTipoReclamo(){
+        return this.controlTipoReclamo.getListaTiposReclamos();
+    }
+    
+    /*ESTO HAY QUE ARREGLAR LA PARTE DE VISTAS*/
     public void controlLogin(String usuario, String clave, Principal vistaPrincipal){
         this.vPrincipal = vistaPrincipal;
         
@@ -75,9 +81,9 @@ public class ControlSistema {
     }
 
     public void agregarReclamo(int dniCliente, String servicio, String descripcion, String urgencia
-    , String tipoReclamo, String descripcionHistorial) throws Notificaciones{
+    , String tipoReclamo) throws Notificaciones{
         String mensaje;
-        if(servicio.isBlank() || descripcion.isBlank() || urgencia.isBlank() || tipoReclamo.isBlank() || descripcionHistorial.isBlank()){
+        if(servicio.isBlank() || descripcion.isBlank() || urgencia.isBlank() || tipoReclamo.isBlank()){
             throw new Notificaciones("Por favor complete todos los campos.");
         }
         Cliente cliente= this.controlCliente.getCliente(dniCliente);
@@ -100,13 +106,24 @@ public class ControlSistema {
         /*generar la asignacion de empleado*/
         String empleadoAsignar="";
         /*---------------------------------*/
-        Historial historial= this.controlHistorial.agregarHistorial(empleadoAsignar, descripcion, estadoAgregar);
+        String descripcionHistorial="";
+        Historial historial= this.controlHistorial.agregarHistorial(empleadoAsignar, descripcionHistorial, estadoAgregar);
         mensaje= this.controlReclamo.nuevoReclamo(cliente, servicioAgregar, descripcion, urgencia, sesion, historial, tipoReclamoAgregar);
         JOptionPane.showMessageDialog(this.vPrincipal, mensaje);
     }
     
     
+    public void vistaExisteReclamo(int idReclamo)throws Notificaciones{
+        if(this.controlReclamo.existeReclamo(idReclamo)){
+            /*LLAMAR A LA VISTA DE FINALIZAR RECLAMO y pasar el ID*/
+        }else{
+            throw new Notificaciones("No existe el reclamo.");
+        }
+    }
     
+    public void finalizarReclamo(int idReclamo, String descripcion)throws Notificaciones{
+        this.controlReclamo.finalizarReclamo(idReclamo, descripcion);
+    }
     
     
     
