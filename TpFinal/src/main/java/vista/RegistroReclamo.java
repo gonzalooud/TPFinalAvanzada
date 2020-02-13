@@ -140,6 +140,7 @@ public class RegistroReclamo extends javax.swing.JPanel {
 
         TextoDescripcion.setBackground(new java.awt.Color(153, 153, 153));
         TextoDescripcion.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        TextoDescripcion.setText(" ");
 
         ComboTipoReclamo.setBackground(new java.awt.Color(153, 153, 153));
         ComboTipoReclamo.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -326,9 +327,22 @@ public class RegistroReclamo extends javax.swing.JPanel {
     }//GEN-LAST:event_BotonCancelarActionPerformed
 
     private void BotonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAceptarActionPerformed
-        String urgencia= (String) ComboClasificación.getSelectedItem();
-        String servicio= (String) ComboServicio.getSelectedItem();
-        String tipoReclamo= (String) ComboTipoReclamo.getSelectedItem();
+        if(ComboClasificación.getSelectedIndex()==0 || ComboServicio.getSelectedIndex()==0 || ComboTipoReclamo.getSelectedIndex()==0){
+            JOptionPane.showMessageDialog(vPrincipal, "Por favor seleccione una opcion.");
+        }else{
+            int dni;
+            String urgencia= (String) ComboClasificación.getSelectedItem();
+            String servicio= (String) ComboServicio.getSelectedItem();
+            String tipoReclamo= (String) ComboTipoReclamo.getSelectedItem();
+            dni = Integer.parseInt(TextoNumeroCliente.getText());
+            String descripcion= TextoDescripcion.getText();
+            try{
+                this.controlSistema.agregarReclamo(dni, servicio, descripcion, urgencia, tipoReclamo);
+            }catch(Notificaciones ex){
+                JOptionPane.showMessageDialog(this.vPrincipal, ex.getMessage());
+            }
+        }
+        
     }//GEN-LAST:event_BotonAceptarActionPerformed
 
 
