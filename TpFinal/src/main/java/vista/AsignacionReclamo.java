@@ -101,7 +101,7 @@ public class AsignacionReclamo extends javax.swing.JPanel {
 
         ComboEstado.setBackground(new java.awt.Color(153, 153, 153));
         ComboEstado.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        ComboEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ComboEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un opción", "En evaluacion", "En proceso", "Finalizado" }));
 
         TextoEmpleado.setBackground(new java.awt.Color(153, 153, 153));
         TextoEmpleado.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
@@ -188,9 +188,9 @@ public class AsignacionReclamo extends javax.swing.JPanel {
                     .addComponent(jLabel5)
                     .addComponent(TextoNumeroEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(TextoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TextoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonCancelar)
