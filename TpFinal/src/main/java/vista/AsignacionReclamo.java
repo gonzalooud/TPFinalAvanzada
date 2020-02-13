@@ -36,11 +36,13 @@ public class AsignacionReclamo extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        TextoNumeroReclamo = new javax.swing.JTextField();
+        ComboEstado = new javax.swing.JComboBox<>();
+        TextoEmpleado = new javax.swing.JTextField();
+        TextoNumeroEmpleado = new javax.swing.JTextField();
+        TextoDescripcion = new javax.swing.JTextField();
+        BotonCancelar = new javax.swing.JButton();
+        BotonAceptar = new javax.swing.JButton();
 
         PanelAsignacionReclamo.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -94,20 +96,31 @@ public class AsignacionReclamo extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("Descripción:");
 
-        jTextField1.setBackground(new java.awt.Color(153, 153, 153));
-        jTextField1.setText("jTextField1");
+        TextoNumeroReclamo.setBackground(new java.awt.Color(153, 153, 153));
+        TextoNumeroReclamo.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
 
-        jComboBox1.setBackground(new java.awt.Color(153, 153, 153));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ComboEstado.setBackground(new java.awt.Color(153, 153, 153));
+        ComboEstado.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        ComboEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jTextField2.setBackground(new java.awt.Color(153, 153, 153));
-        jTextField2.setText("jTextField2");
+        TextoEmpleado.setBackground(new java.awt.Color(153, 153, 153));
+        TextoEmpleado.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
 
-        jTextField3.setBackground(new java.awt.Color(153, 153, 153));
-        jTextField3.setText("jTextField3");
+        TextoNumeroEmpleado.setBackground(new java.awt.Color(153, 153, 153));
+        TextoNumeroEmpleado.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
 
-        jTextField4.setBackground(new java.awt.Color(153, 153, 153));
-        jTextField4.setText("jTextField4");
+        TextoDescripcion.setBackground(new java.awt.Color(153, 153, 153));
+        TextoDescripcion.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+
+        BotonCancelar.setBackground(new java.awt.Color(102, 102, 102));
+        BotonCancelar.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        BotonCancelar.setForeground(new java.awt.Color(51, 51, 51));
+        BotonCancelar.setText("Cancelar");
+
+        BotonAceptar.setBackground(new java.awt.Color(102, 102, 102));
+        BotonAceptar.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        BotonAceptar.setForeground(new java.awt.Color(51, 51, 51));
+        BotonAceptar.setText("Aceptar");
 
         javax.swing.GroupLayout PanelAsignacionReclamoLayout = new javax.swing.GroupLayout(PanelAsignacionReclamo);
         PanelAsignacionReclamo.setLayout(PanelAsignacionReclamoLayout);
@@ -124,7 +137,7 @@ public class AsignacionReclamo extends javax.swing.JPanel {
                                 .addGroup(PanelAsignacionReclamoLayout.createSequentialGroup()
                                     .addComponent(jLabel4)
                                     .addGap(87, 87, 87)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(TextoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(PanelAsignacionReclamoLayout.createSequentialGroup()
                                     .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel5)
@@ -132,13 +145,18 @@ public class AsignacionReclamo extends javax.swing.JPanel {
                                         .addComponent(jLabel6))
                                     .addGap(18, 18, 18)
                                     .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField3)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(ComboEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(TextoNumeroEmpleado)
+                                        .addComponent(TextoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(PanelAsignacionReclamoLayout.createSequentialGroup()
+                                    .addGap(72, 72, 72)
+                                    .addComponent(BotonCancelar)
+                                    .addGap(48, 48, 48)
+                                    .addComponent(BotonAceptar)))
                             .addGroup(PanelAsignacionReclamoLayout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(35, 35, 35)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TextoNumeroReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(1, 1, 1))))
                     .addGroup(PanelAsignacionReclamoLayout.createSequentialGroup()
                         .addGap(356, 356, 356)
@@ -156,24 +174,28 @@ public class AsignacionReclamo extends javax.swing.JPanel {
                 .addGap(37, 37, 37)
                 .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TextoNumeroReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ComboEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TextoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TextoNumeroEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(106, Short.MAX_VALUE))
+                    .addComponent(TextoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonCancelar)
+                    .addComponent(BotonAceptar))
+                .addGap(28, 28, 28))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -190,8 +212,14 @@ public class AsignacionReclamo extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonAceptar;
+    private javax.swing.JButton BotonCancelar;
+    private javax.swing.JComboBox<String> ComboEstado;
     private javax.swing.JPanel PanelAsignacionReclamo;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JTextField TextoDescripcion;
+    private javax.swing.JTextField TextoEmpleado;
+    private javax.swing.JTextField TextoNumeroEmpleado;
+    private javax.swing.JTextField TextoNumeroReclamo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -200,9 +228,5 @@ public class AsignacionReclamo extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
