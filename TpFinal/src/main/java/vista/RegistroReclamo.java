@@ -1,13 +1,20 @@
 package vista;
 
+import controlador.ControlSistema;
+import exception.Notificaciones;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class RegistroReclamo extends javax.swing.JPanel {
 
-    public RegistroReclamo() {
+    private ControlSistema controlSistema;
+    
+    public RegistroReclamo(ControlSistema controlSistema) {
         initComponents();
+        this.controlSistema = controlSistema;
     }
 
     @SuppressWarnings("unchecked")
@@ -246,7 +253,24 @@ public class RegistroReclamo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
+        int dni;
+        List<String> ListaServicios;
+        List<String>ListaTipoReclamo;
         
+        dni = Integer.parseInt(TextoNumeroCliente.getText());
+        try {
+            ListaServicios = controlSistema.getListaServicios(dni);
+            for (String s: ListaServicios){
+                ComboServicio.addItem(s);
+            }
+            ListaTipoReclamo = controlSistema.getListaTipoReclamo();
+            for (String tr: ListaTipoReclamo){
+                ComboTipoReclamo.addItem(tr);
+            }
+        }
+        catch(Notificaciones ex){
+            JOptionPane.showMessageDialog(this, ex.getMessage()); 
+        }   
     }//GEN-LAST:event_BotonBuscarActionPerformed
 
 
