@@ -5,15 +5,23 @@
  */
 package vista;
 
+import controlador.ControlSistema;
+
 /**
  *
  * @author Nadia
  */
 public class FramePrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FramePrincipal
-     */
+    private ControlSistema controlSistema;
+    private MenuPrincipalSupervisor menuPrincipalSupervisor;
+    private MenuPrincipalEmpleado menuPrincipalEmpleado;
+    
+    public FramePrincipal(ControlSistema controlSistema) {
+        initComponents();
+        this.controlSistema= controlSistema;
+    }
+    
     public FramePrincipal() {
         initComponents();
     }
@@ -94,6 +102,55 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
     }
 
+    
+    public void crearSupervisor(){
+        this.setVisible(true);
+        this.menuPrincipalSupervisor= new MenuPrincipalSupervisor(this);
+        this.add(menuPrincipalSupervisor);
+        this.revalidate();
+        this.repaint();
+        this.pack();
+    }
+    
+    public void crearEmpComun(){
+        this.setVisible(true);
+        this.menuPrincipalEmpleado = new MenuPrincipalEmpleado(this);
+        this.add(menuPrincipalEmpleado);
+        this.revalidate();
+        this.repaint();
+        this.pack();
+    }
+    
+    public void registroReclamo(String menuPrincipal){
+        RegistroReclamo vNuevoReclamo= new RegistroReclamo(controlSistema, this, menuPrincipal);
+        this.removeAll();
+        this.add(vNuevoReclamo);
+        this.revalidate();
+        this.repaint();
+        this.pack();
+    }
+    
+    public void mostrarSupervisor(){
+        this.removeAll();
+        this.add(menuPrincipalSupervisor);
+        this.revalidate();
+        this.repaint();
+        this.pack();
+    }
+    
+    public void mostrarEmpleado(){
+        this.removeAll();
+        this.add(menuPrincipalEmpleado);
+        this.revalidate();
+        this.repaint();
+        this.pack();
+    }
+    
+    
+    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

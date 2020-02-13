@@ -1,20 +1,20 @@
 package controlador;
 
 import exception.Notificaciones;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.swing.JOptionPane;
 import modelo.*;
-import vista.Principal;
+import vista.FramePrincipal;
 
 public class ControlSistema {
     
     /*Instancias de modelo y vista del sistema*/
     private Sistema mSistema;
-    private Principal vPrincipal;
+    private FramePrincipal vPrincipal;
     
     
     /*Instancia de la sesion del empleado loggeado*/
@@ -60,22 +60,16 @@ public class ControlSistema {
         return this.controlTipoReclamo.getListaTiposReclamos();
     }
     
-    /*ESTO HAY QUE ARREGLAR LA PARTE DE VISTAS*/
-    public void controlLogin(String usuario, String clave, Principal vistaPrincipal){
+    
+    public void controlLogin(String usuario, String clave, FramePrincipal vistaPrincipal)throws Notificaciones{
         this.vPrincipal = vistaPrincipal;
-        
-        try {
-            this.sesion = this.getControlLogin().getEmpleadoLogin(usuario, clave);
-        }catch (Notificaciones ex) {
-            JOptionPane.showMessageDialog(this.vPrincipal, ex.getMessage());
-        }
-        
+        this.sesion = this.getControlLogin().getEmpleadoLogin(usuario, clave);
         if(sesion != null){
-            /* Comprobar el tipo de usuario para mostrar su correspondiente vista */
+            /* Comprobar el  de usuario para mostrar su correspondiente vista */
             if(sesion.getSupervisor()==1){
-                this.vPrincipal.mostrarSupervisor();
+                this.vPrincipal.crearSupervisor();
             }else{
-                this.vPrincipal.mostrarEmpComun();
+                this.vPrincipal.crearEmpComun();
             }
         }
     }
@@ -134,11 +128,11 @@ public class ControlSistema {
     
     
     
-    public Principal getvPrincipal() {
+    public FramePrincipal getvPrincipal() {
         return vPrincipal;
     }
 
-    public void setvSistema(Principal vPrincipal) {
+    public void setvSistema(FramePrincipal vPrincipal) {
         this.vPrincipal = vPrincipal;
     }
 

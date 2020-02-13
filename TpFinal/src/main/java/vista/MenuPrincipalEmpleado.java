@@ -1,20 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vista;
 
-/**
- *
- * @author Nadia
- */
+
 public class MenuPrincipalEmpleado extends javax.swing.JPanel {
 
-    /**
-     * Creates new form MenuPrincipalEmpleado
-     */
-    public MenuPrincipalEmpleado() {
+    private FramePrincipal principal;
+    private String menuPrincipal = "Empleado";
+    
+    public MenuPrincipalEmpleado(FramePrincipal principal){
+        initComponents();
+        this.principal= principal;
+    }
+    
+    public MenuPrincipalEmpleado(){
         initComponents();
     }
 
@@ -76,6 +73,11 @@ public class MenuPrincipalEmpleado extends javax.swing.JPanel {
         BotonRegistrarReclamo.setMaximumSize(new java.awt.Dimension(189, 37));
         BotonRegistrarReclamo.setMinimumSize(new java.awt.Dimension(189, 37));
         BotonRegistrarReclamo.setPreferredSize(new java.awt.Dimension(189, 37));
+        BotonRegistrarReclamo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRegistrarReclamoActionPerformed(evt);
+            }
+        });
 
         BotonAsignarReclamo.setBackground(new java.awt.Color(102, 102, 102));
         BotonAsignarReclamo.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
@@ -147,6 +149,10 @@ public class MenuPrincipalEmpleado extends javax.swing.JPanel {
             .addComponent(PanelMenuPrincipalEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotonRegistrarReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarReclamoActionPerformed
+        this.principal.registroReclamo(menuPrincipal);
+    }//GEN-LAST:event_BotonRegistrarReclamoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
