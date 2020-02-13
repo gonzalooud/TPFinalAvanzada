@@ -20,12 +20,12 @@ public class ControlEmpleado {
     
     public String asignarEmpleado(String urgencia){
         List<Historial> list=controlSistema.getmSistema().getHistoriales();
+        int aux1=0 ,aux2 = 0, cont1=0 , cont2=0 ;
         if(urgencia.equalsIgnoreCase("urgente")){
          List<Integer> ultimos=new ArrayList<>();
          list.forEach((e) -> {
             ultimos.add(Integer.parseInt(e.getEmpleadosAsignados().get(e.getEmpleadosAsignados().size()-1).substring(2, 10 )));
         });
-         int aux1=0 ,aux2 = 0, cont1=0 , cont2=0 ;
          for(int e:ultimos){
                 if(cont1 == 0){
                     aux1 = e;
@@ -61,7 +61,6 @@ public class ControlEmpleado {
             todos.forEach((a)  ->{
                 todosInt.add(Integer.parseInt(a.substring(2, 10)));
             });
-            int aux1=0 ,aux2 = 0, cont1=0 , cont2=0 ;
             for(int e:todosInt){
                 if(cont1 == 0){
                     aux1 = e;

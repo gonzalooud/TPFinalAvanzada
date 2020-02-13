@@ -98,7 +98,7 @@ public class ControlSistema {
             throw new Notificaciones("Error en el Estado asignado (NO DEBE PASAR).");
         }
         /*generar la asignacion de empleado*/
-        String empleadoAsignar="";
+        String empleadoAsignar=controlEmpleado.asignarEmpleado(urgencia);
         /*---------------------------------*/
         String descripcionHistorial="";
         Historial historial= this.controlHistorial.agregarHistorial(empleadoAsignar, descripcionHistorial, estadoAgregar);
