@@ -39,16 +39,12 @@ public class mainPrueba {
         Query query=manager.createQuery("FROM Historial");
         List<Historial> list=query.getResultList();
         List<Integer> ultimos=new ArrayList<>();
-       // List<Integer> ultimosId=new ArrayList<>();
         list.forEach((e) -> {
             ultimos.add(Integer.parseInt(e.getEmpleadosAsignados().get(e.getEmpleadosAsignados().size()-1).substring(2, 10 )));
             System.out.println("ultima entrada en empleados asignados :"+e.getEmpleadosAsignados().get(e.getEmpleadosAsignados().size()-1));
         });
             System.out.println(ultimos);
-         /*   ultimos.forEach((e) -> {
-                ultimosId.add(Integer.parseInt(e));
-        });
-            System.out.println(ultimosId);*/
+
             /*   Query query = session.createQuery("SELECT * FROM sistemareclamo.empleado;");
         List<Empleado> listaEmpleados = query.list();
         for (Empleado e : listaEmpleados) {
