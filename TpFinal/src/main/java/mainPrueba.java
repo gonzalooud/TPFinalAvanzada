@@ -44,12 +44,39 @@ public class mainPrueba {
             System.out.println("ultima entrada en empleados asignados :"+e.getEmpleadosAsignados().get(e.getEmpleadosAsignados().size()-1));
         });
             System.out.println(ultimos);
+            int aux1=0 ,aux2 = 0, cont1=0 , cont2=0 ;
+            // seleccion del que menos reclamos asignados tenga ( osea el urgente)
+            for(int e:ultimos){
+                if(cont1 == 0){
+                    aux1 = e;
+                }else if(cont2 == 0){
+                    aux2=e;
+                    }else if(cont1 <= cont2){
+                        aux2=e;
+                        cont2=0;
+                        }else{
+                        aux1=aux2;
+                        cont1=cont2;
+                        aux2=e;
+                        cont2=0; 
+                        }
+                for(int a:ultimos){
+                    if(aux2 == 0){
+                        if(aux1 == a){
+                            cont1++;
+                        }
+                    }else{
+                        if(aux2 == a){
+                            cont2++;
+                        }
+                    }
+                }
+        }
+            System.out.println("el empelado con menos reclamos es:"+aux1);
+            
+            
 
-            /*   Query query = session.createQuery("SELECT * FROM sistemareclamo.empleado;");
-        List<Empleado> listaEmpleados = query.list();
-        for (Empleado e : listaEmpleados) {
-        System.out.println(e.toString());
-        }*/ //TipoReclamo tr = new TipoReclamo ("master en todo");
+        //TipoReclamo tr = new TipoReclamo ("master en todo");
         /* manager.getTransaction().begin();
         manager.persist(tr);
         manager.getTransaction().commit();*/
