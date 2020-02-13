@@ -177,10 +177,11 @@ public class InicioSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonIniciarSesionActionPerformed
-        String usuario = this.TextoUsuario.getText();
-        char[] c = this.TextoContraseña.getPassword();
-        String clave = new String(c);
+        
          try {
+            String usuario = this.TextoUsuario.getText();
+            char[] c = this.TextoContraseña.getPassword();
+            String clave = new String(c);
              this.controlSistema.controlLogin(usuario, clave, vSistema);
              this.dispose();
          } catch (Notificaciones ex) {
