@@ -1,7 +1,11 @@
 package vista;
 
 import controlador.ControlSistema;
+import exception.Notificaciones;
 import java.awt.event.KeyEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class InicioSesion extends javax.swing.JFrame {
 
@@ -176,7 +180,12 @@ public class InicioSesion extends javax.swing.JFrame {
         String usuario = this.TextoUsuario.getText();
         char[] c = this.TextoContraseña.getPassword();
         String clave = new String(c);
-        this.controlSistema.controlLogin(usuario, clave, vSistema);
+         try {
+             this.controlSistema.controlLogin(usuario, clave, vSistema);
+             this.dispose();
+         } catch (Notificaciones ex) {
+            JOptionPane.showMessageDialog(this.vSistema, ex.getMessage());
+        }
     }//GEN-LAST:event_BotonIniciarSesionActionPerformed
 
     private void TextoUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextoUsuarioKeyPressed

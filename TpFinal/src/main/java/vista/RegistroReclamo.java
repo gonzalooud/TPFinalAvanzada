@@ -11,10 +11,14 @@ import javax.swing.JTextField;
 public class RegistroReclamo extends javax.swing.JPanel {
 
     private ControlSistema controlSistema;
+    private FramePrincipal vPrincipal;
+    private String tipoMenu;
     
-    public RegistroReclamo(ControlSistema controlSistema) {
+    public RegistroReclamo(ControlSistema controlSistema, FramePrincipal vSistema, String tipoMenu) {
         initComponents();
         this.controlSistema = controlSistema;
+        this.vPrincipal= vPrincipal;
+        this.tipoMenu= tipoMenu;
     }
 
     @SuppressWarnings("unchecked")
@@ -140,6 +144,11 @@ public class RegistroReclamo extends javax.swing.JPanel {
         BotonCancelar.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         BotonCancelar.setForeground(new java.awt.Color(51, 51, 51));
         BotonCancelar.setText("Cancelar");
+        BotonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCancelarActionPerformed(evt);
+            }
+        });
 
         BotonAceptar.setBackground(new java.awt.Color(102, 102, 102));
         BotonAceptar.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
@@ -272,6 +281,15 @@ public class RegistroReclamo extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, ex.getMessage()); 
         }   
     }//GEN-LAST:event_BotonBuscarActionPerformed
+
+    private void BotonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCancelarActionPerformed
+        if(tipoMenu.equalsIgnoreCase("Supervisor")){
+            this.vPrincipal.mostrarSupervisor();
+        }else{
+            this.vPrincipal.mostrarEmpleado();
+        }
+        
+    }//GEN-LAST:event_BotonCancelarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -2,6 +2,13 @@ package vista;
 
 public class MenuPrincipalSupervisor extends javax.swing.JPanel {
 
+    private FramePrincipal principal;
+    
+    public MenuPrincipalSupervisor(FramePrincipal principal) {
+        initComponents();
+        this.principal= principal;
+    }
+    
     public MenuPrincipalSupervisor() {
         initComponents();
     }
@@ -57,6 +64,11 @@ public class MenuPrincipalSupervisor extends javax.swing.JPanel {
         BotonRegistrarReclamo.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         BotonRegistrarReclamo.setForeground(new java.awt.Color(51, 51, 51));
         BotonRegistrarReclamo.setText("Registrar un reclamo");
+        BotonRegistrarReclamo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRegistrarReclamoActionPerformed(evt);
+            }
+        });
 
         BotonAsignarReclamo.setBackground(new java.awt.Color(102, 102, 102));
         BotonAsignarReclamo.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
@@ -138,6 +150,11 @@ public class MenuPrincipalSupervisor extends javax.swing.JPanel {
             .addComponent(PanelMenuPrincipalSupervisor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotonRegistrarReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarReclamoActionPerformed
+        String menuPrincipal = "Supervisor";
+        this.principal.registroReclamo(menuPrincipal);
+    }//GEN-LAST:event_BotonRegistrarReclamoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
