@@ -4,6 +4,7 @@ package vista;
 public class MenuPrincipalEmpleado extends javax.swing.JPanel {
 
     private FramePrincipal principal;
+    private String menuPrincipal = "Empleado";
     
     public MenuPrincipalEmpleado(FramePrincipal principal){
         initComponents();
@@ -150,7 +151,6 @@ public class MenuPrincipalEmpleado extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonRegistrarReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarReclamoActionPerformed
-        String menuPrincipal = "Empleado";
         this.principal.registroReclamo(menuPrincipal);
     }//GEN-LAST:event_BotonRegistrarReclamoActionPerformed
 

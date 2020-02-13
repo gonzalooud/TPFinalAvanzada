@@ -3,6 +3,7 @@ package vista;
 public class MenuPrincipalSupervisor extends javax.swing.JPanel {
 
     private FramePrincipal principal;
+    private String menuPrincipal = "Supervisor";
     
     public MenuPrincipalSupervisor(FramePrincipal principal) {
         initComponents();
@@ -152,7 +153,6 @@ public class MenuPrincipalSupervisor extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonRegistrarReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarReclamoActionPerformed
-        String menuPrincipal = "Supervisor";
         this.principal.registroReclamo(menuPrincipal);
     }//GEN-LAST:event_BotonRegistrarReclamoActionPerformed
 
