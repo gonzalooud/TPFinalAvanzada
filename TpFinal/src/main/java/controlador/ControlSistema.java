@@ -242,10 +242,10 @@ public class ControlSistema {
         this.mSistema.setContratos((List<Contrato>)manager.createQuery("FROM Contrato").getResultList());
         this.mSistema.setContactos((List<Contacto>)manager.createQuery("FROM Contacto").getResultList());
         this.mSistema.setEmpleados((List<Empleado>)manager.createQuery("FROM Empleado").getResultList());
-        this.mSistema.setEstados((List<Estado>)manager.createQuery("FROM Estados").getResultList());
+        this.mSistema.setEstados((List<Estado>)manager.createQuery("FROM Estado").getResultList());
         this.mSistema.setHistoriales((List<Historial>)manager.createQuery("FROM Historial").getResultList());
         this.mSistema.setReclamos((List<Reclamo>)manager.createQuery("FROM Reclamo").getResultList());
-        this.mSistema.setServicios((List<Servicio>)manager.createQuery("FROM Servicios").getResultList());
+        this.mSistema.setServicios((List<Servicio>)manager.createQuery("FROM Servicio").getResultList());
         this.mSistema.setTiposReclamos((List<TipoReclamo>)manager.createQuery("FROM TipoReclamo").getResultList());
     }
     
