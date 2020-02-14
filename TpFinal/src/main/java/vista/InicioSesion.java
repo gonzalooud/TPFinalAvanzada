@@ -182,8 +182,8 @@ public class InicioSesion extends javax.swing.JFrame {
             String usuario = this.TextoUsuario.getText();
             char[] c = this.TextoContraseña.getPassword();
             String clave = new String(c);
-             this.controlSistema.controlLogin(usuario, clave, vSistema);
-             this.dispose();
+            this.controlSistema.controlLogin(usuario, clave, vSistema);
+            this.dispose();
          } catch (Notificaciones ex) {
             JOptionPane.showMessageDialog(this.vSistema, ex.getMessage());
         }

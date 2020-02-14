@@ -37,7 +37,7 @@ public class ControlLogin {
     private boolean comprobacionCampos(String usuario, String clave) throws Notificaciones{
         boolean resultado = false;
         
-        if(usuario.isEmpty() || clave.isEmpty()){
+        if(usuario.isBlank() || clave.isBlank()){
             throw new Notificaciones("Ingrese el usuario y clave para poder continuar");
         }
         else {
