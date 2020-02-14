@@ -18,7 +18,7 @@ public class ControlEmpleado {
         this.controlSistema = controlSistema;
     }
     
-    public String asignarEmpleado(String urgencia){
+    public String asignarEmpleado(String urgencia ,String tipoReclamo ){
         List<Historial> list=controlSistema.getmSistema().getHistoriales();
         int aux1=0 ,aux2 = 0, cont1=0 , cont2=0 ;
         if(urgencia.equalsIgnoreCase("urgente")){
@@ -26,7 +26,8 @@ public class ControlEmpleado {
          list.forEach((e) -> {
             ultimos.add(Integer.parseInt(e.getEmpleadosAsignados().get(e.getEmpleadosAsignados().size()-1).substring(2, 10 )));
         });
-         for(int e:ultimos){
+         List<Integer> ultimosExpertos=seleccionExpertos(tipoReclamo , ultimos);
+         for(int e:ultimosExpertos){
                 if(cont1 == 0){
                     aux1 = e;
                 }else if(cont2 == 0){
@@ -61,7 +62,8 @@ public class ControlEmpleado {
             todos.forEach((a)  ->{
                 todosInt.add(Integer.parseInt(a.substring(2, 10)));
             });
-            for(int e:todosInt){
+            List<Integer> todosExpertos=seleccionExpertos(tipoReclamo , todosInt);
+            for(int e:todosExpertos){
                 if(cont1 == 0){
                     aux1 = e;
                 }else if(cont2 == 0){
@@ -96,7 +98,22 @@ public class ControlEmpleado {
     
     
     
-    
+    private List<Integer> seleccionExpertos(String tipoReclamo, List<Integer> ultimos) {
+        List<Integer> expertos=new ArrayList<>();
+        List<Empleado> empleados=controlSistema.getmSistema().getEmpleados();
+        ultimos.forEach((e) -> {
+            empleados.forEach((a)->{
+                if(e == a.getDni()){
+                    a.getTipoReclamo().forEach((i)->{
+                        if(tipoReclamo.equalsIgnoreCase(i.getDescripcion())){
+                            expertos.add(e);
+                        }
+                    });
+                }
+            });
+        });
+        return expertos;
+    }
     
     
     
@@ -163,5 +180,7 @@ public class ControlEmpleado {
         }
         return mensaje;
     }
+
+
     
 }
