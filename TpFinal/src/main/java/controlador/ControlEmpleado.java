@@ -119,27 +119,21 @@ public class ControlEmpleado {
     }
     
     
-    private void transferirReclamo(int numeroReclamo )throws Notificaciones{
+    private int transferirReclamoOrdem(int numeroReclamo )throws Notificaciones{
         List<Reclamo> reclamos=controlSistema.getmSistema().getReclamos();
-        TipoReclamo tReclamo = null;
         Historial unHistorial = null;
-        int aux , idTReclamo;
+        int aux ;
         for(Reclamo e:reclamos) {
             if(e.getIdReclamo() == numeroReclamo){
-                tReclamo=e.getTipoReclamo();
                 unHistorial=e.getHistorial();
             }
         }
         if(unHistorial==null){
             throw new Notificaciones("");
         }
-        if(tReclamo==null){
-            throw new Notificaciones("");
-        }
         aux=Integer.parseInt(unHistorial.getEmpleadosAsignados().get(unHistorial.getEmpleadosAsignados().size()-1).substring(0, 1 ));
         aux++;
-        idTReclamo=tReclamo.getIdTipo();
-        List<Integer> expertos=expertosTransferir(idTReclamo);
+        return aux;
     }
     
     private List<Integer> expertosTransferir(int idTipo){
@@ -155,7 +149,22 @@ public class ControlEmpleado {
         return expertos;
     }
     
-    
+        private List<Integer> transferirReclamoLista(int numeroReclamo )throws Notificaciones{
+        List<Reclamo> reclamos=controlSistema.getmSistema().getReclamos();
+        TipoReclamo tReclamo = null;
+        int idTReclamo;
+        for(Reclamo e:reclamos) {
+            if(e.getIdReclamo() == numeroReclamo){
+                tReclamo=e.getTipoReclamo();
+            }
+        }
+        if(tReclamo==null){
+            throw new Notificaciones("");
+        }
+        idTReclamo=tReclamo.getIdTipo();
+        List<Integer> expertos=expertosTransferir(idTReclamo);
+        return expertos;
+    }
     
     
     
