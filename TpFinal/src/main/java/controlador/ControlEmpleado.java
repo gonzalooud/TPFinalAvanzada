@@ -1,10 +1,13 @@
 package controlador;
 
 import controladorJPA.EmpleadoJpaController;
+import exception.Notificaciones;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.Empleado;
 import modelo.Historial;
+import modelo.Reclamo;
+import modelo.TipoReclamo;
 
 
 public class ControlEmpleado {
@@ -116,9 +119,41 @@ public class ControlEmpleado {
     }
     
     
+    private void transferirReclamo(int numeroReclamo )throws Notificaciones{
+        List<Reclamo> reclamos=controlSistema.getmSistema().getReclamos();
+        TipoReclamo tReclamo = null;
+        Historial unHistorial = null;
+        int aux , idTReclamo;
+        for(Reclamo e:reclamos) {
+            if(e.getIdReclamo() == numeroReclamo){
+                tReclamo=e.getTipoReclamo();
+                unHistorial=e.getHistorial();
+            }
+        }
+        if(unHistorial==null){
+            throw new Notificaciones("");
+        }
+        if(tReclamo==null){
+            throw new Notificaciones("");
+        }
+        aux=Integer.parseInt(unHistorial.getEmpleadosAsignados().get(unHistorial.getEmpleadosAsignados().size()-1).substring(0, 1 ));
+        aux++;
+        idTReclamo=tReclamo.getIdTipo();
+        List<Integer> expertos=expertosTransferir(idTReclamo);
+    }
     
-    
-    
+    private List<Integer> expertosTransferir(int idTipo){
+        List<Integer> expertos=new ArrayList<>();
+        List<Empleado> empleados=controlSistema.getmSistema().getEmpleados();
+        empleados.forEach((a)->{
+                    a.getTipoReclamo().forEach((i)->{
+                        if(idTipo==(i.getIdTipo())){
+                            expertos.add(a.getDni());
+                        }
+                    });
+            });
+        return expertos;
+    }
     
     
     
