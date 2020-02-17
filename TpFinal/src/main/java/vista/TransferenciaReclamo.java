@@ -37,13 +37,13 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         TextoEmpleadoActual = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        TextoEmpleadoAsignado = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         ComboEstado = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         TextoDescripcion = new javax.swing.JTextField();
         BotonCancelar = new javax.swing.JButton();
         BotonAceptar = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -100,9 +100,6 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("<html>Número empleado<p>asignado:<html>");
 
-        TextoEmpleadoAsignado.setBackground(new java.awt.Color(153, 153, 153));
-        TextoEmpleadoAsignado.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("Estado:");
@@ -128,6 +125,10 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
         BotonAceptar.setForeground(new java.awt.Color(51, 51, 51));
         BotonAceptar.setText("Aceptar");
 
+        jComboBox1.setBackground(new java.awt.Color(153, 153, 153));
+        jComboBox1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -145,7 +146,7 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
                 .addComponent(TextoNumeroReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addComponent(BotonBuscar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(BotonCancelar)
@@ -161,9 +162,9 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(33, 33, 33)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(TextoEmpleadoAsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TextoEmpleadoActual, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TextoEmpleadoActual, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -193,17 +194,17 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
                             .addComponent(jLabel3)
                             .addComponent(TextoEmpleadoActual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))
-                        .addGap(55, 55, 55)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(TextoEmpleadoAsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(42, 42, 42)
+                        .addGap(57, 57, 57)
+                        .addComponent(jLabel4)
+                        .addGap(46, 46, 46)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(ComboEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(83, 83, 83)
-                        .addComponent(TextoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TextoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonCancelar)
@@ -231,8 +232,8 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> ComboEstado;
     private javax.swing.JTextField TextoDescripcion;
     private javax.swing.JTextField TextoEmpleadoActual;
-    private javax.swing.JTextField TextoEmpleadoAsignado;
     private javax.swing.JTextField TextoNumeroReclamo;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

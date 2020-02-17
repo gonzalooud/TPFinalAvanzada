@@ -43,6 +43,7 @@ public class mainPrueba {
         List<Integer> todosInt=new ArrayList<>();
         list.forEach((e) -> {
             ultimos.add(Integer.parseInt(e.getEmpleadosAsignados().get(e.getEmpleadosAsignados().size()-1).substring(2, 10 )));
+            System.out.println(Integer.parseInt(e.getEmpleadosAsignados().get(e.getEmpleadosAsignados().size()-1).substring(0, 1 )));
             todos.addAll(e.getEmpleadosAsignados());
             System.out.println("ultima entrada en empleados asignados :"+e.getEmpleadosAsignados().get(e.getEmpleadosAsignados().size()-1));
         });
