@@ -6,6 +6,8 @@
 package vista;
 
 import controlador.ControlSistema;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 
 /**
  *
@@ -16,10 +18,13 @@ public class FramePrincipal extends javax.swing.JFrame {
     private ControlSistema controlSistema;
     private MenuPrincipalSupervisor menuPrincipalSupervisor;
     private MenuPrincipalEmpleado menuPrincipalEmpleado;
+    RegistroReclamo vNuevoReclamo;
     
     public FramePrincipal(ControlSistema controlSistema) {
         initComponents();
         this.controlSistema= controlSistema;
+        this.setLayout(new FlowLayout());
+        this.pack();
     }
     
     public FramePrincipal() {
@@ -35,33 +40,17 @@ public class FramePrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setForeground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 915, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
-        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 915, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 530, Short.MAX_VALUE)
         );
 
         pack();
@@ -106,43 +95,39 @@ public class FramePrincipal extends javax.swing.JFrame {
     public void crearSupervisor(){
         this.setVisible(true);
         this.menuPrincipalSupervisor= new MenuPrincipalSupervisor(this);
-        this.add(menuPrincipalSupervisor);
-        this.revalidate();
-        this.repaint();
+        this.add(menuPrincipalSupervisor,BorderLayout.CENTER);
         this.pack();
+        this.setLocationRelativeTo(null);
     }
     
     public void crearEmpComun(){
         this.setVisible(true);
         this.menuPrincipalEmpleado = new MenuPrincipalEmpleado(this);
-        this.add(menuPrincipalEmpleado);
-        this.revalidate();
-        this.repaint();
+        this.add(this.menuPrincipalEmpleado,BorderLayout.CENTER);
         this.pack();
+        this.setLocationRelativeTo(null);
     }
     
     public void registroReclamo(String menuPrincipal){
-        RegistroReclamo vNuevoReclamo= new RegistroReclamo(controlSistema, this, menuPrincipal);
-        this.removeAll();
-        this.add(vNuevoReclamo);
-        this.revalidate();
-        this.repaint();
+        vNuevoReclamo= new RegistroReclamo(controlSistema, this, menuPrincipal);
+        if(menuPrincipal.equalsIgnoreCase("Supervisor")){
+            this.remove(menuPrincipalSupervisor);
+        }else{
+            this.remove(menuPrincipalEmpleado);
+        }
+        this.add(vNuevoReclamo,BorderLayout.CENTER);
         this.pack();
     }
     
     public void mostrarSupervisor(){
-        this.removeAll();
+        this.remove(vNuevoReclamo);
         this.add(menuPrincipalSupervisor);
-        this.revalidate();
-        this.repaint();
         this.pack();
     }
     
     public void mostrarEmpleado(){
-        this.removeAll();
+        this.remove(vNuevoReclamo);
         this.add(menuPrincipalEmpleado);
-        this.revalidate();
-        this.repaint();
         this.pack();
     }
     
@@ -152,6 +137,5 @@ public class FramePrincipal extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

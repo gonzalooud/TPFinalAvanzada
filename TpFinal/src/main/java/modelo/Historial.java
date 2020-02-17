@@ -5,6 +5,7 @@
  */
 package modelo;
 
+import exception.Notificaciones;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,7 +38,8 @@ public class Historial implements Serializable{
     public Historial() {
     }
 
-    public Historial(String empleadosAsignados, String descripcion, Estado estado) {
+    public Historial(String empleadosAsignados, String descripcion, Estado estado)throws Notificaciones {
+        this.empleadosAsignados= new ArrayList<>();
         this.empleadosAsignados.add(empleadosAsignados);
         this.descripcion = descripcion;
         this.estado = estado;
