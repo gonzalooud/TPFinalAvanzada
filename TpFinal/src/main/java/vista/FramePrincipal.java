@@ -142,8 +142,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         this.pack();
     }
     
-    
-    public void mostrarSupervisor(){
+
     public void atrasReclamoSupervisor(){
         this.remove(vNuevoReclamo);
         this.add(menuPrincipalSupervisor);
