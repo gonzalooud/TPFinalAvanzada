@@ -4,6 +4,9 @@ import controladorJPA.HistorialJpaController;
 import modelo.Estado;
 import modelo.Historial;
 import exception.Notificaciones;
+import java.util.ArrayList;
+import java.util.List;
+import modelo.Reclamo;
 
 public class ControlHistorial {
     
@@ -25,6 +28,29 @@ public class ControlHistorial {
         this.controlSistema.getmSistema().getHistoriales().add(nuevoHistorial);
         return nuevoHistorial;
     }
+    
+    public String finalizarReclamo(int idReclamo, String descripcion, Estado estado)throws Notificaciones{
+        Reclamo actualizar=null;
+        List<Reclamo> listaReclamos = new ArrayList<>(controlSistema.getmSistema().getReclamos());
+        for(Reclamo r: listaReclamos){
+            if(idReclamo==r.getIdReclamo()){
+                actualizar = r;
+            }
+        }
+        if (actualizar==null){
+            throw new Notificaciones("ESTO NO DEBERIA PASAR.");
+        }
+        int indexReclamo= listaReclamos.indexOf(actualizar);
+       
+        descripcion= actualizar.getHistorial().getDescripcion() + descripcion;
+        controlSistema.getmSistema().getReclamos().get(indexReclamo).getHistorial().setDescripcion(descripcion);
+        controlSistema.getmSistema().getReclamos().get(indexReclamo).getHistorial().setEstado(estado);
+        actualizarHistorial(controlSistema.getmSistema().getReclamos().get(indexReclamo).getHistorial());
+        return "El reclamo ha finalizado correctamente.";
+    }
+    
+
+    
     
     
     
