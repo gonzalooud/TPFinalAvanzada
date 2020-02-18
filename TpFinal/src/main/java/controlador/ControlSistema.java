@@ -123,29 +123,9 @@ public class ControlSistema {
         JOptionPane.showMessageDialog(this.vPrincipal, mensaje);
     }
     
-    public List<Integer> getListaTransferir(int numeroReclamo)throws Notificaciones{
-        List<Integer> listaTransferir= controlEmpleado.transferirReclamoLista(numeroReclamo);
-        return listaTransferir;
-    }
     
-    public void transferirReclamo(int numeroReclamo, int numeroEmpleado, String estado, String descripcion)throws Notificaciones{
-        if(estado.isBlank() || descripcion.isBlank()){
-            throw new Notificaciones("Por favor complete todos los campos");
-        }
-        int numeroOrden= controlEmpleado.transferirReclamoOrden(numeroReclamo);
-        Estado estadoACambiar= controlEstado.getEstado(estado);
-        String empleadoAsignar= numeroOrden + "-" + numeroEmpleado;
-        Reclamo reclamo= controlReclamo.getReclamo(numeroReclamo);
-        Historial historial= reclamo.getHistorial();
-        descripcion= historial.getDescripcion() + descripcion;
-        historial.setDescripcion(descripcion);
-        historial.setEstado(estadoACambiar);
-        historial.setEmpleadosAsignados(empleadoAsignar);
-        int index= this.getmSistema().getReclamos().indexOf(reclamo);
-        this.getmSistema().getReclamos().get(index).setHistorial(historial);
-        controlHistorial.actualizarHistorial(historial);
-        JOptionPane.showMessageDialog(this.vPrincipal, "Reclamo transferido correctamente.");
-    }
+    
+    
     
     
     
