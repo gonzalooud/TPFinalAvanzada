@@ -2,7 +2,6 @@ package vista;
 
 import controlador.ControlSistema;
 import exception.Notificaciones;
-import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -47,7 +46,6 @@ public class RegistroReclamo extends javax.swing.JPanel {
         jLabelEstado = new javax.swing.JLabel();
         jLabelServicio = new javax.swing.JLabel();
         jLabel6TipoReclamo = new javax.swing.JLabel();
-        jLabelDescripcion = new javax.swing.JLabel();
         jLabelClasificacion = new javax.swing.JLabel();
         TextoNumeroCliente = new javax.swing.JTextField();
         BotonBuscar = new javax.swing.JButton();
@@ -57,8 +55,8 @@ public class RegistroReclamo extends javax.swing.JPanel {
         TextoEstado = new javax.swing.JTextField();
         BotonCancelar = new javax.swing.JButton();
         BotonAceptar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jLabelDescripcion = new javax.swing.JLabel();
+        TextoDescripcion = new javax.swing.JTextField();
 
         PanelRegistroReclamo.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -111,11 +109,6 @@ public class RegistroReclamo extends javax.swing.JPanel {
         jLabel6TipoReclamo.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         jLabel6TipoReclamo.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6TipoReclamo.setText("Tipo reclamo:");
-
-        jLabelDescripcion.setBackground(new java.awt.Color(204, 204, 204));
-        jLabelDescripcion.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
-        jLabelDescripcion.setForeground(new java.awt.Color(51, 51, 51));
-        jLabelDescripcion.setText("Descripción:");
 
         jLabelClasificacion.setBackground(new java.awt.Color(204, 204, 204));
         jLabelClasificacion.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
@@ -172,63 +165,57 @@ public class RegistroReclamo extends javax.swing.JPanel {
             }
         });
 
-        jTextArea1.setBackground(new java.awt.Color(153, 153, 153));
-        jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jLabelDescripcion.setBackground(new java.awt.Color(204, 204, 204));
+        jLabelDescripcion.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        jLabelDescripcion.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelDescripcion.setText("Descripción:");
+
+        TextoDescripcion.setBackground(new java.awt.Color(153, 153, 153));
+        TextoDescripcion.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout PanelRegistroReclamoLayout = new javax.swing.GroupLayout(PanelRegistroReclamo);
         PanelRegistroReclamo.setLayout(PanelRegistroReclamoLayout);
         PanelRegistroReclamoLayout.setHorizontalGroup(
             PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegistroReclamoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(352, 352, 352))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(PanelRegistroReclamoLayout.createSequentialGroup()
-                .addGap(96, 96, 96)
                 .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelRegistroReclamoLayout.createSequentialGroup()
-                        .addComponent(jLabelServicio)
-                        .addGap(60, 60, 60)
-                        .addComponent(jLabelNumeroCliente)
-                        .addGap(18, 18, 18)
-                        .addComponent(TextoNumeroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(BotonBuscar))
+                        .addGap(220, 220, 220)
+                        .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabelNumeroCliente)
+                            .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabelServicio)
+                                .addComponent(jLabel6TipoReclamo)
+                                .addComponent(jLabelClasificacion)
+                                .addComponent(jLabelEstado)
+                                .addComponent(jLabelDescripcion)))
+                        .addGap(22, 22, 22)
+                        .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ComboClasificación, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ComboTipoReclamo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(TextoEstado, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(TextoDescripcion, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(PanelRegistroReclamoLayout.createSequentialGroup()
+                                .addComponent(ComboServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(PanelRegistroReclamoLayout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(TextoNumeroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BotonBuscar)
+                                .addGap(30, 30, 30))))
                     .addGroup(PanelRegistroReclamoLayout.createSequentialGroup()
-                        .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegistroReclamoLayout.createSequentialGroup()
-                                .addComponent(BotonCancelar)
-                                .addGap(27, 27, 27))
-                            .addGroup(PanelRegistroReclamoLayout.createSequentialGroup()
-                                .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(PanelRegistroReclamoLayout.createSequentialGroup()
-                                        .addGap(166, 166, 166)
-                                        .addComponent(ComboServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(PanelRegistroReclamoLayout.createSequentialGroup()
-                                        .addComponent(jLabelEstado)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(TextoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(PanelRegistroReclamoLayout.createSequentialGroup()
-                                        .addComponent(jLabelClasificacion)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(ComboClasificación, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegistroReclamoLayout.createSequentialGroup()
-                                        .addComponent(jLabel6TipoReclamo)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(ComboTipoReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)))
-                        .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BotonAceptar)
-                            .addGroup(PanelRegistroReclamoLayout.createSequentialGroup()
-                                .addComponent(jLabelDescripcion)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(83, Short.MAX_VALUE))
+                        .addGap(366, 366, 366)
+                        .addComponent(BotonCancelar)
+                        .addGap(27, 27, 27)
+                        .addComponent(BotonAceptar)))
+                .addGap(161, 161, 161))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegistroReclamoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(335, 335, 335))
         );
         PanelRegistroReclamoLayout.setVerticalGroup(
             PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,26 +231,26 @@ public class RegistroReclamo extends javax.swing.JPanel {
                     .addComponent(TextoNumeroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotonBuscar))
                 .addGap(38, 38, 38)
-                .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelRegistroReclamoLayout.createSequentialGroup()
-                        .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ComboServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelDescripcion)
-                            .addComponent(jLabelServicio))
-                        .addGap(37, 37, 37)
-                        .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6TipoReclamo)
-                            .addComponent(ComboTipoReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34)
-                        .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelClasificacion, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ComboClasificación, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
-                        .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelEstado)
-                            .addComponent(TextoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ComboServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelServicio))
+                .addGap(18, 18, 18)
+                .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ComboTipoReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6TipoReclamo))
+                .addGap(18, 18, 18)
+                .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ComboClasificación, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelClasificacion))
+                .addGap(18, 18, 18)
+                .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelEstado))
+                .addGap(18, 18, 18)
+                .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelDescripcion))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addGroup(PanelRegistroReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonCancelar)
                     .addComponent(BotonAceptar))
@@ -355,6 +342,7 @@ public class RegistroReclamo extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> ComboServicio;
     private javax.swing.JComboBox<String> ComboTipoReclamo;
     private javax.swing.JPanel PanelRegistroReclamo;
+    private javax.swing.JTextField TextoDescripcion;
     private javax.swing.JTextField TextoEstado;
     private javax.swing.JTextField TextoNumeroCliente;
     private javax.swing.JLabel jLabel1;
@@ -366,7 +354,5 @@ public class RegistroReclamo extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelServicio;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
