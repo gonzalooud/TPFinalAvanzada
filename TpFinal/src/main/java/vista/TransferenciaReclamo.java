@@ -1,12 +1,17 @@
 package vista;
 
 import controlador.ControlSistema;
+import exception.Notificaciones;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 public class TransferenciaReclamo extends javax.swing.JPanel {
 
     private ControlSistema controlSistema;
     private FramePrincipal vPrincipal;
     private String tipoMenu;
+    private int numeroReclamo;
     
     public TransferenciaReclamo(ControlSistema controlSistema, FramePrincipal vPrincipal, String tipoMenu){
         this.controlSistema = controlSistema;
@@ -89,11 +94,17 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
 
         TextoNumeroReclamo.setBackground(new java.awt.Color(153, 153, 153));
         TextoNumeroReclamo.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        TextoNumeroReclamo.setActionCommand("<Not Set>");
 
         BotonBuscar.setBackground(new java.awt.Color(102, 102, 102));
         BotonBuscar.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         BotonBuscar.setForeground(new java.awt.Color(51, 51, 51));
         BotonBuscar.setText("Buscar");
+        BotonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonBuscarActionPerformed(evt);
+            }
+        });
 
         LabelEmpleadoActual.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         LabelEmpleadoActual.setForeground(new java.awt.Color(51, 51, 51));
@@ -112,7 +123,7 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
 
         ComboEstado.setBackground(new java.awt.Color(153, 153, 153));
         ComboEstado.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        ComboEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Alta", "En evaluacion", "En proceso", " " }));
+        ComboEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Alta", "En evaluacion", "En proceso", "" }));
 
         LabelDescripcion.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         LabelDescripcion.setForeground(new java.awt.Color(51, 51, 51));
@@ -132,6 +143,11 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
         BotonAceptar.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         BotonAceptar.setForeground(new java.awt.Color(51, 51, 51));
         BotonAceptar.setText("Aceptar");
+        BotonAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAceptarActionPerformed(evt);
+            }
+        });
 
         ComboEmpleadoAsignado.setBackground(new java.awt.Color(153, 153, 153));
         ComboEmpleadoAsignado.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -244,6 +260,39 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
             this.vPrincipal.atrasTransferenciaEmpleado();
         }
     }//GEN-LAST:event_BotonCancelarActionPerformed
+
+    private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
+        List<Integer> listaNumeroEmpleados;
+        try{
+            this.numeroReclamo= Integer.parseInt(TextoNumeroReclamo.getText());
+            listaNumeroEmpleados= this.controlSistema.getListaTransferir(numeroReclamo);
+            LabelEmpleadoActual.setVisible(true);
+            LabelEmpleadoAsignado.setVisible(true);
+            LabelEstado.setVisible(true);
+            LabelDescripcion.setVisible(true);
+            TextoEmpleadoActual.setVisible(true);
+            TextoDescripcion.setVisible(true);
+            jScrollPane1.setVisible(true);
+            ComboEmpleadoAsignado.setVisible(true);
+            ComboEstado.setVisible(true);
+            for (Integer le: listaNumeroEmpleados){
+                ComboEmpleadoAsignado.addItem(le.toString());
+            }
+            this.vPrincipal.pack();
+        }catch(NumberFormatException bd){
+            JOptionPane.showMessageDialog(this.vPrincipal, "Por favor ingrese solo números.");
+        }catch(Notificaciones ex){
+            JOptionPane.showMessageDialog(this.vPrincipal, ex.getMessage());
+        }
+    }//GEN-LAST:event_BotonBuscarActionPerformed
+
+    private void BotonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAceptarActionPerformed
+        if(ComboEmpleadoAsignado.getSelectedIndex()==0 || ComboEstado.getSelectedIndex()==0){
+            JOptionPane.showMessageDialog(vPrincipal, "Por favor seleccione una opcion.");
+        }else{
+            
+        }
+    }//GEN-LAST:event_BotonAceptarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

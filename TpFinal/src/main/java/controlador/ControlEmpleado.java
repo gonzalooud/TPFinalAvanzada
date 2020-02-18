@@ -102,7 +102,7 @@ public class ControlEmpleado {
     
     
     //Filtar solo los expertos para finalizacion empeleado**********************************************************
-    private List<Integer> seleccionExpertos(String tipoReclamo, List<Integer> ultimos) {
+    public List<Integer> seleccionExpertos(String tipoReclamo, List<Integer> ultimos) {
         List<Integer> expertos=new ArrayList<>();
         List<Empleado> empleados=controlSistema.getmSistema().getEmpleados();
         ultimos.forEach((e) -> {
@@ -120,7 +120,7 @@ public class ControlEmpleado {
     }
     
     //Obtencion del orden del historial de empelados asignados en un historial****************************************
-    private int transferirReclamoOrden(int numeroReclamo )throws Notificaciones{
+    public int transferirReclamoOrden(int numeroReclamo )throws Notificaciones{
         List<Reclamo> reclamos=controlSistema.getmSistema().getReclamos();
         Historial unHistorial = null;
         int aux ;
@@ -130,14 +130,14 @@ public class ControlEmpleado {
             }
         }
         if(unHistorial==null){
-            throw new Notificaciones("");
+            throw new Notificaciones("No existe el reclamo a buscar.");
         }
         aux=Integer.parseInt(unHistorial.getEmpleadosAsignados().get(unHistorial.getEmpleadosAsignados().size()-1).substring(0, 1 ));
         aux++;
         return aux;
     }
     //Filtracion de expertos disponibles para transferir***********************************************************
-    private List<Integer> expertosTransferir(int idTipo){
+    public List<Integer> expertosTransferir(int idTipo){
         List<Integer> expertos=new ArrayList<>();
         List<Empleado> empleados=controlSistema.getmSistema().getEmpleados();
         empleados.forEach((a)->{
@@ -150,7 +150,7 @@ public class ControlEmpleado {
         return expertos;
     }
     //Obtencion de la lista de expertos para tranferir el reclamo***************************************************
-        private List<Integer> transferirReclamoLista(int numeroReclamo )throws Notificaciones{
+        public List<Integer> transferirReclamoLista(int numeroReclamo )throws Notificaciones{
         List<Reclamo> reclamos=controlSistema.getmSistema().getReclamos();
         TipoReclamo tReclamo = null;
         int idTReclamo;
@@ -160,10 +160,13 @@ public class ControlEmpleado {
             }
         }
         if(tReclamo==null){
-            throw new Notificaciones("");
+            throw new Notificaciones("No existe el reclamo a buscar.");
         }
         idTReclamo=tReclamo.getIdTipo();
         List<Integer> expertos=expertosTransferir(idTReclamo);
+        if(expertos.isEmpty()){
+            throw new Notificaciones("No existen expertos para este tipo de reclamo. (NO DEBERIA PASAR ESTO!)");
+        }
         return expertos;
     }
     
