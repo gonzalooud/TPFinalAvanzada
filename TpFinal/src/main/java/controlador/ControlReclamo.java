@@ -88,4 +88,28 @@ public class ControlReclamo {
         return mensaje;
     }
     
+    
+    //Listar empleados**********************************************************************************************
+        private List<Integer> listarEmpleados() {
+        List<Integer> dniEmpleados=new ArrayList<>();
+        List<Empleado> empleados=controlSistema.getmSistema().getEmpleados();
+        for(Empleado e:empleados){
+            dniEmpleados.add(e.getDni());
+        }
+        return dniEmpleados;
+    }
+        
+    //Buscar reclamos pendientes de un empleado*********************************************************************
+        private List<String> reclamosPendientes(int dniEmpleado){
+            int ultimoEmpleado;
+            List<String> reclamosPendientes=new ArrayList<>();
+            List<Reclamo>reclamos=controlSistema.getmSistema().getReclamos();
+            for(Reclamo e:reclamos){
+                ultimoEmpleado=Integer.parseInt(e.getHistorial().getEmpleadosAsignados().get(e.getHistorial().getEmpleadosAsignados().size()-1).substring(2, 10));
+                if(dniEmpleado==ultimoEmpleado && !e.getHistorial().getEstado().getDescripcion().equalsIgnoreCase("finalizado")){
+                    reclamosPendientes.add("NumeroReclamo:"+e.getIdReclamo()+"Urgencia"+e.getUrgencia()+"Fecha"+e.getFecha());
+                }
+            }
+            return reclamosPendientes;
+        }
 }
