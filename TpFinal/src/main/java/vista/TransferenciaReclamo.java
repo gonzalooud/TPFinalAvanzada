@@ -290,7 +290,14 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
         if(ComboEmpleadoAsignado.getSelectedIndex()==0 || ComboEstado.getSelectedIndex()==0){
             JOptionPane.showMessageDialog(vPrincipal, "Por favor seleccione una opcion.");
         }else{
-            
+            int numeroEmpleado= Integer.parseInt((String) ComboEmpleadoAsignado.getSelectedItem());
+            String estado= (String) ComboEstado.getSelectedItem();
+            String descripcion= TextoDescripcion.getText();
+            try{
+                this.controlSistema.transferirReclamo(numeroReclamo, numeroEmpleado, estado, descripcion);
+            }catch(Notificaciones ex){
+                JOptionPane.showMessageDialog(this.vPrincipal, ex.getMessage());
+            }
         }
     }//GEN-LAST:event_BotonAceptarActionPerformed
 
