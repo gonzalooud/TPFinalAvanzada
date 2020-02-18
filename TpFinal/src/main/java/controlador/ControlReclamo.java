@@ -101,7 +101,7 @@ public class ControlReclamo {
     
     
     //Listar empleados**********************************************************************************************
-        private List<Integer> listarEmpleados() {
+        public List<Integer> listarEmpleados() {
         List<Integer> dniEmpleados=new ArrayList<>();
         List<Empleado> empleados=controlSistema.getmSistema().getEmpleados();
         for(Empleado e:empleados){
@@ -111,14 +111,14 @@ public class ControlReclamo {
     }
         
     //Buscar reclamos pendientes de un empleado*********************************************************************
-        private List<String> reclamosPendientes(int dniEmpleado){
+        public List<String> reclamosPendientes(int dniEmpleado){
             int ultimoEmpleado;
             List<String> reclamosPendientes=new ArrayList<>();
-            List<Reclamo>reclamos=controlSistema.getmSistema().getReclamos();
+            List<Reclamo>reclamos=jpaControl.reclamosOrdenadosFecha();
             for(Reclamo e:reclamos){
                 ultimoEmpleado=Integer.parseInt(e.getHistorial().getEmpleadosAsignados().get(e.getHistorial().getEmpleadosAsignados().size()-1).substring(2, 10));
-                if(dniEmpleado==ultimoEmpleado && !e.getHistorial().getEstado().getDescripcion().equalsIgnoreCase("finalizado")){
-                    reclamosPendientes.add("NumeroReclamo:"+e.getIdReclamo()+"Urgencia"+e.getUrgencia()+"Fecha"+e.getFecha());
+                if(dniEmpleado==ultimoEmpleado ){  /*&& !e.getHistorial().getEstado().getDescripcion().equalsIgnoreCase("finalizado")*/
+                    reclamosPendientes.add("NumeroReclamo: "+e.getIdReclamo()+" Urgencia: "+e.getUrgencia()+" Fecha: "+e.getFecha()+" Estado: "+e.getHistorial().getEstado().getDescripcion());
                 }
             }
             return reclamosPendientes;
