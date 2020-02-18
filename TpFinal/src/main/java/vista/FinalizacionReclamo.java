@@ -5,15 +5,32 @@
  */
 package vista;
 
+import controlador.ControlSistema;
+
 /**
  *
  * @author Nadia
  */
 public class FinalizacionReclamo extends javax.swing.JPanel {
 
-    /**
-     * Creates new form AsignacionReclamo
-     */
+    private ControlSistema controlSistema;
+    private FramePrincipal vPrincipal;
+    private String tipoMenu;
+    
+    public FinalizacionReclamo(ControlSistema controlSistema, FramePrincipal vPrincipal, String tipoMenu) {
+        this.controlSistema= controlSistema;
+        this.vPrincipal= vPrincipal;
+        this.tipoMenu= tipoMenu;
+        initComponents();
+        BotonAceptar.setVisible(false);
+        jLabelDescripcion.setVisible(false);
+        jLabelEstado.setVisible(false);
+        jTextAreaDescripcion.setVisible(false);
+        jTextEstado.setVisible(false);
+        this.vPrincipal.pack();
+    }
+    
+    
     public FinalizacionReclamo() {
         initComponents();
     }
@@ -29,17 +46,18 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
 
         PanelAsignacionReclamo = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelTitulo = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLabelNumReclamo = new javax.swing.JLabel();
+        jLabelEstado = new javax.swing.JLabel();
+        jLabelDescripcion = new javax.swing.JLabel();
         TextoNumeroReclamo = new javax.swing.JTextField();
         BotonCancelar = new javax.swing.JButton();
         BotonAceptar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jTextEstado = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextAreaDescripcion = new javax.swing.JTextArea();
+        botonBuscarReclamo = new javax.swing.JButton();
 
         PanelAsignacionReclamo.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -56,9 +74,9 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
             .addGap(0, 25, Short.MAX_VALUE)
         );
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel1.setText("Finalizar un reclamo");
+        jLabelTitulo.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        jLabelTitulo.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelTitulo.setText("Finalizar un reclamo");
 
         jPanel3.setBackground(new java.awt.Color(0, 204, 204));
 
@@ -73,17 +91,17 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
             .addGap(0, 25, Short.MAX_VALUE)
         );
 
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel2.setText("Número reclamo:");
+        jLabelNumReclamo.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        jLabelNumReclamo.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelNumReclamo.setText("Número reclamo:");
 
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel3.setText("Estado:");
+        jLabelEstado.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        jLabelEstado.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelEstado.setText("Estado:");
 
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel6.setText("Descripción:");
+        jLabelDescripcion.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        jLabelDescripcion.setForeground(new java.awt.Color(51, 51, 51));
+        jLabelDescripcion.setText("Descripción:");
 
         TextoNumeroReclamo.setBackground(new java.awt.Color(153, 153, 153));
         TextoNumeroReclamo.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
@@ -92,16 +110,26 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
         BotonCancelar.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         BotonCancelar.setForeground(new java.awt.Color(51, 51, 51));
         BotonCancelar.setText("Cancelar");
+        BotonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCancelarActionPerformed(evt);
+            }
+        });
 
         BotonAceptar.setBackground(new java.awt.Color(102, 102, 102));
         BotonAceptar.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         BotonAceptar.setForeground(new java.awt.Color(51, 51, 51));
         BotonAceptar.setText("Aceptar");
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(153, 153, 153));
-        jTextField1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jTextField1.setText("Finalizado");
+        jTextEstado.setEditable(false);
+        jTextEstado.setBackground(new java.awt.Color(153, 153, 153));
+        jTextEstado.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jTextEstado.setText("Finalizado");
+
+        jTextAreaDescripcion.setBackground(new java.awt.Color(153, 153, 153));
+        jTextAreaDescripcion.setColumns(20);
+        jTextAreaDescripcion.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaDescripcion);
 
         jTextArea1.setBackground(new java.awt.Color(153, 153, 153));
         jTextArea1.setColumns(20);
@@ -125,11 +153,11 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
                             .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(PanelAsignacionReclamoLayout.createSequentialGroup()
                                     .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel6))
+                                        .addComponent(jLabelEstado)
+                                        .addComponent(jLabelDescripcion))
                                     .addGap(77, 77, 77)
                                     .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField1)
+                                        .addComponent(jTextEstado)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAsignacionReclamoLayout.createSequentialGroup()
                                     .addGap(60, 60, 60)
@@ -138,35 +166,38 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
                                     .addComponent(BotonAceptar)
                                     .addGap(35, 35, 35)))
                             .addGroup(PanelAsignacionReclamoLayout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addComponent(jLabelNumReclamo)
                                 .addGap(35, 35, 35)
-                                .addComponent(TextoNumeroReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(TextoNumeroReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(botonBuscarReclamo))
                     .addGroup(PanelAsignacionReclamoLayout.createSequentialGroup()
                         .addGap(356, 356, 356)
-                        .addComponent(jLabel1)))
-                .addContainerGap(275, Short.MAX_VALUE))
+                        .addComponent(jLabelTitulo)))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         PanelAsignacionReclamoLayout.setVerticalGroup(
             PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAsignacionReclamoLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
+                .addComponent(jLabelTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(TextoNumeroReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelNumReclamo)
+                    .addComponent(TextoNumeroReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonBuscarReclamo))
                 .addGap(18, 18, 18)
                 .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelEstado)
+                    .addComponent(jTextEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
+                    .addComponent(jLabelDescripcion)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonCancelar)
                     .addComponent(BotonAceptar))
@@ -185,20 +216,35 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botonBuscarReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarReclamoActionPerformed
+        
+        
+        
+    }//GEN-LAST:event_botonBuscarReclamoActionPerformed
+
+    private void BotonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCancelarActionPerformed
+        if(tipoMenu.equalsIgnoreCase("Supervisor")){
+            this.vPrincipal.mostrarSupervisor();
+        }else{
+            this.vPrincipal.mostrarEmpleado();
+        }
+    }//GEN-LAST:event_BotonCancelarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAceptar;
     private javax.swing.JButton BotonCancelar;
     private javax.swing.JPanel PanelAsignacionReclamo;
     private javax.swing.JTextField TextoNumeroReclamo;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JButton botonBuscarReclamo;
+    private javax.swing.JLabel jLabelDescripcion;
+    private javax.swing.JLabel jLabelEstado;
+    private javax.swing.JLabel jLabelNumReclamo;
+    private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextArea jTextAreaDescripcion;
+    private javax.swing.JTextField jTextEstado;
     // End of variables declaration//GEN-END:variables
 }
