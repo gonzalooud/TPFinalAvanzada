@@ -119,7 +119,7 @@ public class ControlEmpleado {
     }
     
     
-    private int transferirReclamoOrdem(int numeroReclamo )throws Notificaciones{
+    private int transferirReclamoOrden(int numeroReclamo )throws Notificaciones{
         List<Reclamo> reclamos=controlSistema.getmSistema().getReclamos();
         Historial unHistorial = null;
         int aux ;
