@@ -18,6 +18,7 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
     private ControlSistema controlSistema;
     private FramePrincipal vPrincipal;
     private String tipoMenu;
+    private int numeroReclamo;
     
     public FinalizacionReclamo(ControlSistema controlSistema, FramePrincipal vPrincipal, String tipoMenu) {
         this.controlSistema= controlSistema;
@@ -29,6 +30,7 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
         jLabelEstado.setVisible(false);
         jTextArea1.setVisible(false);
         jTextEstado.setVisible(false);
+        jScrollPane1.setVisible(false);
         this.vPrincipal.pack();
     }
     
@@ -122,6 +124,11 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
         BotonAceptar.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         BotonAceptar.setForeground(new java.awt.Color(51, 51, 51));
         BotonAceptar.setText("Aceptar");
+        BotonAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAceptarActionPerformed(evt);
+            }
+        });
 
         jTextEstado.setEditable(false);
         jTextEstado.setBackground(new java.awt.Color(153, 153, 153));
@@ -221,27 +228,40 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonBuscarReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarReclamoActionPerformed
-        int numeroReclamo;
         try{
             numeroReclamo= Integer.parseInt(TextoNumeroReclamo.getText());
             controlSistema.vistaExisteReclamo(numeroReclamo);
+            botonBuscarReclamo.setVisible(false);
+            BotonAceptar.setVisible(true);
+            jLabelDescripcion.setVisible(true);
+            jLabelEstado.setVisible(true);
+            jTextArea1.setVisible(true);
+            jTextEstado.setVisible(true);
+            jScrollPane1.setVisible(true);
+            vPrincipal.pack();
         }catch(NumberFormatException badnumber){
             JOptionPane.showMessageDialog(this, "Por favor ingrese un número."); 
         }catch(Notificaciones ex){
             JOptionPane.showMessageDialog(this, ex.getMessage()); 
-        } 
-        
-        
-        
+        }
     }//GEN-LAST:event_botonBuscarReclamoActionPerformed
 
     private void BotonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCancelarActionPerformed
         if(tipoMenu.equalsIgnoreCase("Supervisor")){
-            this.vPrincipal.mostrarSupervisor();
+            this.vPrincipal.atrasFinalizarSupervisor();
         }else{
-            this.vPrincipal.mostrarEmpleado();
+            this.vPrincipal.atrasFinalizarEmpleado();
         }
     }//GEN-LAST:event_BotonCancelarActionPerformed
+
+    private void BotonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAceptarActionPerformed
+        String descripcion= jTextArea1.getText();
+        try{
+            controlSistema.finalizarReclamo(numeroReclamo, descripcion);
+        }catch(Notificaciones ex){
+            JOptionPane.showMessageDialog(this, ex.getMessage()); 
+        }
+    }//GEN-LAST:event_BotonAceptarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -18,8 +18,8 @@ public class FramePrincipal extends javax.swing.JFrame {
     private ControlSistema controlSistema;
     private MenuPrincipalSupervisor menuPrincipalSupervisor;
     private MenuPrincipalEmpleado menuPrincipalEmpleado;
-    RegistroReclamo vNuevoReclamo;
-    TransferenciaReclamo vTransferenciaReclamo;
+    private RegistroReclamo vNuevoReclamo;
+    private FinalizacionReclamo vFinalizarReclamo;
     
     public FramePrincipal(ControlSistema controlSistema) {
         initComponents();
@@ -91,7 +91,18 @@ public class FramePrincipal extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    public void finalizarReclamo(String menuPrincipal){
+        this.vFinalizarReclamo= new FinalizacionReclamo(controlSistema,this, menuPrincipal);
+        if(menuPrincipal.equalsIgnoreCase("Supervisor")){
+            this.remove(menuPrincipalSupervisor);
+        }else{
+            this.remove(menuPrincipalEmpleado);
+        }
+        this.add(vFinalizarReclamo,BorderLayout.CENTER);
+        this.pack();
+    }
+    
     
     public void crearSupervisor(){
         this.setVisible(true);
@@ -133,13 +144,26 @@ public class FramePrincipal extends javax.swing.JFrame {
     
     
     public void mostrarSupervisor(){
+    public void atrasReclamoSupervisor(){
         this.remove(vNuevoReclamo);
         this.add(menuPrincipalSupervisor);
         this.pack();
     }
     
-    public void mostrarEmpleado(){
+    public void atrasReclamoEmpleado(){
         this.remove(vNuevoReclamo);
+        this.add(menuPrincipalEmpleado);
+        this.pack();
+    }
+    
+    public void atrasFinalizarSupervisor(){
+        this.remove(vFinalizarReclamo);
+        this.add(menuPrincipalSupervisor);
+        this.pack();
+    }
+    
+    public void atrasFinalizarEmpleado(){
+        this.remove(vFinalizarReclamo);
         this.add(menuPrincipalEmpleado);
         this.pack();
     }

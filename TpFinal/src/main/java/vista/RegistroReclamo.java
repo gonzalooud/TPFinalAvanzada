@@ -309,9 +309,9 @@ public class RegistroReclamo extends javax.swing.JPanel {
     
     private void BotonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCancelarActionPerformed
         if(tipoMenu.equalsIgnoreCase("Supervisor")){
-            this.vPrincipal.mostrarSupervisor();
+            this.vPrincipal.atrasReclamoSupervisor();
         }else{
-            this.vPrincipal.mostrarEmpleado();
+            this.vPrincipal.atrasReclamoEmpleado();
         }
     }//GEN-LAST:event_BotonCancelarActionPerformed
 
