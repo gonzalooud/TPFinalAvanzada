@@ -21,6 +21,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     private RegistroReclamo vNuevoReclamo;
     private FinalizacionReclamo vFinalizarReclamo;
     private TransferenciaReclamo vTransferenciaReclamo;
+    private ConsultaReclamoCliente vConsultaReclamo;
     
     public FramePrincipal(ControlSistema controlSistema) {
         initComponents();
@@ -155,6 +156,29 @@ public class FramePrincipal extends javax.swing.JFrame {
         this.pack();
     }
     
+    public void ConsultaReclamoCliente (String menuPrincipal){
+        vConsultaReclamo = new ConsultaReclamoCliente(controlSistema, this, menuPrincipal);
+         if(menuPrincipal.equalsIgnoreCase("Supervisor")){
+            this.remove(menuPrincipalSupervisor);
+        }else{
+            this.remove(menuPrincipalEmpleado);
+        }
+        this.add(vConsultaReclamo,BorderLayout.CENTER);
+        this.pack();
+    }
+     
+     public void atrasConsultaReclamoClienteSupervisor(){
+        this.remove(vConsultaReclamo);
+        this.add(menuPrincipalSupervisor);
+        this.pack();
+     }
+     
+     public void atrasConsultaReclamoClienteEmpleado(){
+        this.remove(vConsultaReclamo);
+        this.add(menuPrincipalEmpleado);
+        this.pack();
+     }
+     
     public void atrasReclamoSupervisor(){
         this.remove(vNuevoReclamo);
         this.add(menuPrincipalSupervisor);

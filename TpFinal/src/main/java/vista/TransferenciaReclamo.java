@@ -13,11 +13,9 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
         this.vPrincipal = vPrincipal;
         this.tipoMenu = tipoMenu;
         initComponents();
-        LabelEmpleadoActual.setVisible(false);
         LabelEmpleadoAsignado.setVisible(false);
         LabelEstado.setVisible(false);
         LabelDescripcion.setVisible(false);
-        TextoEmpleadoActual.setVisible(false);
         TextoDescripcion.setVisible(false);
         jScrollPane1.setVisible(false);
         ComboEmpleadoAsignado.setVisible(false);

@@ -95,6 +95,11 @@ public class MenuPrincipalSupervisor extends javax.swing.JPanel {
         BotonConsultarHistorialReclamo.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         BotonConsultarHistorialReclamo.setForeground(new java.awt.Color(51, 51, 51));
         BotonConsultarHistorialReclamo.setText("Consultar sobre historial de reclamos");
+        BotonConsultarHistorialReclamo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonConsultarHistorialReclamoActionPerformed(evt);
+            }
+        });
 
         BotonConsultarReclamosPendientes.setBackground(new java.awt.Color(102, 102, 102));
         BotonConsultarReclamosPendientes.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
@@ -172,6 +177,10 @@ public class MenuPrincipalSupervisor extends javax.swing.JPanel {
     private void BotonFinalizarReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonFinalizarReclamoActionPerformed
         this.principal.finalizarReclamo(menuPrincipal);
     }//GEN-LAST:event_BotonFinalizarReclamoActionPerformed
+
+    private void BotonConsultarHistorialReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultarHistorialReclamoActionPerformed
+        this.principal.ConsultaReclamoCliente(menuPrincipal);
+    }//GEN-LAST:event_BotonConsultarHistorialReclamoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
