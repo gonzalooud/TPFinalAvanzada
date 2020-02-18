@@ -141,7 +141,7 @@ public class ReclamoJpaController implements Serializable {
     
     public List<Reclamo> reclamosOrdenadosFecha(){
         EntityManager manager = emf.createEntityManager();
-        Query query=manager.createQuery("FROM Reclamo ORDER BY fecha"); 
+        Query query=manager.createQuery("SELECT r.idReclamo,r.historial ,r.fecha FROM Reclamo r ORDER BY r.fecha");
         List<Reclamo>ordenados=query.getResultList();
         return ordenados;
     }
