@@ -85,6 +85,11 @@ public class MenuPrincipalEmpleado extends javax.swing.JPanel {
         BotonTransferirReclamo.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         BotonTransferirReclamo.setForeground(new java.awt.Color(51, 51, 51));
         BotonTransferirReclamo.setText("Transferir un reclamo");
+        BotonTransferirReclamo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonTransferirReclamoActionPerformed(evt);
+            }
+        });
 
         BotonTransferirReclamo1.setBackground(new java.awt.Color(102, 102, 102));
         BotonTransferirReclamo1.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
@@ -150,6 +155,10 @@ public class MenuPrincipalEmpleado extends javax.swing.JPanel {
     private void BotonRegistrarReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarReclamoActionPerformed
         this.principal.registroReclamo(menuPrincipal);
     }//GEN-LAST:event_BotonRegistrarReclamoActionPerformed
+
+    private void BotonTransferirReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTransferirReclamoActionPerformed
+        this.principal.transferenciaReclamo(menuPrincipal);
+    }//GEN-LAST:event_BotonTransferirReclamoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

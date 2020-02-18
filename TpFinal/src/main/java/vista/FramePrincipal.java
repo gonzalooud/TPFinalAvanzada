@@ -19,6 +19,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     private MenuPrincipalSupervisor menuPrincipalSupervisor;
     private MenuPrincipalEmpleado menuPrincipalEmpleado;
     RegistroReclamo vNuevoReclamo;
+    TransferenciaReclamo vTransferenciaReclamo;
     
     public FramePrincipal(ControlSistema controlSistema) {
         initComponents();
@@ -118,6 +119,18 @@ public class FramePrincipal extends javax.swing.JFrame {
         this.add(vNuevoReclamo,BorderLayout.CENTER);
         this.pack();
     }
+    
+    public void transferenciaReclamo (String menuPrincipal){
+        vTransferenciaReclamo = new TransferenciaReclamo(controlSistema, this, menuPrincipal);
+         if(menuPrincipal.equalsIgnoreCase("Supervisor")){
+            this.remove(menuPrincipalSupervisor);
+        }else{
+            this.remove(menuPrincipalEmpleado);
+        }
+        this.add(vTransferenciaReclamo,BorderLayout.CENTER);
+        this.pack();
+    }
+    
     
     public void mostrarSupervisor(){
         this.remove(vNuevoReclamo);
