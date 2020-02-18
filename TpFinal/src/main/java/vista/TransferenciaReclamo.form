@@ -221,11 +221,14 @@
             <Property name="text" type="java.lang.String" value="Buscar"/>
           </Properties>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonBuscarActionPerformed"/>
           </Events>
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of ca95900... Actualizacion transferencia Reclamo
 =======
 >>>>>>> parent of ca95900... Actualizacion transferencia Reclamo
         </Component>
