@@ -5,8 +5,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.swing.JOptionPane;
 import modelo.Empleado;
 import modelo.Historial;
+import modelo.Reclamo;
 import modelo.TipoReclamo;
 
 
@@ -115,7 +117,9 @@ public class mainPrueba {
         manager.persist(tr);
         manager.getTransaction().commit();*/
         
-        
+        Query queryy=manager.createQuery("FROM Reclamo ORDER BY fecha"); 
+        List<Reclamo>ordenados=queryy.getResultList();
+        System.out.println(ordenados);
         
     }
     
