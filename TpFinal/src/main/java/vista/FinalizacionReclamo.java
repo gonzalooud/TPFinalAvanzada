@@ -6,6 +6,8 @@
 package vista;
 
 import controlador.ControlSistema;
+import exception.Notificaciones;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,7 +27,7 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
         BotonAceptar.setVisible(false);
         jLabelDescripcion.setVisible(false);
         jLabelEstado.setVisible(false);
-        jTextAreaDescripcion.setVisible(false);
+        jTextArea1.setVisible(false);
         jTextEstado.setVisible(false);
         this.vPrincipal.pack();
     }
@@ -56,7 +58,7 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
         BotonAceptar = new javax.swing.JButton();
         jTextEstado = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextAreaDescripcion = new javax.swing.JTextArea();
+        jTextArea1 = new javax.swing.JTextArea();
         botonBuscarReclamo = new javax.swing.JButton();
 
         PanelAsignacionReclamo.setBackground(new java.awt.Color(204, 204, 204));
@@ -126,11 +128,6 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
         jTextEstado.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jTextEstado.setText("Finalizado");
 
-        jTextAreaDescripcion.setBackground(new java.awt.Color(153, 153, 153));
-        jTextAreaDescripcion.setColumns(20);
-        jTextAreaDescripcion.setRows(5);
-        jScrollPane1.setViewportView(jTextAreaDescripcion);
-
         jTextArea1.setBackground(new java.awt.Color(153, 153, 153));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
@@ -138,6 +135,13 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
         jTextArea1.setRows(5);
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
+
+        botonBuscarReclamo.setText("Buscar Reclamo");
+        botonBuscarReclamo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBuscarReclamoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelAsignacionReclamoLayout = new javax.swing.GroupLayout(PanelAsignacionReclamo);
         PanelAsignacionReclamo.setLayout(PanelAsignacionReclamoLayout);
@@ -217,6 +221,15 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonBuscarReclamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarReclamoActionPerformed
+        int numeroReclamo;
+        try{
+            numeroReclamo= Integer.parseInt(TextoNumeroReclamo.getText());
+            controlSistema.vistaExisteReclamo(numeroReclamo);
+        }catch(NumberFormatException badnumber){
+            JOptionPane.showMessageDialog(this, "Por favor ingrese un número."); 
+        }catch(Notificaciones ex){
+            JOptionPane.showMessageDialog(this, ex.getMessage()); 
+        } 
         
         
         
@@ -244,7 +257,7 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextAreaDescripcion;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextEstado;
     // End of variables declaration//GEN-END:variables
 }

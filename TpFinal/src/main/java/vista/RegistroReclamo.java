@@ -274,8 +274,9 @@ public class RegistroReclamo extends javax.swing.JPanel {
         List<String> ListaServicios;
         List<String> ListaTipoReclamo;
         
-        dni = Integer.parseInt(TextoNumeroCliente.getText());
+        
         try {
+            dni = Integer.parseInt(TextoNumeroCliente.getText());
             ListaServicios = controlSistema.getListaServicios(dni);
             for (String s: ListaServicios){
                 ComboServicio.addItem(s);
@@ -299,8 +300,9 @@ public class RegistroReclamo extends javax.swing.JPanel {
             this.vPrincipal.revalidate();
             this.vPrincipal.repaint();
             this.vPrincipal.pack();
-        }
-        catch(Notificaciones ex){
+        }catch(NumberFormatException badnumber){
+            JOptionPane.showMessageDialog(this, "Por favor ingrese un número."); 
+        }catch(Notificaciones ex){
             JOptionPane.showMessageDialog(this, ex.getMessage()); 
         }   
     }//GEN-LAST:event_BotonBuscarActionPerformed
@@ -311,7 +313,6 @@ public class RegistroReclamo extends javax.swing.JPanel {
         }else{
             this.vPrincipal.mostrarEmpleado();
         }
-        
     }//GEN-LAST:event_BotonCancelarActionPerformed
 
     private void BotonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAceptarActionPerformed

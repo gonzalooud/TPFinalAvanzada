@@ -108,9 +108,7 @@ public class ControlSistema {
     
     
     public void vistaExisteReclamo(int idReclamo)throws Notificaciones{
-        if(this.controlReclamo.existeReclamo(idReclamo)){
-            /*LLAMAR A LA VISTA DE FINALIZAR RECLAMO y pasar el ID*/
-        }else{
+        if(!this.controlReclamo.existeReclamo(idReclamo)){
             throw new Notificaciones("No existe el reclamo.");
         }
     }
