@@ -29,7 +29,7 @@ public class MenuPrincipalEmpleado extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         BotonRegistrarReclamo = new javax.swing.JButton();
-        BotonAsignarReclamo = new javax.swing.JButton();
+        BotonFinalizarReclamo = new javax.swing.JButton();
         BotonTransferirReclamo = new javax.swing.JButton();
         BotonTransferirReclamo1 = new javax.swing.JButton();
 
@@ -70,19 +70,16 @@ public class MenuPrincipalEmpleado extends javax.swing.JPanel {
         BotonRegistrarReclamo.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         BotonRegistrarReclamo.setForeground(new java.awt.Color(51, 51, 51));
         BotonRegistrarReclamo.setText("Registrar un reclamo");
-        BotonRegistrarReclamo.setMaximumSize(new java.awt.Dimension(189, 37));
-        BotonRegistrarReclamo.setMinimumSize(new java.awt.Dimension(189, 37));
-        BotonRegistrarReclamo.setPreferredSize(new java.awt.Dimension(189, 37));
         BotonRegistrarReclamo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonRegistrarReclamoActionPerformed(evt);
             }
         });
 
-        BotonAsignarReclamo.setBackground(new java.awt.Color(102, 102, 102));
-        BotonAsignarReclamo.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
-        BotonAsignarReclamo.setForeground(new java.awt.Color(51, 51, 51));
-        BotonAsignarReclamo.setText("Asignar un reclamo");
+        BotonFinalizarReclamo.setBackground(new java.awt.Color(102, 102, 102));
+        BotonFinalizarReclamo.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        BotonFinalizarReclamo.setForeground(new java.awt.Color(51, 51, 51));
+        BotonFinalizarReclamo.setText("Finalizar un reclamo");
 
         BotonTransferirReclamo.setBackground(new java.awt.Color(102, 102, 102));
         BotonTransferirReclamo.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
@@ -110,7 +107,7 @@ public class MenuPrincipalEmpleado extends javax.swing.JPanel {
                         .addComponent(BotonRegistrarReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelMenuPrincipalEmpleadoLayout.createSequentialGroup()
                         .addGap(248, 248, 248)
-                        .addComponent(BotonAsignarReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BotonFinalizarReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelMenuPrincipalEmpleadoLayout.createSequentialGroup()
                         .addGap(248, 248, 248)
                         .addComponent(BotonTransferirReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -128,9 +125,9 @@ public class MenuPrincipalEmpleado extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
-                .addComponent(BotonRegistrarReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotonRegistrarReclamo)
                 .addGap(49, 49, 49)
-                .addComponent(BotonAsignarReclamo)
+                .addComponent(BotonFinalizarReclamo)
                 .addGap(51, 51, 51)
                 .addComponent(BotonTransferirReclamo)
                 .addGap(51, 51, 51)
@@ -156,7 +153,7 @@ public class MenuPrincipalEmpleado extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonAsignarReclamo;
+    private javax.swing.JButton BotonFinalizarReclamo;
     private javax.swing.JButton BotonRegistrarReclamo;
     private javax.swing.JButton BotonTransferirReclamo;
     private javax.swing.JButton BotonTransferirReclamo1;

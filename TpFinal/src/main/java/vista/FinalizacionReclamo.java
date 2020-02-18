@@ -105,7 +105,10 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
 
         jTextArea1.setBackground(new java.awt.Color(153, 153, 153));
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
+        jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout PanelAsignacionReclamoLayout = new javax.swing.GroupLayout(PanelAsignacionReclamo);
@@ -119,7 +122,7 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
                     .addGroup(PanelAsignacionReclamoLayout.createSequentialGroup()
                         .addGap(235, 235, 235)
                         .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(PanelAsignacionReclamoLayout.createSequentialGroup()
                                     .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel3)
@@ -128,11 +131,12 @@ public class FinalizacionReclamo extends javax.swing.JPanel {
                                     .addGroup(PanelAsignacionReclamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jTextField1)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)))
-                                .addGroup(PanelAsignacionReclamoLayout.createSequentialGroup()
-                                    .addGap(57, 57, 57)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAsignacionReclamoLayout.createSequentialGroup()
+                                    .addGap(60, 60, 60)
                                     .addComponent(BotonCancelar)
-                                    .addGap(63, 63, 63)
-                                    .addComponent(BotonAceptar)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                                    .addComponent(BotonAceptar)
+                                    .addGap(35, 35, 35)))
                             .addGroup(PanelAsignacionReclamoLayout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(35, 35, 35)
