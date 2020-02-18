@@ -227,9 +227,9 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
 
     private void BotonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCancelarActionPerformed
          if(tipoMenu.equalsIgnoreCase("Supervisor")){
-            this.vPrincipal.mostrarSupervisor();
+            this.vPrincipal.atrasTransferenciaSupervisor();
         }else{
-            this.vPrincipal.mostrarEmpleado();
+            this.vPrincipal.atrasTransferenciaEmpleado();
         }
     }//GEN-LAST:event_BotonCancelarActionPerformed
 

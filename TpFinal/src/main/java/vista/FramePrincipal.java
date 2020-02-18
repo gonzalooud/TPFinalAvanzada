@@ -20,6 +20,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     private MenuPrincipalEmpleado menuPrincipalEmpleado;
     private RegistroReclamo vNuevoReclamo;
     private FinalizacionReclamo vFinalizarReclamo;
+    private TransferenciaReclamo vTransferenciaReclamo;
     
     public FramePrincipal(ControlSistema controlSistema) {
         initComponents();
@@ -142,8 +143,18 @@ public class FramePrincipal extends javax.swing.JFrame {
         this.pack();
     }
     
+    public void atrasTransferenciaSupervisor() {
+        this.remove(vTransferenciaReclamo);
+        this.add(menuPrincipalSupervisor);
+        this.pack();
+    }
     
-    public void mostrarSupervisor(){
+     public void atrasTransferenciaEmpleado() {
+        this.remove(vTransferenciaReclamo);
+        this.add(menuPrincipalEmpleado);
+        this.pack();
+    }
+    
     public void atrasReclamoSupervisor(){
         this.remove(vNuevoReclamo);
         this.add(menuPrincipalSupervisor);
