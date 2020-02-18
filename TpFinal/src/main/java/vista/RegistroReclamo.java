@@ -12,6 +12,7 @@ public class RegistroReclamo extends javax.swing.JPanel {
     private ControlSistema controlSistema;
     private FramePrincipal vPrincipal;
     private String tipoMenu;
+    private int dni;
     
     public RegistroReclamo(ControlSistema controlSistema, FramePrincipal vPrincipal, String tipoMenu) {
         this.controlSistema = controlSistema;
@@ -270,7 +271,6 @@ public class RegistroReclamo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
-        int dni;
         List<String> ListaServicios;
         List<String> ListaTipoReclamo;
         
@@ -319,11 +319,9 @@ public class RegistroReclamo extends javax.swing.JPanel {
         if(ComboClasificación.getSelectedIndex()==0 || ComboServicio.getSelectedIndex()==0 || ComboTipoReclamo.getSelectedIndex()==0){
             JOptionPane.showMessageDialog(vPrincipal, "Por favor seleccione una opcion.");
         }else{
-            int dni;
             String urgencia= (String) ComboClasificación.getSelectedItem();
             String servicio= (String) ComboServicio.getSelectedItem();
             String tipoReclamo= (String) ComboTipoReclamo.getSelectedItem();
-            dni = Integer.parseInt(TextoNumeroCliente.getText());
             String descripcion= TextoDescripcion.getText();
             try{
                 this.controlSistema.agregarReclamo(dni, servicio, descripcion, urgencia, tipoReclamo);
