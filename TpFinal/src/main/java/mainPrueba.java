@@ -118,9 +118,11 @@ public class mainPrueba {
         manager.getTransaction().commit();*/
         
         
-        Query query=manager.createQuery("SELECT r.idReclamo,r.historial ,r.fecha FROM Reclamo r ORDER BY r.fecha");
-        List<Reclamo>ordenados=query.getResultList();
-        System.out.println(ordenados);
+        Query query=manager.createQuery("FROM Reclamo r ORDER BY r.fecha");
+        List<Reclamo>ordenados=query.getResultList(); 
+        for(Reclamo e:ordenados){
+            System.out.println("NumeroReclamo: "+e.getIdReclamo()+" Urgencia: "+e.getUrgencia()+" Fecha: "+e.getFecha()+" Estado: "+e.getHistorial().getEstado().getDescripcion());
+        }
         
     }
     
