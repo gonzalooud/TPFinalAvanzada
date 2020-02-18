@@ -11,6 +11,7 @@ import modelo.Empleado;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import modelo.Estado;
 
 public class ControlReclamo {
     
@@ -37,23 +38,7 @@ public class ControlReclamo {
     }
     
     
-    public void finalizarReclamo(int idReclamo, String descripcion)throws Notificaciones{
-        Reclamo actualizar=null;
-        List<Reclamo> listaReclamos = new ArrayList<>(controlSistema.getmSistema().getReclamos());
-        for(Reclamo r: listaReclamos){
-            if(idReclamo==r.getIdReclamo()){
-                actualizar = r;
-            }
-        }
-        if (actualizar==null){
-            throw new Notificaciones("ESTO NO DEBERIA PASAR.");
-        }
-        descripcion= actualizar.getDescripcion() + descripcion;
-        actualizar.setDescripcion(descripcion);
-        actualizarReclamo(actualizar);
-    }
-    
-    public boolean existeReclamo(int idReclamo){
+        public boolean existeReclamo(int idReclamo){
         boolean existe=false;
         List<Reclamo> listaReclamos = new ArrayList<>(controlSistema.getmSistema().getReclamos());
         for(Reclamo r: listaReclamos){

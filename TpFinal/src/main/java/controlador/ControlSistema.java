@@ -116,7 +116,13 @@ public class ControlSistema {
     }
     
     public void finalizarReclamo(int idReclamo, String descripcion)throws Notificaciones{
-        this.controlReclamo.finalizarReclamo(idReclamo, descripcion);
+        String mensaje;
+        if(descripcion.isBlank()){
+            throw new Notificaciones("Por favor complete todos los campos.");
+        }
+        Estado estado = this.getControlEstado().getEstado("finalizado");
+        mensaje= this.controlHistorial.finalizarReclamo(idReclamo, descripcion, estado);
+        JOptionPane.showMessageDialog(this.vPrincipal, mensaje);
     }
     
     
