@@ -117,7 +117,7 @@ public class mainPrueba {
         manager.persist(tr);
         manager.getTransaction().commit();*/
         
-        Query queryy=manager.createQuery("FROM Reclamo ORDER BY fecha"); 
+        Query queryy=manager.createQuery("FROM Reclamo"); 
         List<Reclamo>ordenados=queryy.getResultList();
         System.out.println(ordenados);
         
