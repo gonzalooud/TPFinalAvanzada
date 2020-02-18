@@ -38,7 +38,7 @@ public class ControlReclamo {
     }
     
     
-    public boolean existeReclamo(int idReclamo){
+        public boolean existeReclamo(int idReclamo){
         boolean existe=false;
         List<Reclamo> listaReclamos = new ArrayList<>(controlSistema.getmSistema().getReclamos());
         for(Reclamo r: listaReclamos){
@@ -47,17 +47,6 @@ public class ControlReclamo {
             }
         }
         return existe;
-    }
-    
-    public Reclamo getReclamo(int idReclamo){
-        Reclamo reclamo=null;
-        List<Reclamo> listaReclamos = new ArrayList<>(controlSistema.getmSistema().getReclamos());
-        for(Reclamo r: listaReclamos){
-            if(idReclamo==r.getIdReclamo()){
-                reclamo=r;
-            }
-        }
-        return reclamo;
     }
     
     

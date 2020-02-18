@@ -205,7 +205,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="14" style="0"/>
             </Property>
-            <Property name="actionCommand" type="java.lang.String" value="&lt;Not Set&gt;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="BotonBuscar">
@@ -221,11 +220,14 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Buscar"/>
           </Properties>
+<<<<<<< HEAD
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonBuscarActionPerformed"/>
           </Events>
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of ca95900... Actualizacion transferencia Reclamo
         </Component>
         <Component class="javax.swing.JLabel" name="LabelEmpleadoActual">
           <Properties>
@@ -289,7 +291,7 @@
                 <StringItem index="1" value="Alta"/>
                 <StringItem index="2" value="En evaluacion"/>
                 <StringItem index="3" value="En proceso"/>
-                <StringItem index="4" value=""/>
+                <StringItem index="4" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -338,9 +340,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Aceptar"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonAceptarActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="ComboEmpleadoAsignado">
           <Properties>
