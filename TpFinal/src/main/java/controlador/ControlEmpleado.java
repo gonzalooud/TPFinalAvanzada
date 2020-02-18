@@ -21,6 +21,7 @@ public class ControlEmpleado {
         this.controlSistema = controlSistema;
     }
     
+    //Asignacion de empelado en base  a la urgencia **********************************************************************
     public String asignarEmpleado(String urgencia ,String tipoReclamo ){
         List<Historial> list=controlSistema.getmSistema().getHistoriales();
         int aux1=0 ,aux2 = 0, cont1=0 , cont2=0 ;
@@ -100,7 +101,7 @@ public class ControlEmpleado {
     
     
     
-    
+    //Filtar solo los expertos para finalizacion empeleado**********************************************************
     private List<Integer> seleccionExpertos(String tipoReclamo, List<Integer> ultimos) {
         List<Integer> expertos=new ArrayList<>();
         List<Empleado> empleados=controlSistema.getmSistema().getEmpleados();
@@ -118,7 +119,7 @@ public class ControlEmpleado {
         return expertos;
     }
     
-    
+    //Obtencion del orden del historial de empelados asignados en un historial****************************************
     private int transferirReclamoOrden(int numeroReclamo )throws Notificaciones{
         List<Reclamo> reclamos=controlSistema.getmSistema().getReclamos();
         Historial unHistorial = null;
@@ -135,7 +136,7 @@ public class ControlEmpleado {
         aux++;
         return aux;
     }
-    
+    //Filtracion de expertos disponibles para transferir***********************************************************
     private List<Integer> expertosTransferir(int idTipo){
         List<Integer> expertos=new ArrayList<>();
         List<Empleado> empleados=controlSistema.getmSistema().getEmpleados();
@@ -148,7 +149,7 @@ public class ControlEmpleado {
             });
         return expertos;
     }
-    
+    //Obtencion de la lista de expertos para tranferir el reclamo***************************************************
         private List<Integer> transferirReclamoLista(int numeroReclamo )throws Notificaciones{
         List<Reclamo> reclamos=controlSistema.getmSistema().getReclamos();
         TipoReclamo tReclamo = null;
