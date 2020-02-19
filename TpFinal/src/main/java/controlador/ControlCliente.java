@@ -17,7 +17,7 @@ public class ControlCliente {
     }
     //Consulta de todos los reclamos de un cliente*********************************************************************
     
-    private List<Integer> listarReclamos(int dniCliente){
+    public List<Integer> listarReclamos(int dniCliente){
         List<Integer> numerosReclamo=new ArrayList<>();
         List<Reclamo> reclamos=controlSistema.getmSistema().getReclamos();
         for(Reclamo e:reclamos) {
@@ -30,7 +30,7 @@ public class ControlCliente {
     
     //Enviar todos los datos de un reclamo*****************************************************************************
     
-     private List<String> datosReclamo(int numeroReclamo){
+     public List<String> datosReclamo(int numeroReclamo){
         List<String>datos=new ArrayList<>();
         List<Reclamo> reclamos=controlSistema.getmSistema().getReclamos();
         for(Reclamo e:reclamos) {
