@@ -49,7 +49,7 @@
                       <Component id="BotonRegistrarReclamo" alignment="1" min="-2" pref="410" max="-2" attributes="0"/>
                       <Component id="BotonFinalizarReclamo" alignment="1" min="-2" pref="410" max="-2" attributes="0"/>
                       <Component id="BotonTransferirReclamo" alignment="1" min="-2" pref="410" max="-2" attributes="0"/>
-                      <Component id="BotonConsultarHistorialReclamo" alignment="1" min="-2" pref="410" max="-2" attributes="0"/>
+                      <Component id="BotonConsultarHistorialReclamosCliente" alignment="1" min="-2" pref="410" max="-2" attributes="0"/>
                       <Component id="BotonConsultarReclamosPendientes" alignment="1" min="-2" pref="410" max="-2" attributes="0"/>
                       <Component id="ConsultarReclamosRealizados" alignment="1" min="-2" pref="410" max="-2" attributes="0"/>
                   </Group>
@@ -72,7 +72,7 @@
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Component id="BotonTransferirReclamo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="BotonConsultarHistorialReclamo" min="-2" max="-2" attributes="0"/>
+                  <Component id="BotonConsultarHistorialReclamosCliente" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Component id="BotonConsultarReclamosPendientes" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="36" max="32767" attributes="0"/>
@@ -185,7 +185,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonTransferirReclamoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BotonConsultarHistorialReclamo">
+        <Component class="javax.swing.JButton" name="BotonConsultarHistorialReclamosCliente">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="66" type="rgb"/>
@@ -196,8 +196,11 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Consultar sobre historial de reclamos"/>
+            <Property name="text" type="java.lang.String" value="Consultar sobre historial reclamos de clientes"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultarHistorialReclamosClienteActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonConsultarReclamosPendientes">
           <Properties>
@@ -212,6 +215,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Consultar sobre reclamos pendientes"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonConsultarReclamosPendientesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="ConsultarReclamosRealizados">
           <Properties>
@@ -226,6 +232,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Consultar sobre reclamos realizados"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarReclamosRealizadosActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

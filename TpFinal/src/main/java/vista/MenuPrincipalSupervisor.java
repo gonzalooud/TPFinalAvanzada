@@ -25,7 +25,7 @@ public class MenuPrincipalSupervisor extends javax.swing.JPanel {
         BotonRegistrarReclamo = new javax.swing.JButton();
         BotonFinalizarReclamo = new javax.swing.JButton();
         BotonTransferirReclamo = new javax.swing.JButton();
-        BotonConsultarHistorialReclamo = new javax.swing.JButton();
+        BotonConsultarHistorialReclamosCliente = new javax.swing.JButton();
         BotonConsultarReclamosPendientes = new javax.swing.JButton();
         ConsultarReclamosRealizados = new javax.swing.JButton();
 
@@ -91,20 +91,35 @@ public class MenuPrincipalSupervisor extends javax.swing.JPanel {
             }
         });
 
-        BotonConsultarHistorialReclamo.setBackground(new java.awt.Color(102, 102, 102));
-        BotonConsultarHistorialReclamo.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
-        BotonConsultarHistorialReclamo.setForeground(new java.awt.Color(51, 51, 51));
-        BotonConsultarHistorialReclamo.setText("Consultar sobre historial de reclamos");
+        BotonConsultarHistorialReclamosCliente.setBackground(new java.awt.Color(102, 102, 102));
+        BotonConsultarHistorialReclamosCliente.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        BotonConsultarHistorialReclamosCliente.setForeground(new java.awt.Color(51, 51, 51));
+        BotonConsultarHistorialReclamosCliente.setText("Consultar sobre historial reclamos de clientes");
+        BotonConsultarHistorialReclamosCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonConsultarHistorialReclamosClienteActionPerformed(evt);
+            }
+        });
 
         BotonConsultarReclamosPendientes.setBackground(new java.awt.Color(102, 102, 102));
         BotonConsultarReclamosPendientes.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         BotonConsultarReclamosPendientes.setForeground(new java.awt.Color(51, 51, 51));
         BotonConsultarReclamosPendientes.setText("Consultar sobre reclamos pendientes");
+        BotonConsultarReclamosPendientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonConsultarReclamosPendientesActionPerformed(evt);
+            }
+        });
 
         ConsultarReclamosRealizados.setBackground(new java.awt.Color(102, 102, 102));
         ConsultarReclamosRealizados.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         ConsultarReclamosRealizados.setForeground(new java.awt.Color(51, 51, 51));
         ConsultarReclamosRealizados.setText("Consultar sobre reclamos realizados");
+        ConsultarReclamosRealizados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultarReclamosRealizadosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelMenuPrincipalSupervisorLayout = new javax.swing.GroupLayout(PanelMenuPrincipalSupervisor);
         PanelMenuPrincipalSupervisor.setLayout(PanelMenuPrincipalSupervisorLayout);
@@ -122,7 +137,7 @@ public class MenuPrincipalSupervisor extends javax.swing.JPanel {
                     .addComponent(BotonRegistrarReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotonFinalizarReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotonTransferirReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonConsultarHistorialReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonConsultarHistorialReclamosCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotonConsultarReclamosPendientes, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ConsultarReclamosRealizados, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(231, 231, 231))
@@ -142,7 +157,7 @@ public class MenuPrincipalSupervisor extends javax.swing.JPanel {
                 .addGap(32, 32, 32)
                 .addComponent(BotonTransferirReclamo)
                 .addGap(34, 34, 34)
-                .addComponent(BotonConsultarHistorialReclamo)
+                .addComponent(BotonConsultarHistorialReclamosCliente)
                 .addGap(32, 32, 32)
                 .addComponent(BotonConsultarReclamosPendientes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
@@ -173,9 +188,20 @@ public class MenuPrincipalSupervisor extends javax.swing.JPanel {
         this.principal.finalizarReclamo(menuPrincipal);
     }//GEN-LAST:event_BotonFinalizarReclamoActionPerformed
 
+    private void BotonConsultarHistorialReclamosClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultarHistorialReclamosClienteActionPerformed
+        this.principal.ConsultaReclamoCliente(menuPrincipal);
+    }//GEN-LAST:event_BotonConsultarHistorialReclamosClienteActionPerformed
+
+    private void BotonConsultarReclamosPendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultarReclamosPendientesActionPerformed
+        this.principal.ConsultaReclamoCliente(menuPrincipal);
+    }//GEN-LAST:event_BotonConsultarReclamosPendientesActionPerformed
+
+    private void ConsultarReclamosRealizadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarReclamosRealizadosActionPerformed
+        this.principal.ConsultaReclamoCliente(menuPrincipal);
+    }//GEN-LAST:event_ConsultarReclamosRealizadosActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonConsultarHistorialReclamo;
+    private javax.swing.JButton BotonConsultarHistorialReclamosCliente;
     private javax.swing.JButton BotonConsultarReclamosPendientes;
     private javax.swing.JButton BotonFinalizarReclamo;
     private javax.swing.JButton BotonRegistrarReclamo;

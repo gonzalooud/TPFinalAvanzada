@@ -31,7 +31,7 @@ public class MenuPrincipalEmpleado extends javax.swing.JPanel {
         BotonRegistrarReclamo = new javax.swing.JButton();
         BotonFinalizarReclamo = new javax.swing.JButton();
         BotonTransferirReclamo = new javax.swing.JButton();
-        BotonTransferirReclamo1 = new javax.swing.JButton();
+        BotonConsultarHistorialReclamosDeClientes = new javax.swing.JButton();
 
         PanelMenuPrincipalEmpleado.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -96,10 +96,15 @@ public class MenuPrincipalEmpleado extends javax.swing.JPanel {
             }
         });
 
-        BotonTransferirReclamo1.setBackground(new java.awt.Color(102, 102, 102));
-        BotonTransferirReclamo1.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
-        BotonTransferirReclamo1.setForeground(new java.awt.Color(51, 51, 51));
-        BotonTransferirReclamo1.setText("Consultar sobre historial de reclamos");
+        BotonConsultarHistorialReclamosDeClientes.setBackground(new java.awt.Color(102, 102, 102));
+        BotonConsultarHistorialReclamosDeClientes.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        BotonConsultarHistorialReclamosDeClientes.setForeground(new java.awt.Color(51, 51, 51));
+        BotonConsultarHistorialReclamosDeClientes.setText("Consultar sobre historial reclamos de clientes");
+        BotonConsultarHistorialReclamosDeClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonConsultarHistorialReclamosDeClientesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelMenuPrincipalEmpleadoLayout = new javax.swing.GroupLayout(PanelMenuPrincipalEmpleado);
         PanelMenuPrincipalEmpleado.setLayout(PanelMenuPrincipalEmpleadoLayout);
@@ -123,7 +128,7 @@ public class MenuPrincipalEmpleado extends javax.swing.JPanel {
                         .addComponent(BotonTransferirReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelMenuPrincipalEmpleadoLayout.createSequentialGroup()
                         .addGap(248, 248, 248)
-                        .addComponent(BotonTransferirReclamo1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BotonConsultarHistorialReclamosDeClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(257, Short.MAX_VALUE))
         );
         PanelMenuPrincipalEmpleadoLayout.setVerticalGroup(
@@ -141,7 +146,7 @@ public class MenuPrincipalEmpleado extends javax.swing.JPanel {
                 .addGap(51, 51, 51)
                 .addComponent(BotonTransferirReclamo)
                 .addGap(51, 51, 51)
-                .addComponent(BotonTransferirReclamo1)
+                .addComponent(BotonConsultarHistorialReclamosDeClientes)
                 .addContainerGap(76, Short.MAX_VALUE))
         );
 
@@ -168,12 +173,16 @@ public class MenuPrincipalEmpleado extends javax.swing.JPanel {
         this.principal.finalizarReclamo(menuPrincipal);
     }//GEN-LAST:event_BotonFinalizarReclamoActionPerformed
 
+    private void BotonConsultarHistorialReclamosDeClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultarHistorialReclamosDeClientesActionPerformed
+        this.principal.ConsultaReclamoCliente(menuPrincipal);
+    }//GEN-LAST:event_BotonConsultarHistorialReclamosDeClientesActionPerformed
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonConsultarHistorialReclamosDeClientes;
     private javax.swing.JButton BotonFinalizarReclamo;
     private javax.swing.JButton BotonRegistrarReclamo;
     private javax.swing.JButton BotonTransferirReclamo;
-    private javax.swing.JButton BotonTransferirReclamo1;
     private javax.swing.JPanel PanelMenuPrincipalEmpleado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
