@@ -18,11 +18,9 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
         this.vPrincipal = vPrincipal;
         this.tipoMenu = tipoMenu;
         initComponents();
-        LabelEmpleadoActual.setVisible(false);
         LabelEmpleadoAsignado.setVisible(false);
         LabelEstado.setVisible(false);
         LabelDescripcion.setVisible(false);
-        TextoEmpleadoActual.setVisible(false);
         TextoDescripcion.setVisible(false);
         jScrollPane1.setVisible(false);
         ComboEmpleadoAsignado.setVisible(false);
@@ -31,6 +29,7 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
         this.vPrincipal.repaint();
         this.vPrincipal.pack();
     }
+    /**/
 
     
     @SuppressWarnings("unchecked")
@@ -44,8 +43,6 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         TextoNumeroReclamo = new javax.swing.JTextField();
         BotonBuscar = new javax.swing.JButton();
-        LabelEmpleadoActual = new javax.swing.JLabel();
-        TextoEmpleadoActual = new javax.swing.JTextField();
         LabelEmpleadoAsignado = new javax.swing.JLabel();
         LabelEstado = new javax.swing.JLabel();
         ComboEstado = new javax.swing.JComboBox<>();
@@ -105,13 +102,6 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
                 BotonBuscarActionPerformed(evt);
             }
         });
-
-        LabelEmpleadoActual.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
-        LabelEmpleadoActual.setForeground(new java.awt.Color(51, 51, 51));
-        LabelEmpleadoActual.setText("<html>Número empleado<p>anterior:<html>");
-
-        TextoEmpleadoActual.setBackground(new java.awt.Color(153, 153, 153));
-        TextoEmpleadoActual.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
 
         LabelEmpleadoAsignado.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         LabelEmpleadoAsignado.setForeground(new java.awt.Color(51, 51, 51));
@@ -178,11 +168,18 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
                 .addComponent(BotonAceptar)
                 .addGap(307, 307, 307))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(164, 164, 164)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(LabelDescripcion)
+                        .addComponent(LabelEmpleadoAsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(ComboEmpleadoAsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(LabelDescripcion)
+                                .addGap(52, 52, 52))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(48, 48, 48)
@@ -190,17 +187,9 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
                         .addGap(48, 48, 48)
                         .addComponent(BotonBuscar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelEstado)
-                            .addComponent(LabelEmpleadoAsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelEmpleadoActual, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ComboEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(TextoEmpleadoActual, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                                .addComponent(ComboEmpleadoAsignado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(LabelEstado)
+                        .addGap(139, 139, 139)
+                        .addComponent(ComboEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(155, 155, 155)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(56, Short.MAX_VALUE))
@@ -218,23 +207,19 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
                     .addComponent(TextoNumeroReclamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(BotonBuscar))
-                .addGap(46, 46, 46)
+                .addGap(45, 45, 45)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LabelDescripcion)
-                            .addComponent(LabelEmpleadoActual)
-                            .addComponent(TextoEmpleadoActual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(52, 52, 52)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ComboEmpleadoAsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelEmpleadoAsignado))
-                        .addGap(48, 48, 48)
+                            .addComponent(LabelEmpleadoAsignado)
+                            .addComponent(ComboEmpleadoAsignado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(125, 125, 125)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LabelEstado)
                             .addComponent(ComboEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonCancelar)
                     .addComponent(BotonAceptar))
@@ -266,11 +251,9 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
         try{
             this.numeroReclamo= Integer.parseInt(TextoNumeroReclamo.getText());
             listaNumeroEmpleados= this.controlSistema.getListaTransferir(numeroReclamo);
-            LabelEmpleadoActual.setVisible(true);
             LabelEmpleadoAsignado.setVisible(true);
             LabelEstado.setVisible(true);
             LabelDescripcion.setVisible(true);
-            TextoEmpleadoActual.setVisible(true);
             TextoDescripcion.setVisible(true);
             jScrollPane1.setVisible(true);
             ComboEmpleadoAsignado.setVisible(true);
@@ -309,11 +292,9 @@ public class TransferenciaReclamo extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> ComboEmpleadoAsignado;
     private javax.swing.JComboBox<String> ComboEstado;
     private javax.swing.JLabel LabelDescripcion;
-    private javax.swing.JLabel LabelEmpleadoActual;
     private javax.swing.JLabel LabelEmpleadoAsignado;
     private javax.swing.JLabel LabelEstado;
     private javax.swing.JTextArea TextoDescripcion;
-    private javax.swing.JTextField TextoEmpleadoActual;
     private javax.swing.JTextField TextoNumeroReclamo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
