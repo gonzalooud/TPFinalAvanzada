@@ -14,7 +14,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
+@ManagedBean(name="reclamo")
+@RequestScoped
 @Entity
 @Table (name = "RECLAMO")
 public class Reclamo implements Serializable {

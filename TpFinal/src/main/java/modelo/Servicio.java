@@ -1,6 +1,8 @@
 package modelo;
 
 import java.io.Serializable;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
@@ -9,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+@ManagedBean(name="servicio")
+@RequestScoped
 @Entity
 @Table(name="SERVICIO")
 public class Servicio implements Serializable{

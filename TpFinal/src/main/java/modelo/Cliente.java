@@ -3,6 +3,8 @@ package modelo;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+@ManagedBean(name="cliente")
+@RequestScoped
 @Entity
 @Table (name = "CLIENTE")
 public class Cliente implements Serializable {

@@ -1,8 +1,12 @@
 package modelo;
 
 import java.io.Serializable;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.persistence.*;
 
+@ManagedBean(name="estado")
+@RequestScoped
 @Entity
 @Table (name = "ESTADO")
 public class Estado implements Serializable{

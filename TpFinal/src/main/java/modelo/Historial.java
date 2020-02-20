@@ -10,8 +10,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.persistence.*;
 
+@ManagedBean(name="historial")
+@RequestScoped
 @Entity
 @Table (name = "HISTORIAL")
 public class Historial implements Serializable{

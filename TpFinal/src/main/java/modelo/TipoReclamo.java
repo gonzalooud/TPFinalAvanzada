@@ -1,9 +1,12 @@
 package modelo;
 
 import java.io.Serializable;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.persistence.*;
 
-
+@ManagedBean(name="tipoReclamo")
+@RequestScoped
 @Entity
 @Table (name = "TIPORECLAMO")
 public class TipoReclamo implements Serializable{
