@@ -95,7 +95,7 @@ public class ControlSistema {
         String estado="Alta";
         Estado estadoAgregar= this.getControlEstado().getEstado(estado);
         if(estadoAgregar==null){
-            throw new Notificaciones("Error en el Estado asignado (NO DEBE PASAR).");
+            throw new Notificaciones("Error en el Estado asignado.");
         }
         /*generar la asignacion de empleado*/
         String empleadoAsignar=controlEmpleado.asignarEmpleado(urgencia, tipoReclamo);
