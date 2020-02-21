@@ -9,7 +9,7 @@ public class ConsultaReclamoCliente extends javax.swing.JPanel {
     private String tipoMenu;
     
     public ConsultaReclamoCliente(ControlSistema controlSistema, FramePrincipal vPrincipal, String tipoMenu) {
-      this.controlSistema = controlSistema;
+       this.controlSistema = controlSistema;
        this.vPrincipal = vPrincipal;
        this.tipoMenu = tipoMenu;
        initComponents();
@@ -59,13 +59,15 @@ public class ConsultaReclamoCliente extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel1.setText("Consultar un reclamo");
+        jLabel1.setText("Consultar sobre reclamos");
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("Esta consulta se ve por WEB");
 
+        BotonAceptar.setBackground(new java.awt.Color(102, 102, 102));
         BotonAceptar.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        BotonAceptar.setForeground(new java.awt.Color(51, 51, 51));
         BotonAceptar.setText("Aceptar");
         BotonAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,18 +82,17 @@ public class ConsultaReclamoCliente extends javax.swing.JPanel {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(328, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(318, 318, 318))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(337, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(352, 352, 352)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(419, 419, 419)
-                        .addComponent(BotonAceptar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(309, 309, 309))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(BotonAceptar)
+                        .addGap(389, 389, 389))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(321, 321, 321))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,11 +102,11 @@ public class ConsultaReclamoCliente extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(180, 180, 180)
+                .addGap(181, 181, 181)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
                 .addComponent(BotonAceptar)
-                .addGap(21, 21, 21))
+                .addGap(26, 26, 26))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -121,13 +122,14 @@ public class ConsultaReclamoCliente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAceptarActionPerformed
-                if(tipoMenu.equalsIgnoreCase("Supervisor")){
+        if(tipoMenu.equalsIgnoreCase("Supervisor")){
             this.vPrincipal.atrasConsultaReclamoClienteSupervisor();
         }else{
             this.vPrincipal.atrasConsultaReclamoClienteEmpleado();
         }                                           
     }//GEN-LAST:event_BotonAceptarActionPerformed
- 
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAceptar;
     private javax.swing.JLabel jLabel1;
